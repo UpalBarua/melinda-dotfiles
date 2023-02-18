@@ -1,0 +1,226 @@
+# -------------------- #
+# I3 SETTINGS          #
+# -------------------- #
+set $Alt Mod1
+set $mod Mod4
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+floating_modifier $mod
+font pango:JetBrainsMono Nerd Font 10
+
+# AUTOSTART
+exec_always --no-startup-id $HOME/.config/i3/scripts/autostart.sh
+
+# TITLE BAR & BORDERS
+default_border pixel 3
+default_floating_border pixel 3
+for_window [class="^.*"] border pixel 3
+
+# INNER & OUTER GAPS
+gaps inner 5
+gaps outer 5
+
+# SMART GAPS & BORDERS
+smart_gaps on
+smart_borders on
+
+# I3 COLORS
+# class                 border  backgr. text    indicator child_border
+client.focused          #d19a66 #d19a66 #282c34 #d19a66   #d19a66
+client.focused_inactive #282c34 #282c34 #abb2bf #282c34   #282c34
+client.unfocused        #282c34 #282c34 #abb2bf #282c34   #282c34
+client.urgent           #e06c75 #e06c75 #abb2bf #e06c75   #e06c75
+client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
+client.background       #abb2bf
+
+# WINDOW RULES
+for_window [class="firefox"] move to workspace $ws2
+for_window [class="Brave"] move to workspace $ws2
+for_window [class="VSCodium"] move to workspace $ws1
+for_window [class="obsidian"] move to workspace $ws4
+for_window [class="Nitrogen"] floating enable
+for_window [class="Gpick"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Timeshift-gtk"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Engrampa"] floating enable
+for_window [class="stacer"] floating enable
+for_window [class="st"] , move scratchpad
+
+# -------------------- #
+# i3 KEYBINDINGS       #
+# -------------------- #
+# KILL WINDOW
+bindsym $mod+q kill
+
+# CHANGE FOCUS (VIM KEYS)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# CHANGE FOCUS (ARROW KEYS)
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# MOVE FOCUSED WINDOW (VIM KEYS)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# MOVE FOCUSED WINDOW (ARROW KEYS)
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# SPLIT HORIZONTALLY & VERTICALLY
+bindsym $mod+z split h
+bindsym $mod+v split v
+
+# FULSCREEEN, FLOATING & TILING TOGGLE
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+Tab floating toggle
+bindsym $mod+Shift+space focus mode_toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+Tab layout toggle split
+
+# FOCUS PARENT & CHILD CONTAINER
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+
+# RELOAD, RESTART & EXIT I3
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You wann head out?' -B 'yay' 'i3-msg exit'"
+
+# RESIZE WINDOWS
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # Originally set to jkl;.
+        bindsym h resize shrink width 4 px or 4 ppt
+        bindsym j resize grow height 4 px or 4 ppt
+        bindsym k resize shrink height 4 px or 4 ppt
+        bindsym l resize grow width 4 px or 4 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# SWITCH TO WORKSPACE
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# MOVE FOCUSED CONTAINER TO WORKSPACE
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# -------------------- #
+# CUSTOM KEYBINDINGS   #
+# -------------------- #
+# TERMINAL
+bindsym $mod+Return exec --no-startup-id $TERMINAL
+bindsym $mod+$Alt+Return exec --no-startup-id st
+
+# RUN LAUNCHERS 
+bindsym $mod+Shift+Return exec --no-startup-id dmenu_run
+bindsym $mod+Ctrl+r exec --no-startup-id rofi -show drun
+
+# ROFI APPLETS
+bindsym $mod+Shift+e exec --no-startup-id rofi -show emoji -modi emoji
+bindsym $mod+Shift+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+w exec --no-startup-id rofi -show window
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort
+
+# GUI PROGRAMS
+bindsym $mod+$Alt+b exec --no-startup-id brave
+bindsym $mod+$Alt+v exec --no-startup-id vscodium
+bindsym $mod+$Alt+t exec --no-startup-id thunar
+bindsym $mod+$Alt+x exec --no-startup-id firefox
+bindsym $mod+$Alt+i exec --no-startup-id timeshift-launcher
+bindsym $mod+$Alt+g exec --no-startup-id gpick
+bindsym $mod+$Alt+n exec --no-startup-id nitrogen
+bindsym $mod+$Alt+d exec --no-startup-id evince
+bindsym $mod+$Alt+o exec --no-startup-id obsidian
+bindsym $mod+$Alt+p exec --no-startup-id pavucontrol
+bindsym $mod+$Alt+s exec --no-startup-id stacer
+
+# TUI PROGRAMS
+bindsym $mod+$Alt+f exec --no-startup-id $TERMINAL -e lfub
+bindsym $mod+$Alt+y exec --no-startup-id $TERMINAL -e btop
+bindsym $mod+$Alt+z exec --no-startup-id $TERMINAL -e htop
+bindsym $mod+$Alt+c exec --no-startup-id $TERMINAL -e nvim
+bindsym $mod+$Alt+r exec --no-startup-id $TERMINAL -e newsboat
+
+# VOLUME CONTROLS
+bindsym $Alt+F1 exec --no-startup-id amixer set Capture toggle && notify-send "Microphone" "mic toggled"
+bindsym $Alt+F2 exec --no-startup-id pamixer -d 5 && /home/upalb/.config/dunst/scripts/volume.sh
+bindsym $Alt+F3 exec --no-startup-id pamixer -i 5 && /home/upalb/.config/dunst/scripts/volume.sh
+bindsym $Alt+F4 exec --no-startup-id pamixer --toggle-mute
+
+# BRIGHTNESS CONTROLS
+bindsym $Alt+F11 exec --no-startup-id brightnessctl set 5%- && /home/upalb/.config/dunst/scripts/brightness.sh screen
+bindsym $Alt+F12 exec --no-startup-id brightnessctl set +5% && /home/upalb/.config/dunst/scripts/brightness.sh screen
+
+# SCREENSHOT CONTROLS
+bindsym Print exec --no-startup-id scrot ~/Pictures/Screenshots/ss-%y%m%d-%H%M.png && notify-send "Screenshot" "screenshot saved"
+bindsym Shift+Print exec --no-startup-id scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f' && notify-send "Screenshot" "screenshot copied"
+bindsym $mod+Shift+Print exec --no-startup-id scrot -a $(slop -f '%x,%y,%w,%h') ~/Pictures/Screenshots/screenshot-%y-%m_%d__%H-%M.png && notify-send "Screenshot" "screenshot saved";
+
+# POWER OPTIONS
+bindsym $mod+Ctrl+$Alt+p exec --no-startup-id systemctl poweroff
+bindsym $mod+Ctrl+$Alt+r exec --no-startup-id systemctl reboot
+bindsym $mod+Ctrl+$Alt+s exec --no-startup-id systemctl suspend
+bindsym $mod+Ctrl+$Alt+l exec --no-startup-id betterlockscreen -l dimblur
+bindsym $mod+Ctrl+$Alt+q exec --no-startup-id i3 exit 
+
+# TOGGLES
+bindsym $mod+F1 exec --no-startup-id ~/.local/bin/toggles/picom-toggle
+bindsym $mod+F2 exec --no-startup-id ~/.local/bin/toggles/transmission-toggle
+bindsym $mod+F3 exec --no-startup-id ~/.local/bin/toggles/polkit-toggle
+bindsym $mod+F4 exec --no-startup-id ~/.local/bin/toggles/ibus-toggle
+
+# MISCELLANEOUS
+bindsym XF86Mail exec --no-startup-id nitrogen --set-zoom-fill --random --save $HOME/Pictures/Wallpapers/ && ~/.local/bin/lockwall
+
+exec_always --no-startup-id "st -c st,st"
+bindsym $mod+BackSpace [class="st"] scratchpad show

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+wallpaper=$(cat ~/.config/nitrogen/bg-saved.cfg | grep 'file' | cut -c 6-);
+rm -rf "$wallpaper";

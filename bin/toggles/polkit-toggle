@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if pidof -x polkit-mate-authentication-agent-1 > /dev/null; then
+  notify-send "Polkit" "mate polkit agent killed"
+  killall -9 polkit-mate-authentication-agent-1
+else
+  notify-send "Polkit" "mate polkit agent started"
+  /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+fi

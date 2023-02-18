@@ -1,0 +1,7 @@
+#!/bin/sh
+
+toggle=$(ls ~/.local/bin/toggles/ | rofi -dmenu -p 'Toggle')
+exec $toggle
+
+
+

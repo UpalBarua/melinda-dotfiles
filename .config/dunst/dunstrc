@@ -1,0 +1,179 @@
+[global]
+    # General
+    monitor = 0
+    follow = none
+    width = 150
+    height = 350
+    origin = top-right
+    offset = 5x22
+    scale = 2
+    notification_limit = 0
+    highlight = "#fab387"
+    indicate_hidden = yes
+    transparency = 0 
+    separator_height = 1
+    padding = 10 
+    horizontal_padding = 8
+    text_icon_padding = 0
+    frame_width = 0
+    frame_color = "#fab387"
+    separator_color = auto 
+    sort = yes
+    gaps = true
+    gap_size = 5
+
+    # Progress bar
+    progress_bar = true
+    progress_bar_height = 2 
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 150
+    progress_bar_max_width = 350
+
+    # Text
+    font = JetBrainsMono Nerd Font 10
+    line_height = 2.8 
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    # Icons
+    icon_position = left
+    min_icon_size = 25
+    max_icon_size = 25
+    icon_path = /usr/share/icons/Papirus-Dark/48x48/apps:/usr/share/icons/Papirus-Dark/48x48/categories:/usr/share/icons/Papirus-Dark/48x48/devices:/usr/share/icons/Papirus-Dark/48x48/emblems:/usr/share/icons/Papirus-Dark/48x48/mimetypes:/usr/share/icons/Papirus-Dark/48x48/places:/usr/share/icons/Papirus-Dark/48x48/status
+
+    # History
+    sticky_history = yes
+    history_length = 20
+
+    # Misc/Advanced
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = brave-beta 
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 0
+    ignore_dbusclose = false
+
+    ### Wayland ###
+    force_xwayland = false
+
+    ### Legacy
+    force_xinerama = false
+
+    ### mouse
+    mouse_left_click = do_action
+    mouse_middle_click = close_current, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+[urgency_low]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    timeout = 10
+    default_icon = /home/upal/.config/dunst/icons/bell.svg
+
+[urgency_normal]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    timeout = 10
+    default_icon = /home/upal/.config/dunst/icons/bell.svg
+
+[urgency_critical]
+    background = "#1E1E2E"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
+    timeout = 10
+    default_icon = /home/upal/.config/dunst/icons/alert.svg
+
+# Custom
+[screenshot_sound]
+    appname = flameshot
+    summary = "Flameshot Info"
+    script = "~/.config/dunst/scripts/screenshot-sound.sh"
+    new_icon = /home/upal/.config/dunst/icons/aperture.svg
+
+[screenshot_sound]
+    appname = * 
+    summary = "Screenshot"
+    script = "~/.config/dunst/scripts/screenshot-sound.sh"
+    new_icon = /home/upal/.config/dunst/icons/aperture.svg
+    timeout = 5
+
+[charger_plugged_in]
+    appname = xfce4-power-manager 
+    summary = "*Power Manager*"
+    script = "~/.config/dunst/scripts/charger-unplugged.sh"
+    new_icon = /home/upal/.config/dunst/icons/heart.svg
+
+[battery_low]
+    appname = * 
+    summary = "*Battery Low*"
+    script = "~/.config/dunst/scripts/notification-sound.sh"
+    new_icon = /home/upal/.config/dunst/icons/heart-red.svg
+    timeout = 10
+
+[transmission]
+    appname = * 
+    summary = "*Transmission*"
+    new_icon = /home/upal/.config/dunst/icons/download.svg
+    script = "~/.config/dunst/scripts/notification-sound.sh"
+    # format = "Transmission\n%s\n%b"
+    
+[ibus-daemon]
+    appname = * 
+    summary = "*Keyboard*"
+    new_icon = /home/upal/.config/dunst/icons/globe.svg
+    script = "~/.config/dunst/scripts/notification-sound.sh"
+
+[microphone]
+    appname = * 
+    summary = "*Microphone*"
+    new_icon = /home/upal/.config/dunst/icons/mic.svg
+
+[rofi-beats]
+    appname = * 
+    summary = "*Playing now*"
+    new_icon = /home/upal/.config/dunst/icons/music.svg
+
+[wallpaper]
+    appname = * 
+    summary = "*Wallpaper*"
+    new_icon = /home/upal/.config/dunst/icons/image.svg
+
+[picom-toggle]
+    appname = * 
+    summary = "*Compositor*"
+    new_icon = /home/upal/.config/dunst/icons/compositor.svg
+
+[polkit]
+    appname = * 
+    summary = "*Polkit*"
+    new_icon = /home/upal/.config/dunst/icons/polkit.svg
+
+[volume]
+    appname = *
+    summary = "*Volume*"
+    highlight = "#a6e3a1"
+
+[redshift]
+    appname = *
+    summary = "*Night light*"
+    new_icon = /home/upal/.config/dunst/icons/sunset.svg
+
+[welcome]
+    appname = * 
+    summary = "*Inspiron*"
+    new_icon = /home/upal/.config/dunst/icons/heart-blue.svg
+    script = "~/.config/dunst/scripts/startup-sound.sh"
+
+

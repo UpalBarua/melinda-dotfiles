@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if pidof -x "ibus-daemon" > /dev/null; then
+  notify-send "Keyboard" "bangla keybord daemon killed"
+  killall -9 ibus-daemon 
+else
+  notify-send "Keyboard" "bangla keybord daemon started"
+  ibus-daemon -drxR
+fi

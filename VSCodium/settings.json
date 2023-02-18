@@ -1,0 +1,85 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.activityBar.visible": false,
+  "window.menuBarVisibility": "toggle",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "JetBrains Mono",
+  // "editor.fontFamily": "Cascadia Code",
+  "editor.tabSize": 2,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css"
+    }
+  ],
+  "liveSassCompile.settings.generateMap": false,
+  "html.format.enable": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": "'calt', 'ss01'",
+  "prettier.singleQuote": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.cursorBlinking": "expand",
+  "emmet.triggerExpansionOnTab": true,
+  "cSpell.ignoreWords": [
+    "Chakra",
+    "FONTAWESOME",
+    "Nums",
+    "Signin",
+    "Signup",
+    "myservices"
+  ],
+  "editor.minimap.size": "fit",
+  "workbench.sideBar.location": "right",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "editor.suggest.insertMode": "replace",
+  "editor.suggest.showStatusBar": true,
+  "workbench.statusBar.visible": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "terminal.integrated.shellIntegration.enabled": false,
+  "workbench.startupEditor": "none",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.cursorBlinking": true,
+  "liveSassCompile.settings.showOutputWindowOn": "Error",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.bracketPairColorization.enabled": true,
+  "prettier.bracketSameLine": true,
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "**/env": true,
+    "**/venv": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveServer.settings.fullReload": true,
+  "css.lint.unknownAtRules": "ignore",
+  "editor.mouseWheelZoom": false,
+  "cssvar.files": ["**/*.css", "**/*.scss"],
+  "editor.guides.bracketPairs": "active",
+  "explorer.confirmDragAndDrop": false,
+  "tailwindCSS.emmetCompletions": true,
+  "catppuccin.accentColor": "sapphire"
+
+  // "terminal.integrated.cursorStyle": "line",
+  // "editor.glyphMargin": false
+}

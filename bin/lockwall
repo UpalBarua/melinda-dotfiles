@@ -1,0 +1,5 @@
+#!/bin/sh
+
+killall -9 convert;
+wallpaper=$(cat ~/.config/nitrogen/bg-saved.cfg | grep 'file' | cut -c 6-);
+betterlockscreen -u "$wallpaper" --fx dimblur;

@@ -1,0 +1,14 @@
+[Unit]
+Description = Lock the screen when going to sleep
+Before = sleep.target
+Before = suspend.target
+
+[Service]
+User = upal 
+Type = simple 
+Environment = DISPLAY=:0
+ExecStart = /usr/bin/betterlockscreen -l dimblur
+ExecStartPost = /usr/bin/sleep 1
+
+[Install]
+WantedBy = sleep.target

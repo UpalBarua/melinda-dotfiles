@@ -1,0 +1,40 @@
+#--------------- BetterlockscreenRC ---------------#
+# default options
+display_on=0
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+dim_level=40
+blur_level=2
+pixel_scale=10,1000
+solid_color=333333
+wallpaper_cmd="feh --bg-fill"
+quiet=false
+
+# default theme
+loginbox=282c3400
+loginshadow=00000000
+bgcolor=000000ff
+locktext="Melinda"
+font="JetBrains Mono"
+time_format="%I:%M"
+# time_format="%I:%M %P"
+
+# Text colors.
+timecolor=cdd6f4ff
+greetercolor=cdd6f4ff
+verifcolor=00000000
+wrongcolor=00000000
+layoutcolor=cdd6f4ff
+
+# Ring colors.
+keyhlcolor=74c7ecff
+bshlcolor=e06c75ff
+ringcolor=cdd6f4ff
+insidecolor=00000000
+separatorcolor=00000000
+ringvercolor=61afefff
+insidevercolor=00000000
+ringwrongcolor=e06c75ff
+insidewrongcolor=00000000
+modifcolor=74c7ecff

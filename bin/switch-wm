@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+CURR_WM=$(tail -n 1 ~/.xinitrc)
+sed -i '$d' ~/.xinitrc
+
+if [[ "$CURR_WM" == *"bspwm"* ]]; then
+  echo 'exec i3' >> ~/.xinitrc
+  echo 'wm switched to i3wm!'
+elif [[ "$CURR_WM" == *"i3"* ]]; then
+  echo 'exec bspwm' >> ~/.xinitrc
+  echo 'wm switched to bspwm!'
+else 
+  echo "Something's wrong in .xinitrc!"
+fi
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if pidof -x "picom" > /dev/null; then
+  notify-send "Compositor" "picom killed"
+  killall -9 picom
+else
+  notify-send "Compositor" "picom started"
+  picom -b
+fi

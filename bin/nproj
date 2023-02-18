@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir assets css js
+touch index.html css/style.css js/index.js
+

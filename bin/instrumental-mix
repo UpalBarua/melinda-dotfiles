@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+main() {
+	notify-send "Playing Now" "instrumental mix" 
+  mpv --shuffle --title="radio-mpv" "$HOME/Music/05 Instrumental/"
+}
+
+pkill -f radio-mpv || main
