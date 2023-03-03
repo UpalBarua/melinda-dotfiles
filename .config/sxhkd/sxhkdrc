@@ -113,7 +113,7 @@ super + Print
 # ======================== #
 
 alt + F5
-    nitrogen --set-zoom-fill --random --save $HOME/Pictures/Wallpapers/;\
+    nitrogen --set-zoom-fill --random --save $HOME/pictures/wallpapers/;\
     ~/.local/bin/lockwall;
 
 alt + F5 + {d, l}

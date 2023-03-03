@@ -213,6 +213,7 @@ alias push='git push'
 
 # Startup
 clear
+# pfetch
 colorscript random
 
 # pnpm

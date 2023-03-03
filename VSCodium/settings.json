@@ -78,7 +78,8 @@
   "editor.guides.bracketPairs": "active",
   "explorer.confirmDragAndDrop": false,
   "tailwindCSS.emmetCompletions": true,
-  "catppuccin.accentColor": "sapphire"
+  "catppuccin.accentColor": "sapphire",
+  "editor.foldingHighlight": false
 
   // "terminal.integrated.cursorStyle": "line",
   // "editor.glyphMargin": false

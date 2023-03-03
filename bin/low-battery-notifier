@@ -9,7 +9,7 @@ LOW_BAT=25           # lesser than this is considered low battery
 #
 #   $ ls -1 /sys/class/power_supply/
 #
-BAT_PATH=/sys/class/power_supply/BAT0
+BAT_PATH=/sys/class/power_supply/BAT1
 BAT_STAT=$BAT_PATH/status
 
 if [[ -f $BAT_PATH/charge_full ]]

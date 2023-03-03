@@ -12,6 +12,7 @@ greenclip daemon &
 xsetroot -cursor_name left_ptr &
 $HOME/.config/polybar/scripts/bspwm-launch.sh &
 $HOME/.local/bin/power-manager &
+$HOME/.local/bin/low-battery-notifier &
 
 # $HOME/.local/bin/lockwall &
 # picom -b --experimental-backends --animations --animation-window-mass 0.85 --animation-for-open-window zoom --animation-stiffness 350 & 
