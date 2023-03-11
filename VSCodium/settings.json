@@ -28,7 +28,8 @@
     "Nums",
     "Signin",
     "Signup",
-    "myservices"
+    "myservices",
+    "pkglist"
   ],
   "editor.minimap.size": "fit",
   "workbench.sideBar.location": "right",
