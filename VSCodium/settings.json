@@ -3,8 +3,8 @@
   "workbench.activityBar.visible": false,
   "window.menuBarVisibility": "toggle",
   "editor.fontSize": 16,
-  "editor.fontFamily": "JetBrains Mono",
-  // "editor.fontFamily": "Cascadia Code",
+  // "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Cascadia Code",
   "editor.tabSize": 2,
   "liveSassCompile.settings.formats": [
     {
@@ -25,6 +25,7 @@
   "cSpell.ignoreWords": [
     "Chakra",
     "FONTAWESOME",
+    "Ipost",
     "Nums",
     "Signin",
     "Signup",

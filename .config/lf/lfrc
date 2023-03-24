@@ -159,7 +159,7 @@ map gC cd ~/.config
 map gT cd ~/.trash
 map gr cd "/run/media/upalb/Miscellaneous/Courses/React - The Complete Guide (incl Hooks, React Router, Redux)"
 
-map ge. cd /run/media/upalb
+map ge. cd /run/media/upal
 map ged cd "/run/media/upalb/Multimedia/Stolen Dots"
 
 map gd cd ~/downloads

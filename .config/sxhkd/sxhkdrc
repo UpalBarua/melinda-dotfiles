@@ -15,23 +15,20 @@
 super + Return
     $TERMINAL
 
-super + alt + Return
-    st 
-
 # gui applications
-super + alt + {b, v, t, s, x, i, g, n, d, o, p} 
-    {$BROWSER, vscodium, thunar --class tiled, stacer, firefox, timeshift-launcher, gpick, nitrogen, evince, obsidian, pavucontrol}
+super + alt + {b, v, t, s, x, i, g, n, d, o, p, m} 
+    {$BROWSER, vscodium, thunar --class tiled, stacer, firefox, timeshift-launcher, gpick, nitrogen, evince, obsidian, pavucontrol, rhythmbox}
 
 # tui applications
-super + alt + {f, y, z, c, r, m}
-    $TERMINAL -e {lfub, btop, htop, nvim, newsboat, cmus}
+super + alt + {f, y, z, c, r}
+    $TERMINAL -e {lfub, btop, htop, nvim, newsboat}
 
 # ======================== #
 # SCRATCHPADS              #
 # ======================== #
 
 super + BackSpace
-    tdrop -ma -w 1000 -h 650 -y 215 -x 460  -n 0 st -c tdrop
+    # tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 0 alacritty --class tdrop,tdrop
 
 # ======================== #
 # ROFI APPLETS             #
