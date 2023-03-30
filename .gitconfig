@@ -4,6 +4,6 @@
 [credential]
 	helper = store
 [safe]
-	directory = /run/media/upal/general-disk/job-hunting/raju-kancharla-assignment/client
-	directory = /run/media/upal/general-disk/job-hunting/raju-kancharla-assignment/server
-	directory = /run/media/upal/general-disk/my-portfolio
+	directory = /run/media/upal/general-disk/code
+	directory = /run/media/upal/general-disk/code/projects/code-sage
+

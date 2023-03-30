@@ -214,7 +214,7 @@ alias push='git push'
 # Startup
 clear
 # pfetch
-colorscript random
+# colorscript random
 
 # pnpm
 export PNPM_HOME="/home/upalb/.local/share/pnpm"

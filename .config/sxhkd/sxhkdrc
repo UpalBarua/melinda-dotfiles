@@ -28,7 +28,7 @@ super + alt + {f, y, z, c, r}
 # ======================== #
 
 super + BackSpace
-    # tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 0 alacritty --class tdrop,tdrop
+    tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 0 alacritty
 
 # ======================== #
 # ROFI APPLETS             #
