@@ -30,7 +30,8 @@
     "Signin",
     "Signup",
     "myservices",
-    "pkglist"
+    "pkglist",
+    "tanstack"
   ],
   "editor.minimap.size": "fit",
   "workbench.sideBar.location": "right",
@@ -71,7 +72,7 @@
     "**/venv/**": true,
     "env-*": true
   },
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Solarized Dark",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "liveServer.settings.fullReload": true,
   "css.lint.unknownAtRules": "ignore",
