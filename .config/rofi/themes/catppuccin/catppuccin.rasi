@@ -1,7 +1,7 @@
 @theme "/dev/null"
 
 * {
-  font: "JetBrainsMono Nerd Font 13";
+  font: "CaskaydiaCove Nerd Font 13";
 
   bg: #1e1e2e;
   fg: #cdd6f4;

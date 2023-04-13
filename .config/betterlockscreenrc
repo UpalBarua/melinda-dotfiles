@@ -16,7 +16,7 @@ loginbox=282c3400
 loginshadow=00000000
 bgcolor=000000ff
 locktext="#Melinda"
-font="JetBrains Mono"
+font="CaskaydiaCove Nerd Font"
 time_format="%I:%M"
 # time_format="%I:%M %P"
 

@@ -46,7 +46,7 @@
   },
   "terminal.integrated.shellIntegration.enabled": false,
   "workbench.startupEditor": "none",
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.cursorBlinking": true,
   "liveSassCompile.settings.showOutputWindowOn": "Error",
@@ -72,7 +72,7 @@
     "**/venv/**": true,
     "env-*": true
   },
-  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "liveServer.settings.fullReload": true,
   "css.lint.unknownAtRules": "ignore",

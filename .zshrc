@@ -132,7 +132,7 @@ alias z="devour zathura"
 alias v="nvim"
 alias sv="sudo nvim"
 alias vim="nvim"
-alias vsc="vscodium"
+alias c="vscodium"
 alias bt="btop"
 alias ht="htop"
 alias fm="$HOME/.config/vifm/scripts/vifmrun"
@@ -152,7 +152,7 @@ alias pr='paru'
 alias pn='pnpm'
 alias y='yarn'
 alias pacman='sudo pacman --color auto'
-alias yay='paru'
+# alias yay='paru'
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 
@@ -214,7 +214,7 @@ alias push='git push'
 # Startup
 clear
 # pfetch
-# colorscript random
+colorscript random
 
 # pnpm
 export PNPM_HOME="/home/upalb/.local/share/pnpm"

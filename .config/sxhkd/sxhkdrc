@@ -69,6 +69,15 @@ super + u
 alt + t 
     ~/.local/bin/toggles/toggle
 
+super + ctrl + p 
+    ~/.local/bin/toggles/polkit-toggle
+
+super + ctrl + b 
+    ~/.local/bin/toggles/ibus-toggle
+
+super + ctrl + p 
+    ~/.local/bin/toggles/polkit-toggle
+
 # ======================== #
 # SYSTEM CONTROLS          #
 # ======================== #
@@ -93,22 +102,18 @@ alt + {F12, F11}
 
 # screenshot
 Print
-    scrot ~/pictures/screenshots/screenshot-%y%m%d-%H%M.png;\
-    notify-send "Screenshot" "screenshot saved";
+    scrot ~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png -e 'xclip -selection clipboard -target image/png -i $f';\
+    sleep 0.5s; \
+    notify-send "Screenshot" "screenshot saved and copied to clipboard";
 
 shift + Print
-    scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f';\
-    notify-send "Screenshot" "screenshot copied";
-
-super + Print
-    scrot -a $(slop -f '%x,%y,%w,%h') ~/pictures/screenshots/screenshot-%y%m%d-%H%M.png;\
-    notify-send "Screenshot" "screenshot saved";
-
+    scrot -a $(slop -f '%x,%y,%w,%h') ~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png -e 'xclip -selection clipboard -target image/png -i $f';\
+    sleep 0.5s; \
+    notify-send "Screenshot" "screenshot saved and copied to clipboard";
 
 # ======================== #
 # WALLPAPERS               #
 # ======================== #
-
 alt + F5
     nitrogen --set-zoom-fill --random --save $HOME/pictures/wallpapers/;\
     ~/.local/bin/lockwall;
@@ -129,7 +134,7 @@ super + shift + r
     bspc wm -r
 
 # close and kill
-super + q
+super + shift + q
     bspc node -c
 
 super + m

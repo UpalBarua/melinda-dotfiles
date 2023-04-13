@@ -30,7 +30,7 @@
     progress_bar_max_width = 350
 
     # Text
-    font = JetBrainsMono Nerd Font 10
+    font = CaskaydiaCove Nerd Font 10
     line_height = 2.8 
     markup = full
     format = "<b>%s</b>\n%b"

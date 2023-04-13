@@ -10,7 +10,7 @@ Xft.lcdfilter: lcddefault
 
 Sxiv.background: #1E1E2E
 Sxiv.foreground: #74c7ec
-Sxiv.font: JetBrains Mono:size=10
+Sxiv.font: CaskaydiaCove Nerd Font:size=10
 
 # catppuccin-mocha
 *background: #1E1E2E
