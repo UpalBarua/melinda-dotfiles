@@ -82,7 +82,9 @@
   "explorer.confirmDragAndDrop": false,
   "tailwindCSS.emmetCompletions": true,
   "catppuccin.accentColor": "sapphire",
-  "editor.foldingHighlight": false
+  "editor.foldingHighlight": false,
+  "thunder-client.defaultUrl": "http://localhost:3000/",
+  "update.mode": "none"
 
   // "terminal.integrated.cursorStyle": "line",
   // "editor.glyphMargin": false

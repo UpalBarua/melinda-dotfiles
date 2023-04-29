@@ -20,8 +20,8 @@ super + alt + {b, v, t, s, x, i, g, n, d, o, p, m}
     {$BROWSER, vscodium, thunar --class tiled, stacer, firefox, timeshift-launcher, gpick, nitrogen, evince, obsidian, pavucontrol, rhythmbox}
 
 # tui applications
-super + alt + {f, y, z, c, r}
-    $TERMINAL -e {lfub, btop, htop, nvim, newsboat}
+super + alt + {a, f, y, z, c, r}
+    $TERMINAL -e {gpterm, lfub, btop, htop, nvim, newsboat}
 
 # ======================== #
 # SCRATCHPADS              #

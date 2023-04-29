@@ -70,6 +70,7 @@ export EDITOR="nvim"
 export BROWSER="brave-nightly" 
 export TERMINAL="alacritty" 
 export EXA_ICON_SPACING="2" 
+export OPENAI_API_KEY=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
 
 
 export LF_ICONS="\
