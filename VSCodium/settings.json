@@ -31,6 +31,7 @@
     "Signup",
     "myservices",
     "pkglist",
+    "swiper",
     "tanstack"
   ],
   "editor.minimap.size": "fit",
@@ -51,7 +52,6 @@
   "terminal.integrated.cursorBlinking": true,
   "liveSassCompile.settings.showOutputWindowOn": "Error",
   "editor.cursorSmoothCaretAnimation": "on",
-  "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.smoothScrolling": true,
   "editor.bracketPairColorization.enabled": true,
@@ -83,8 +83,11 @@
   "tailwindCSS.emmetCompletions": true,
   "catppuccin.accentColor": "sapphire",
   "editor.foldingHighlight": false,
-  "thunder-client.defaultUrl": "http://localhost:3000/",
-  "update.mode": "none"
+  "thunder-client.defaultUrl": "http://localhost:5000/",
+  "update.mode": "none",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "thunder-client.httpLibrary": "axios",
+  "terminal.integrated.cursorStyle": "line"
 
   // "terminal.integrated.cursorStyle": "line",
   // "editor.glyphMargin": false

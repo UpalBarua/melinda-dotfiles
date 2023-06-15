@@ -75,8 +75,8 @@ super + ctrl + p
 super + ctrl + b 
     ~/.local/bin/toggles/ibus-toggle
 
-super + ctrl + p 
-    ~/.local/bin/toggles/polkit-toggle
+super + ctrl + t 
+    ~/.local/bin/toggles/transmission-toggle
 
 # ======================== #
 # SYSTEM CONTROLS          #

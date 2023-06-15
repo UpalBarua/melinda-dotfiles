@@ -18,6 +18,17 @@
   },
   {
     "key": "ctrl+n",
-    "command": "fileutils.newFileAtRoot"
+    "command": "fileutils.newFileAtRoot",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   }
 ]
