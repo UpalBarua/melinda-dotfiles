@@ -15,7 +15,7 @@ $reboot
 $shutdown" | rofi -dmenu\
                   -i\
                   -p "Power"\
-                  -config "~/.config/rofi/themes/catppuccin/catppuccin-powermenu.rasi"\
+                  -config "~/.config/rofi/themes/tokyo-night/tokyo-night-powermenu.rasi"\
                   -width "15"\
                   -lines 5\
                   -line-margin 3\

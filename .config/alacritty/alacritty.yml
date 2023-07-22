@@ -1,6 +1,6 @@
 ##--------------- Alacritty config ---------------##
 import:
-  - ~/.config/alacritty/colorschemes/catppuccin-mocha.yml
+  - ~/.config/alacritty/colorschemes/tokyo-night.yml
 
 env:
   TERM: alacritty
@@ -19,7 +19,7 @@ window:
     y: 10 
 
   dynamic_padding: false
-  opacity: 1.0
+  opacity: 0.95
 
   # Window title
   title: Alacritty
@@ -37,19 +37,19 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
 
   bold:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   italic:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: CaskaydiaCove Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 
   size: 12.0

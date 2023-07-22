@@ -23,21 +23,23 @@
   "editor.cursorBlinking": "expand",
   "emmet.triggerExpansionOnTab": true,
   "cSpell.ignoreWords": [
+    "Barua",
     "Chakra",
     "FONTAWESOME",
     "Ipost",
     "Nums",
     "Signin",
     "Signup",
+    "Upal",
+    "clsx",
     "myservices",
     "pkglist",
     "swiper",
+    "tailwindcss",
     "tanstack"
   ],
   "editor.minimap.size": "fit",
   "workbench.sideBar.location": "right",
-  "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
   "workbench.editor.pinnedTabSizing": "compact",
   "editor.suggest.insertMode": "replace",
   "editor.suggest.showStatusBar": true,
@@ -72,7 +74,7 @@
     "**/venv/**": true,
     "env-*": true
   },
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Tokyo Night",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "liveServer.settings.fullReload": true,
   "css.lint.unknownAtRules": "ignore",
@@ -87,7 +89,9 @@
   "update.mode": "none",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "thunder-client.httpLibrary": "axios",
-  "terminal.integrated.cursorStyle": "line"
+  "terminal.integrated.cursorStyle": "line",
+  "breadcrumbs.enabled": false,
+  "terminal.integrated.env.linux": {}
 
   // "terminal.integrated.cursorStyle": "line",
   // "editor.glyphMargin": false
