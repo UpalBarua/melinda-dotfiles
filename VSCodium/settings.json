@@ -3,17 +3,8 @@
   "workbench.activityBar.visible": false,
   "window.menuBarVisibility": "toggle",
   "editor.fontSize": 16,
-  // "editor.fontFamily": "JetBrains Mono",
-  "editor.fontFamily": "Cascadia Code",
+  "editor.fontFamily": "JetBrains Mono",
   "editor.tabSize": 2,
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/css"
-    }
-  ],
-  "liveSassCompile.settings.generateMap": false,
   "html.format.enable": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "editor.formatOnSave": true,
@@ -49,10 +40,9 @@
   },
   "terminal.integrated.shellIntegration.enabled": false,
   "workbench.startupEditor": "none",
-  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.cursorBlinking": true,
-  "liveSassCompile.settings.showOutputWindowOn": "Error",
   "editor.cursorSmoothCaretAnimation": "on",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.smoothScrolling": true,
@@ -91,8 +81,30 @@
   "thunder-client.httpLibrary": "axios",
   "terminal.integrated.cursorStyle": "line",
   "breadcrumbs.enabled": false,
-  "terminal.integrated.env.linux": {}
+  "terminal.integrated.env.linux": {},
+  "editor.minimap.enabled": false,
 
   // "terminal.integrated.cursorStyle": "line",
   // "editor.glyphMargin": false
+
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": true,
+  //   "source.fixAll": true
+  // }
+
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
+  "editor.lineNumbers": "relative",
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.smoothScrolling": true,
+  "gitlens.statusBar.enabled": false
 }

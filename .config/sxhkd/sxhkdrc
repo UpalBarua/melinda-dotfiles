@@ -30,6 +30,9 @@ super + alt + {a, f, y, z, c, r}
 super + BackSpace
     tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 0 alacritty
 
+super + ctrl + m
+    tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 1 alacritty -e cmus
+
 # ======================== #
 # ROFI APPLETS             #
 # ======================== #
