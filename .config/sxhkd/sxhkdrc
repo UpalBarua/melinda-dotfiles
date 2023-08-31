@@ -81,6 +81,9 @@ super + ctrl + b
 super + ctrl + t 
     ~/.local/bin/toggles/transmission-toggle
 
+super + ctrl + i
+    xcalib -invert -alter 
+
 # ======================== #
 # SYSTEM CONTROLS          #
 # ======================== #

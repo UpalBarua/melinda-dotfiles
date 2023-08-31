@@ -2,12 +2,13 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.activityBar.visible": false,
   "window.menuBarVisibility": "toggle",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.fontFamily": "JetBrains Mono",
   "editor.tabSize": 2,
   "html.format.enable": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.fontLigatures": "'calt', 'ss01'",
   "prettier.singleQuote": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -17,12 +18,16 @@
     "Barua",
     "Chakra",
     "FONTAWESOME",
+    "IMGBB",
     "Ipost",
     "Nums",
+    "Roboto",
+    "Scoutspole",
     "Signin",
     "Signup",
     "Upal",
     "clsx",
+    "headlessui",
     "myservices",
     "pkglist",
     "swiper",
@@ -34,14 +39,13 @@
   "workbench.editor.pinnedTabSizing": "compact",
   "editor.suggest.insertMode": "replace",
   "editor.suggest.showStatusBar": true,
-  "workbench.statusBar.visible": false,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
   "terminal.integrated.shellIntegration.enabled": false,
   "workbench.startupEditor": "none",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorBlinking": true,
   "editor.cursorSmoothCaretAnimation": "on",
   "terminal.integrated.cursorWidth": 2,
@@ -64,7 +68,6 @@
     "**/venv/**": true,
     "env-*": true
   },
-  "workbench.colorTheme": "Tokyo Night",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "liveServer.settings.fullReload": true,
   "css.lint.unknownAtRules": "ignore",
@@ -80,12 +83,10 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "thunder-client.httpLibrary": "axios",
   "terminal.integrated.cursorStyle": "line",
-  "breadcrumbs.enabled": false,
   "terminal.integrated.env.linux": {},
-  "editor.minimap.enabled": false,
 
   // "terminal.integrated.cursorStyle": "line",
-  // "editor.glyphMargin": false
+  // "editor.glyphMargin": true,
 
   // "editor.codeActionsOnSave": {
   //   "source.organizeImports": true,
@@ -94,7 +95,6 @@
 
   "zenMode.hideLineNumbers": false,
   "zenMode.hideTabs": false,
-  "editor.lineNumbers": "relative",
 
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -106,5 +106,22 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.smoothScrolling": true,
-  "gitlens.statusBar.enabled": false
+  "gitlens.statusBar.enabled": false,
+
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": false,
+  "workbench.editor.decorations.colors": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "workbench.colorTheme": "Tokyo Night",
+  "breadcrumbs.enabled": false,
+  "workbench.settings.editor": "json",
+  "workbench.statusBar.visible": false,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "chatgpt.lang": "en"
 }
