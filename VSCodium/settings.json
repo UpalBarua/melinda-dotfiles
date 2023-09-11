@@ -28,11 +28,13 @@
     "Upal",
     "clsx",
     "headlessui",
+    "maxlength",
     "myservices",
     "pkglist",
     "swiper",
     "tailwindcss",
-    "tanstack"
+    "tanstack",
+    "todos"
   ],
   "editor.minimap.size": "fit",
   "workbench.sideBar.location": "right",

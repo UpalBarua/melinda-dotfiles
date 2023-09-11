@@ -6,7 +6,7 @@
 $HOME/.config/bspwm/scripts/autostart.sh
 
 # ======================== #
-# BSPWM CONFIGS            #
+# BSPWM CONFIG             #
 # ======================== #
 bspc monitor -d 1 2 3 4 5
 
@@ -53,7 +53,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Brave-browser-nightly desktop=^2 follow=false
 bspc rule -a Thunar state=floating follow=on
-bspc rule -a VSCodium state=tiled desktop=^1 follow=false
+bspc rule -a VSCodium state=monocole desktop=^1 follow=false
 bspc rule -a Pulsemixer state=tiled desktop=^3 follow=on
 bspc rule -a Nitrogen state=floating follow=on
 bspc rule -a Gpick state=floating follow=on

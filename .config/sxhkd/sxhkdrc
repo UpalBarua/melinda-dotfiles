@@ -16,7 +16,7 @@ super + Return
     $TERMINAL
 
 # gui applications
-super + alt + {b, v, t, s, x, i, g, n, d, o, p, m} 
+super + alt + {b, v, t, s, x, i, g, n, d, o, p, m}
     {$BROWSER, vscodium, thunar --class tiled, stacer, firefox, timeshift-launcher, gpick, nitrogen, evince, obsidian, pavucontrol, rhythmbox}
 
 # tui applications
@@ -61,28 +61,28 @@ super + v
     rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # calculator
-super + c 
+super + c
     rofi -show calc -modi calc -no-show-match -no-sort
 
 # lofi music
-super + u 
+super + u
     ~/.config/rofi/scripts/rofi-beats.sh
 
 # lofi music
-alt + t 
+alt + t
     ~/.local/bin/toggles/toggle
 
-super + ctrl + p 
+super + ctrl + p
     ~/.local/bin/toggles/polkit-toggle
 
-super + ctrl + b 
+super + ctrl + b
     ~/.local/bin/toggles/ibus-toggle
 
-super + ctrl + t 
+super + ctrl + t
     ~/.local/bin/toggles/transmission-toggle
 
 super + ctrl + i
-    xcalib -invert -alter 
+    xcalib -invert -alter
 
 # ======================== #
 # SYSTEM CONTROLS          #

@@ -15,13 +15,12 @@ window:
     y: 0
 
   padding:
-    x: 12
-    y: 12
+    x: 10
+    y: 10
 
   dynamic_padding: false
-  opacity: 1.00
+  opacity: 1.0
 
-  # Window title
   title: Alacritty
   dynamic_title: true
 
@@ -34,7 +33,6 @@ window:
 scrolling:
   history: 10000
 
-# Font configuration
 font:
   normal:
     family: JetBrainsMono Nerd Font
@@ -54,16 +52,15 @@ font:
 
   size: 11.0
 
-  # spacing.
   offset:
     x: 0
-    y: 5 
+    y: 5
 
   glyph_offset:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 bell:
   animation: EaseOutExpo
