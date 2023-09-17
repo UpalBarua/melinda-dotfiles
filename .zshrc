@@ -117,11 +117,10 @@ alias l="exa -l --icons --no-user --sort=extension --group-directories-first"
 alias ll="exa -la --icons --no-user --sort=extension --group-directories-first"
 alias lt="exa -laT --icons --no-user --sort=extension --group-directories-first --level=2"
 alias q="exit"
+alias c="clear"
 alias k="killall -9"
-alias md="mkdir"
 alias mf="touch"
 alias ge.="cd /run/media/upalb"
-
 
 # Programs
 alias x="startx"
@@ -132,7 +131,7 @@ alias z="devour zathura"
 alias v="nvim"
 alias sv="sudo nvim"
 alias vim="nvim"
-alias c="vscodium ."
+alias vc="vscodium"
 alias bt="btop"
 alias ht="htop"
 alias fm="$HOME/.config/vifm/scripts/vifmrun"
@@ -145,14 +144,12 @@ alias yta="yt-dlp -f 140"
 alias ytv1="yt-dlp -f 140+137"
 alias ytv2="yt-dlp -f 140+299"
 
-
 # pacman and paru
 alias pm='sudo pacman --color auto'
 alias pr='paru'
 alias pn='pnpm'
-alias y='yarn'
 alias pacman='sudo pacman --color auto'
-# alias yay='paru'
+alias yay='paru'
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 
@@ -183,8 +180,7 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 # confirm before overwriting something
 alias cp="cp -iv"
 alias mv='mv -i'
-alias rm='rm -i'
-alias rmf='rm -rf'
+alias rm='trash-put'
 alias cpr="rsync -av --progress"
 alias ds="du -sh"
 
@@ -206,12 +202,29 @@ alias arc='nvim ~/.config/alacritty/alacritty.yml'
 alias irc='nvim ~/.config/i3/config'
 
 # Git
-alias clone='git clone'
-alias add='git add'
-alias commit='git commit -m'
-alias push='git push'
+alias gc='git commit -m'
+alias gco='git checkout'
+alias ga='git add'
+alias gb='git branch'
+alias gba='git branch --all'
+alias gbd='git branch -D'
+alias gcp='git cherry-pick'
+alias gd='git diff -w'
+alias gds='git diff -w --staged'
+alias grs='git restore --staged'
+alias gst='git status'
+alias gpr='git remote prune origin'
+alias ff='git remote prune origin && git pull --ff-only'
+alias gl="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(green)%an %ar %C(reset) %C(bold magenta)%d%C(reset)'"
+alias gla="git log --all --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(bold magenta)%d%C(reset)'"
+alias gcan='gc --amend --no-edit'
+alias gp="git push -u"
+
+
+
 
 # Startup
+(cat ~/.cache/wal/sequences &)
 clear
 # pfetch
 # colorscript random

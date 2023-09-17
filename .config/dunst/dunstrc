@@ -4,7 +4,7 @@
     follow = none
     width = 160
     height = 360
-    origin = top-right
+    origin = top-center
     offset = 5x30
     scale = 2
     notification_limit = 0
@@ -21,6 +21,7 @@
     sort = yes
     gaps = true
     gap_size = 5
+    transparency = 20
 
     # Progress bar
     progress_bar = true

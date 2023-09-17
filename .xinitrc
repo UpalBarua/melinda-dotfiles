@@ -3,5 +3,6 @@
 Xcursor.size: 32
 xrdb -load ~/.Xresources &
 # xgamma -gamma .855
+wal -R
 
 exec bspwm

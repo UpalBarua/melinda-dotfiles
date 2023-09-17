@@ -9,7 +9,8 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.fontLigatures": "'calt', 'ss01'",
+  "editor.fontLigatures": "'ss02'",
+  // "editor.fontLigatures": "'calt', 'ss01'",
   "prettier.singleQuote": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.cursorBlinking": "expand",
@@ -110,7 +111,7 @@
   "editor.smoothScrolling": true,
   "gitlens.statusBar.enabled": false,
 
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "none",
   "editor.minimap.enabled": false,
   "workbench.editor.decorations.colors": true,
   "files.trimTrailingWhitespace": true,
@@ -118,12 +119,44 @@
   "emmet.showSuggestionsAsSnippets": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Monokai",
   "breadcrumbs.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.statusBar.visible": false,
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "chatgpt.lang": "en"
+  "chatgpt.lang": "en",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic (=FlottFlott)
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js" //class keyword
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
 }
