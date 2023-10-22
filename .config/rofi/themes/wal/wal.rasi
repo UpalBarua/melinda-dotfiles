@@ -24,7 +24,7 @@ window {
 }
 
 element {
-  padding: 6 0;
+  padding: 6 6;
   text-color: @fg;
 }
 
@@ -54,7 +54,7 @@ inputbar {
 }
 
 listview {
-  padding: 8 12;
+  padding: 0 0;
   background-color: @bg;
   columns: 1;
   lines: 8;

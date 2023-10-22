@@ -1,14 +1,7 @@
-[user]
-	email = upalbarua52@gmail.com
-	name = Upal Barua
 [credential]
 	helper = store
 [safe]
 	directory = /run/media/upal/general-disk/code
-	directory = /run/media/upal/general-disk/code/projects/code-sage
-	directory = /run/media/upal/general-disk/code/projects/remedics
-	directory = /run/media/upal/general-disk/code/projects/my-portfolio
-	directory = /run/media/upal/general-disk/code/projects/savvy-pulse
-	directory = /run/media/upal/general-disk/code/projects/kit-kart
-	directory = /run/media/upal/general-disk/code/projects/programming-hero-projects/assignment-6
-
+[user]
+	name = UpalBarua
+	email = upalbarua52@gmail.com

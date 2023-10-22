@@ -21,7 +21,7 @@ super + alt + {b, v, t, s, x, i, g, n, d, o, p, m}
 
 # tui applications
 super + alt + {a, f, y, z, c, r}
-    $TERMINAL -e {gpterm, lfub, btop, htop, nvim, newsboat}
+    $TERMINAL -e {gpterm, lfub, btop, htop, $BROWSER --app=https://chat.openai.com/, newsboat}
 
 # ======================== #
 # SCRATCHPADS              #
@@ -39,7 +39,8 @@ super + ctrl + m
 
 # run prompts
 super + r
-    rofi -show drun -show-icons
+    rofi -show drun
+    # rofi -show drun -show-icons
 
 super + shift + Return
     dmenu_run

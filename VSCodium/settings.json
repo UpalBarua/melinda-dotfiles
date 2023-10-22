@@ -28,6 +28,7 @@
     "Signup",
     "Upal",
     "clsx",
+    "formkit",
     "headlessui",
     "maxlength",
     "myservices",
@@ -119,7 +120,7 @@
   "emmet.showSuggestionsAsSnippets": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
   "breadcrumbs.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.statusBar.visible": false,
@@ -158,5 +159,6 @@
         }
       }
     ]
-  }
+  },
+  "git.mergeEditor": true
 }
