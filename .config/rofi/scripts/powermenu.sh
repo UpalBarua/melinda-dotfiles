@@ -15,7 +15,6 @@ $reboot
 $shutdown" | rofi -dmenu\
                   -i\
                   -p "Power"\
-                  -config "~/.config/rofi/themes/tokyo-night/tokyo-night-powermenu.rasi"\
                   -width "15"\
                   -lines 5\
                   -line-margin 3\
@@ -25,7 +24,7 @@ $shutdown" | rofi -dmenu\
 # Do something based on selected option
 if [ "$selected_option" == "$lock" ]
 then
-    betterlockscreen -l dim 
+    betterlockscreen -l dim
     # /home/$USER/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
 elif [ "$selected_option" == "$logout" ]
 then

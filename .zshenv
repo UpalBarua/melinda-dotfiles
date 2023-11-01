@@ -67,7 +67,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/toggles:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export EDITOR="nvim"
-export BROWSER="brave-nightly" 
+export BROWSER="brave" 
 export TERMINAL="alacritty" 
 export EXA_ICON_SPACING="2" 
 export OPENAI_API_KEY=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
@@ -251,4 +251,7 @@ ln=34:\
 di=34:\
 ex=34:\
 "
-
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"

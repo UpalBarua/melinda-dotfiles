@@ -2,6 +2,7 @@
 	helper = store
 [safe]
 	directory = /run/media/upal/general-disk/code
+	directory = /run/media/upal/general-disk/code/projects/my-portfolio
 [user]
 	name = UpalBarua
 	email = upalbarua52@gmail.com

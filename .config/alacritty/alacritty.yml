@@ -1,6 +1,6 @@
 ##--------------- Alacritty config ---------------##
-# import:
-#    - ~/.config/alacritty/themes/solarized-dark.yml
+import:
+   - ~/.config/alacritty/themes/catppuccin-mocha.yml
 
 env:
   TERM: alacritty
@@ -19,7 +19,7 @@ window:
     y: 10
 
   dynamic_padding: false
-  opacity: 0.80
+  opacity: 1.0
 
   title: Alacritty
   dynamic_title: true

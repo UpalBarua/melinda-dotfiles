@@ -10,29 +10,28 @@
     notification_limit = 0
     highlight = "#fab387"
     indicate_hidden = yes
-    transparency = 0 
+    # transparency = 1
     separator_height = 1
-    padding = 11 
+    padding = 11
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 0
     frame_color = "#fab387"
-    separator_color = auto 
+    separator_color = auto
     sort = yes
     gaps = true
     gap_size = 5
-    transparency = 20
 
     # Progress bar
     progress_bar = true
-    progress_bar_height = 2 
+    progress_bar_height = 2
     progress_bar_frame_width = 0
     progress_bar_min_width = 150
     progress_bar_max_width = 350
 
     # Text
     font = JetBrains Mono 9
-    line_height = 2.8 
+    line_height = 2.8
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -56,7 +55,7 @@
 
     # Misc/Advanced
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = brave-beta 
+    browser = brave-beta
     always_run_script = true
     title = Dunst
     class = Dunst
@@ -78,21 +77,21 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1a1b26"
-    foreground = "#a9b1d6"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
     default_icon = /home/upal/.config/dunst/icons/bell.svg
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#a9b1d6"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
     default_icon = /home/upal/.config/dunst/icons/bell.svg
 
 [urgency_critical]
-    background = "#1a1b26"
-    foreground = "#f7768e"
-    frame_color = "#f7768e"
+    background = "#f38ba8"
+    foreground = "#1e1e2e"
+    frame_color = "#f38ba8"
     timeout = 10
     default_icon = /home/upal/.config/dunst/icons/alert.svg
 
@@ -104,60 +103,60 @@
     new_icon = /home/upal/.config/dunst/icons/aperture.svg
 
 [screenshot_sound]
-    appname = * 
+    appname = *
     summary = "Screenshot"
     script = "~/.config/dunst/scripts/screenshot-sound.sh"
     new_icon = /home/upal/.config/dunst/icons/aperture.svg
     timeout = 5
 
 [charger_plugged_in]
-    appname = xfce4-power-manager 
+    appname = xfce4-power-manager
     summary = "*Power Manager*"
     script = "~/.config/dunst/scripts/charger-unplugged.sh"
     new_icon = /home/upal/.config/dunst/icons/heart.svg
 
 [battery_low]
-    appname = * 
+    appname = *
     summary = "*Battery Low*"
     script = "~/.config/dunst/scripts/notification-sound.sh"
     new_icon = /home/upal/.config/dunst/icons/heart-red.svg
     timeout = 10
 
 [transmission]
-    appname = * 
+    appname = *
     summary = "*Transmission*"
     new_icon = /home/upal/.config/dunst/icons/download.svg
     script = "~/.config/dunst/scripts/notification-sound.sh"
     # format = "Transmission\n%s\n%b"
-    
+
 [ibus-daemon]
-    appname = * 
+    appname = *
     summary = "*Keyboard*"
     new_icon = /home/upal/.config/dunst/icons/globe.svg
     script = "~/.config/dunst/scripts/notification-sound.sh"
 
 [microphone]
-    appname = * 
+    appname = *
     summary = "*Microphone*"
     new_icon = /home/upal/.config/dunst/icons/mic.svg
 
 [rofi-beats]
-    appname = * 
+    appname = *
     summary = "*Playing now*"
     new_icon = /home/upal/.config/dunst/icons/music.svg
 
 [wallpaper]
-    appname = * 
+    appname = *
     summary = "*Wallpaper*"
     new_icon = /home/upal/.config/dunst/icons/image.svg
 
 [picom-toggle]
-    appname = * 
+    appname = *
     summary = "*Compositor*"
     new_icon = /home/upal/.config/dunst/icons/compositor.svg
 
 [polkit]
-    appname = * 
+    appname = *
     summary = "*Polkit*"
     new_icon = /home/upal/.config/dunst/icons/polkit.svg
 
@@ -172,7 +171,7 @@
     new_icon = /home/upal/.config/dunst/icons/sunset.svg
 
 [welcome]
-    appname = * 
+    appname = *
     summary = "*Inspiron*"
     new_icon = /home/upal/.config/dunst/icons/heart-blue.svg
     script = "~/.config/dunst/scripts/startup-sound.sh"

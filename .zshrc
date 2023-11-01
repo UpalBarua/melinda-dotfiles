@@ -113,9 +113,9 @@ autoload -U compinit && compinit -u
 
 ##--------------- Aliases --------------##
 # Navigation
-alias l="exa -l --icons --no-user --sort=extension --group-directories-first"
-alias ll="exa -la --icons --no-user --sort=extension --group-directories-first"
-alias lt="exa -laT --icons --no-user --sort=extension --group-directories-first --level=2"
+alias l="eza -l --icons --no-user --sort=extension --group-directories-first"
+alias ll="eza -la --icons --no-user --sort=extension --group-directories-first"
+alias lt="eza -laT --icons --no-user --sort=extension --group-directories-first --level=2"
 alias q="exit"
 alias c="clear"
 alias k="killall -9"
@@ -220,11 +220,8 @@ alias gla="git log --all --graph --format=format:'%C(bold blue)%h%C(reset) - %C(
 alias gcan='gc --amend --no-edit'
 alias gp="git push -u"
 
-
-
-
 # Startup
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 clear
 # pfetch
 # colorscript random

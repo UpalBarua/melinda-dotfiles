@@ -12,7 +12,6 @@ Sxiv.background: #1E1E2E
 Sxiv.foreground: #74c7ec
 Sxiv.font: CaskaydiaCove Nerd Font:size=10
 
-# catppuccin-mocha
 *background: #1E1E2E
 *foreground: #CDD6F4
 

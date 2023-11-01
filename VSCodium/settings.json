@@ -3,7 +3,7 @@
   "workbench.activityBar.visible": false,
   "window.menuBarVisibility": "toggle",
   "editor.fontSize": 14,
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Geist Mono",
   "editor.tabSize": 2,
   "html.format.enable": false,
   "liveServer.settings.donotShowInfoMsg": true,
@@ -18,6 +18,8 @@
   "cSpell.ignoreWords": [
     "Barua",
     "Chakra",
+    "Coverflow",
+    "EffectCoverflow",
     "FONTAWESOME",
     "IMGBB",
     "Ipost",
@@ -26,13 +28,17 @@
     "Scoutspole",
     "Signin",
     "Signup",
+    "Swiper",
     "Upal",
     "clsx",
+    "coverflow",
     "formkit",
     "headlessui",
+    "hookform",
     "maxlength",
     "myservices",
     "pkglist",
+    "sonner",
     "swiper",
     "tailwindcss",
     "tanstack",
@@ -82,7 +88,7 @@
   "tailwindCSS.emmetCompletions": true,
   "catppuccin.accentColor": "sapphire",
   "editor.foldingHighlight": false,
-  "thunder-client.defaultUrl": "http://localhost:5000/",
+  "thunder-client.defaultUrl": "http://localhost:8080/api/",
   "update.mode": "none",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "thunder-client.httpLibrary": "axios",
@@ -120,7 +126,7 @@
   "emmet.showSuggestionsAsSnippets": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "breadcrumbs.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.statusBar.visible": false,
@@ -160,5 +166,8 @@
       }
     ]
   },
-  "git.mergeEditor": true
+  "git.mergeEditor": true,
+  "tabnine.experimentalAutoImports": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "workbench.editor.enablePreview": false
 }
