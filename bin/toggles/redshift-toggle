@@ -2,10 +2,10 @@
 
 if [ ! -f /tmp/redshift ]; then
   redshift -O 3500
-  notify-send 'Night light' 'switched on'
+  notify-send "Night light switched on"
   touch /tmp/redshift
 else
   redshift -x
-  notify-send 'Night light' 'switched off'
+  notify-send "Night light switched off"
   rm /tmp/redshift
 fi

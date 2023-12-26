@@ -1,6 +1,6 @@
 ##--------------- Alacritty config ---------------##
 import:
-   - ~/.config/alacritty/themes/catppuccin-mocha.yml
+  - ~/.config/alacritty/themes/solarized-dark.yml
 
 env:
   TERM: alacritty
@@ -50,11 +50,11 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
 
-  size: 11.0
+  size: 10.0
 
   offset:
     x: 0
-    y: 5
+    y: 8
 
   glyph_offset:
     x: 0
@@ -73,7 +73,7 @@ selection:
 
 cursor:
   style:
-    shape: Beam
+    shape: Block
     blinking: Always
   vi_mode_style:
     shape: Beam
@@ -81,7 +81,7 @@ cursor:
   vi_mode_style: None
   blink_interval: 500
   unfocused_hollow: false
-  thickness: 0.2
+  thickness: 0
 
 live_config_reload: true
 

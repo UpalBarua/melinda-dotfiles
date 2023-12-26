@@ -149,24 +149,22 @@ require('lazy').setup({
       end,
     },
   },
-
-  {
-    -- Theme inspired by Atom
-    'catppuccin/nvim',
-    priority = 1000,
+{
+  "Tsuzat/NeoSolarized.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd.colorscheme 'catppuccin'
-    end,
-  },
-
-  {
+      vim.cmd [[ colorscheme NeoSolarized ]]
+    end
+},
+   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'catppuccin',
+        theme = 'NeoSolarized',
         component_separators = '|',
         section_separators = '',
       },

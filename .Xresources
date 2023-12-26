@@ -1,5 +1,5 @@
 Xft.dpi: 150
-Xcursor.size: 40
+Xcursor.size: 32
 
 Xft.autohint: 0
 Xft.antialias: 1
@@ -8,41 +8,59 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-Sxiv.background: #1E1E2E
-Sxiv.foreground: #74c7ec
-Sxiv.font: CaskaydiaCove Nerd Font:size=10
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
 
-*background: #1E1E2E
-*foreground: #CDD6F4
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
 
-! black
-*color0: #45475A
-*color8: #585B70
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
 
-! red
-*color1: #F38BA8
-*color9: #F38BA8
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
 
-! green
-*color2: #A6E3A1
-*color10: #A6E3A1
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
 
-! yellow
-*color3: #F9E2AF
-*color11: #F9E2AF
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
 
-! blue
-*color4: #89B4FA
-*color12: #89B4FA
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
 
-! magenta
-*color5: #F5C2E7
-*color13: #F5C2E7
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
 
-! cyan
-*color6: #94E2D5
-*color14: #94E2D5
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
 
-! white
-*color7: #BAC2DE
-*color15: #A6ADC8
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3

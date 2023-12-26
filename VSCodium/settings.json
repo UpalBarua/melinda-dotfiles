@@ -1,9 +1,8 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.activityBar.visible": false,
   "window.menuBarVisibility": "toggle",
   "editor.fontSize": 14,
-  "editor.fontFamily": "Geist Mono",
+  "editor.fontFamily": "JetBrains Mono",
   "editor.tabSize": 2,
   "html.format.enable": false,
   "liveServer.settings.donotShowInfoMsg": true,
@@ -17,10 +16,12 @@
   "emmet.triggerExpansionOnTab": true,
   "cSpell.ignoreWords": [
     "Barua",
+    "Bhara",
     "Chakra",
     "Coverflow",
     "EffectCoverflow",
     "FONTAWESOME",
+    "Foodunity",
     "IMGBB",
     "Ipost",
     "Nums",
@@ -104,7 +105,6 @@
   // }
 
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideTabs": false,
 
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -119,14 +119,13 @@
   "gitlens.statusBar.enabled": false,
 
   "editor.renderWhitespace": "none",
-  "editor.minimap.enabled": false,
   "workbench.editor.decorations.colors": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Solarized Dark",
   "breadcrumbs.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.statusBar.visible": false,
@@ -169,5 +168,8 @@
   "git.mergeEditor": true,
   "tabnine.experimentalAutoImports": true,
   "editor.wordWrap": "wordWrapColumn",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.location": "hidden",
+  "editor.cursorStyle": "line",
+  "editor.minimap.enabled": false
 }

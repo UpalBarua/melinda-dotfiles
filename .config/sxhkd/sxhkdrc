@@ -1,11 +1,4 @@
-#=======================================================#
-#  _   _             _   ____                           #
-# | | | |_ __   __ _| | | __ )  __ _ _ __ _   _  __ _   #
-# | | | | '_ \ / _` | | |  _ \ / _` | '__| | | |/ _` |  #
-# | |_| | |_) | (_| | | | |_) | (_| | |  | |_| | (_| |  #
-#  \___/| .__/ \__,_|_| |____/ \__,_|_|   \__,_|\__,_|  #
-#       |_|                                             #
-#=======================================================#
+## SXHKDRC
 
 # ======================== #
 # LAUNCHING PROGRAMS       #
@@ -19,22 +12,12 @@ super + ctrl + Return
     $TERMINAL -e tmux
 
 # gui applications
-super + alt + {b, v, t, s, x, i, g, n, d, o, p, m}
-    {$BROWSER, vscodium, pcmanfm --class tiled, stacer, firefox, timeshift-launcher, gpick, nitrogen, evince, obsidian, pavucontrol, rhythmbox}
+super + alt + {b, v, s, x, i, n, d, p, m, a, q, c, f}
+    {$BROWSER, vscodium, stacer, firefox, timeshift-launcher, nitrogen, evince, pavucontrol, bspc rule -a \* -o desktop='^4' & $BROWSER --app=https://www.facebook.com/messages/t, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://chat.openai.com/, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://pomofocus.io/, mate-color-select, thunar}
 
 # tui applications
-super + alt + {a, f, y, z, c, r, q }
-    $TERMINAL -e {gpterm, lfub, btop, htop, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://chat.openai.com/, newsboat, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://pomofocus.io/}
-
-# ======================== #
-# SCRATCHPADS              #
-# ======================== #
-
-super + BackSpace
-    tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 0 alacritty
-
-super + ctrl + m
-    tdrop -ma -w 1000 -h 650 -y 215 -x 460 -n 1 alacritty -e cmus
+super + alt + {y, z}
+    $TERMINAL -e {btop, htop}
 
 # ======================== #
 # ROFI APPLETS             #
@@ -44,9 +27,6 @@ super + ctrl + m
 super + r
     rofi -show drun
     # rofi -show drun -show-icons
-
-super + shift + Return
-    dmenu_run
 
 # window switcher
 super + w
@@ -114,12 +94,12 @@ alt + {F12, F11}
 Print
     scrot ~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png -e 'xclip -selection clipboard -target image/png -i $f';\
     sleep 0.5s; \
-    notify-send "Screenshot" "screenshot saved and copied to clipboard";
+    notify-send "Screenshot captured";
 
 shift + Print
     scrot -a $(slop -f '%x,%y,%w,%h') ~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png -e 'xclip -selection clipboard -target image/png -i $f';\
     sleep 0.5s; \
-    notify-send "Screenshot" "screenshot saved and copied to clipboard";
+    notify-send "Screenshot captured";
 
 # ======================== #
 # WALLPAPERS               #

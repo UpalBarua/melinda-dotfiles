@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications";
   display-window: "Windows";
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font 14";
+  font: "JetBrains Mono 15";
   modi: "window,run,drun";
   show-icons: false;
 }
@@ -10,9 +10,9 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1e1e2e;
-  fg: #cdd6f4;
-  ac: #74c7ec;
+  bg: #002b36;
+  fg: #839496;
+  ac: #2aa198;
 
   background-color: @bg;
 

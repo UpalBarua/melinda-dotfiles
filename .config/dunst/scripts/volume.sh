@@ -3,11 +3,11 @@
 volume=$(amixer -D pulse sget Master | tail -1 | awk -F'[][]' '{print $2}' | sed 's/%//g')
 
 if [[ "$volume" -eq "0" ]]; then
-    icon="$HOME/.config/dunst/icons/volume-mute.svg"
+    icon="/usr/share/icons/Papirus-Dark/symbolic/status/audio-volume-low-symbolic.svg"
 elif [[ "$volume" -lt "100" ]]; then
-    icon="$HOME/.config/dunst/icons/volume-normal.svg"
+    icon="/usr/share/icons/Papirus-Dark/symbolic/status/audio-volume-medium-symbolic.svg"
 else
-    icon="$HOME/.config/dunst/icons/volume-max.svg"
+    icon="/usr/share/icons/Papirus-Dark/symbolic/status/audio-volume-high-symbolic.svg"
 fi
 
-dunstify -a "volume" -i "$icon" -r 3456 -h int:value:"$volume" "Volume: ${volume}%"
+dunstify -a "volume" -i "$icon" -r 3456 -h int:value:"$volume" "Volume ${volume}%"

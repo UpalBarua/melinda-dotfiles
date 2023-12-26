@@ -12,14 +12,14 @@ echo "$device"
 current=$(brightnessctl -d "$device" | grep "Current" | awk -F'[()]' '{print $2}' | sed 's/%//g')
 
 if [[ "$1" = "screen" ]]; then
-    message="Brightness: ${current}%"
+    message="Brightness ${current}%"
     if [[ "$current" -lt "50" ]]; then
-        icon="$HOME/.config/dunst/icons/brightness-low.svg"
+        icon="/usr/share/icons/Papirus-Dark/symbolic/status/display-brightness-low-symbolic.svg"
     else
-        icon="$HOME/.config/dunst/icons/brightness-high.svg"
+        icon="/usr/share/icons/Papirus-Dark/symbolic/status/display-brightness-high-symbolic.svg"
     fi
 elif [[ "$1" = "kb" ]]; then
-    message="Keyboard brightness: ${current}%"
+    message="Keyboard brightness ${current}%"
     if [[ "$current" -eq "0" ]]; then
         icon="cross"
     else

@@ -3,68 +3,86 @@
 ### VARIABLES
 
 POLL_INTERVAL=300    # seconds at which to check battery level
-LOW_BAT=20           # lesser than this is considered low battery
+LOW_BAT=30           # lesser than this is considered low battery
 
 # If BAT0 doesn't work for you, check available devices with command below
 #
 #   $ ls -1 /sys/class/power_supply/
 #
-BAT_PATH=/sys/class/power_supply/BAT0
-BAT_STAT=$BAT_PATH/status
+BAT0_PATH="/sys/class/power_supply/BAT0"
+BAT1_PATH="/sys/class/power_supply/BAT1"
 
-if [[ -f $BAT_PATH/charge_full ]]
-then
-    BAT_FULL=$BAT_PATH/charge_full
-    BAT_NOW=$BAT_PATH/charge_now
-elif [[ -f $BAT_PATH/energy_full ]]
-then
-    BAT_FULL=$BAT_PATH/energy_full
-    BAT_NOW=$BAT_PATH/energy_now
+BAT0_STAT="$BAT0_PATH/status"
+BAT1_STAT="$BAT1_PATH/status"
+
+if [[ -f "$BAT0_PATH/charge_full" ]]; then
+    BAT0_FULL="$BAT0_PATH/charge_full"
+    BAT0_NOW="$BAT0_PATH/charge_now"
+elif [[ -f "$BAT0_PATH/energy_full" ]]; then
+    BAT0_FULL="$BAT0_PATH/energy_full"
+    BAT0_NOW="$BAT0_PATH/energy_now"
 else
     exit
+fi
+
+if [[ -f "$BAT1_PATH/charge_full" ]]; then
+    BAT1_FULL="$BAT1_PATH/charge_full"
+    BAT1_NOW="$BAT1_PATH/charge_now"
+elif [[ -f "$BAT1_PATH/energy_full" ]]; then
+    BAT1_FULL="$BAT1_PATH/energy_full"
+    BAT1_NOW="$BAT1_PATH/energy_now"
+else
+    BAT1_FULL=""
 fi
 
 ### END OF VARIABLES
 
 kill_running() {     # stop older instances to not get multiple notifications
-   local mypid=$$
-
-   declare pids=($(pgrep -f ${0##*/}))
-
-   for pid in ${pids[@]/$mypid/}; do
-      kill $pid
-      sleep 1
-   done
+    local mypid=$$
+    declare pids=($(pgrep -f "${0##*/}"))
+    for pid in ${pids[@]/$mypid/}; do
+        kill $pid
+        sleep 1
+    done
 }
 
 launched=0
 
-# Run only if battery is detected
-if ls -1qA /sys/class/power_supply/ | grep -q BAT
-then 
+# Run only if at least one battery is detected
+if ls -1qA /sys/class/power_supply/ | grep -q BAT; then 
 
     kill_running
 
-    while true
-    do
-        bf=$(cat $BAT_FULL)
-        bn=$(cat $BAT_NOW)
-        bs=$(cat $BAT_STAT)
+    while true; do
+        bf0=$(cat "$BAT0_FULL")
+        bn0=$(cat "$BAT0_NOW")
+        bs0=$(cat "$BAT0_STAT")
 
-        bat_percent=$(( 100 * $bn / $bf ))
+        bat_percent0=$(( 100 * $bn0 / $bf0 ))
 
-        if [[ $bat_percent -lt $LOW_BAT && "$bs" = "Discharging" && $launched -lt 3 ]]
-        then
-            notify-send --urgency=critical "Battery Low ($bat_percent%)" "Please plug it in!"
+        if [[ $bat_percent0 -lt $LOW_BAT && "$bs0" = "Discharging" && $launched -lt 3 ]]; then
+            notify-send --urgency=critical "Battery Low ($bat_percent0%)" "Please plug it in!"
             launched=$((launched+1))
-        elif [[ "$bs" = "Charging" ]]
-        then
+        elif [[ "$bs0" = "Charging" ]]; then
             launched=0
         fi
+
+        if [[ -n "$BAT1_FULL" ]]; then
+            bf1=$(cat "$BAT1_FULL")
+            bn1=$(cat "$BAT1_NOW")
+            bs1=$(cat "$BAT1_STAT")
+
+            bat_percent1=$(( 100 * $bn1 / $bf1 ))
+
+            if [[ $bat_percent1 -lt $LOW_BAT && "$bs1" = "Discharging" && $launched -lt 3 ]]; then
+                notify-send --urgency=critical "Battery 1 Low ($bat_percent1%)" "Please plug it in!"
+                launched=$((launched+1))
+            elif [[ "$bs1" = "Charging" ]]; then
+                launched=0
+            fi
+        fi
+
         sleep $POLL_INTERVAL
     done
 fi
-
-
-
 
