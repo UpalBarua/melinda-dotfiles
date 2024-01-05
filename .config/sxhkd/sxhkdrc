@@ -12,8 +12,8 @@ super + ctrl + Return
     $TERMINAL -e tmux
 
 # gui applications
-super + alt + {b, v, s, x, i, n, d, p, m, a, q, c, f}
-    {$BROWSER, vscodium, stacer, firefox, timeshift-launcher, nitrogen, evince, pavucontrol, bspc rule -a \* -o desktop='^4' & $BROWSER --app=https://www.facebook.com/messages/t, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://chat.openai.com/, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://pomofocus.io/, mate-color-select, thunar}
+super + alt + {b, v, s, x, i, d, p, m, a, q, c, f}
+    {$BROWSER, vscodium, stacer, firefox, timeshift-launcher, evince, pavucontrol, bspc rule -a \* -o desktop='^4' & $BROWSER --app=https://www.facebook.com/messages/t, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://chat.openai.com/, bspc rule -a \* -o desktop='^5' & $BROWSER --app=https://pomofocus.io/, mate-color-select, thunar}
 
 # tui applications
 super + alt + {y, z}
@@ -26,7 +26,6 @@ super + alt + {y, z}
 # run prompts
 super + r
     rofi -show drun
-    # rofi -show drun -show-icons
 
 # window switcher
 super + w
@@ -52,7 +51,6 @@ super + c
 super + u
     ~/.config/rofi/scripts/rofi-beats.sh
 
-# lofi music
 alt + t
     ~/.local/bin/toggles/toggle
 
@@ -83,7 +81,7 @@ alt + {F3, F2, F4}
 
 alt + F1
     amixer set Capture toggle;\
-    notify-send "Microphone" "mic toggled";
+    notify-send "mic toggled";
 
 # brightness controls
 alt + {F12, F11}
@@ -105,8 +103,8 @@ shift + Print
 # WALLPAPERS               #
 # ======================== #
 alt + F5
-    nitrogen --set-zoom-fill --random --save $HOME/pictures/wallpapers/;\
-    ~/.local/bin/lockwall;
+    feh --recursive --bg-fill --randomize $HOME/pictures/wallpapers;\
+    # ~/.local/bin/lockwall;
 
 alt + F5 + {d, l}
     {~/.local/bin/delwall, ~/.local/bin/lockwall};

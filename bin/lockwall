@@ -1,6 +1,12 @@
 #!/bin/sh
 
-killall -9 convert;
-wallpaper=$(cat ~/.config/nitrogen/bg-saved.cfg | grep 'file' | cut -c 6-);
-wal -i "$wallpaper"
-betterlockscreen -u "$wallpaper" --fx dimblur;
+killall convert
+
+wallpaper=$(cat $HOME/.fehbg | awk -F"'" '{print $2}' | tr -d '[:space:]')
+
+if [ -e "$wallpaper" ]; then
+  betterlockscreen -u "$wallpaper" --fx dimblur
+  notify-send "Lockscreen wallpaper set"
+else
+  notify-send "Wallpaper file not found"
+fi

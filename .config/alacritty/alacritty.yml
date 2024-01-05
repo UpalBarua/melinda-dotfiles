@@ -1,6 +1,6 @@
 ##--------------- Alacritty config ---------------##
 import:
-  - ~/.config/alacritty/themes/solarized-dark.yml
+  - ~/.config/alacritty/themes/solarized_dark.yaml
 
 env:
   TERM: alacritty
@@ -77,8 +77,6 @@ cursor:
     blinking: Always
   vi_mode_style:
     shape: Beam
-
-  vi_mode_style: None
   blink_interval: 500
   unfocused_hollow: false
   thickness: 0
