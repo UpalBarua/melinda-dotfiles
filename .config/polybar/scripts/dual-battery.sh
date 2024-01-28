@@ -11,30 +11,23 @@ battery_print() {
     battery_max_0=0
     battery_max_1=0
 
-    if [ -f "$PATH_AC/online" ]; then
-        read -r ac < "$PATH_AC/online"
-    fi
+    # Function to read a value from a file
+    read_value() {
+        [ -f "$1" ] && read -r "$2" < "$1"
+    }
 
-    if [ -f "$PATH_BATTERY_0/energy_now" ]; then
-        read -r battery_level_0 < "$PATH_BATTERY_0/energy_now"
-    fi
-
-    if [ -f "$PATH_BATTERY_0/energy_full" ]; then
-        read -r battery_max_0 < "$PATH_BATTERY_0/energy_full"
-    fi
-
-    if [ -f "$PATH_BATTERY_1/energy_now" ]; then
-        read -r battery_level_1 < "$PATH_BATTERY_1/energy_now"
-    fi
-
-    if [ -f "$PATH_BATTERY_1/energy_full" ]; then
-        read -r battery_max_1 < "$PATH_BATTERY_1/energy_full"
-    fi
+    read_value "$PATH_AC/online" ac
+    read_value "$PATH_BATTERY_0/energy_now" battery_level_0
+    read_value "$PATH_BATTERY_0/energy_full" battery_max_0
+    read_value "$PATH_BATTERY_1/energy_now" battery_level_1
+    read_value "$PATH_BATTERY_1/energy_full" battery_max_1
 
     battery_level=$((battery_level_0 + battery_level_1))
     battery_max=$((battery_max_0 + battery_max_1))
 
+    # Ensure the battery percentage does not exceed 100%
     battery_percent=$((battery_level * 100 / battery_max))
+    battery_percent=$((battery_percent > 100 ? 100 : battery_percent))
 
     if [ "$ac" -eq 1 ]; then
         echo "$battery_percent%+"

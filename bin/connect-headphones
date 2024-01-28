@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+device="84:AC:60:79:EB:FF"
+
+if bluetoothctl info "$device" | grep 'Connected: yes' -q; then
+  bluetoothctl disconnect "$device"
+  notify-send "Headphones disconnected"
+else
+  bluetoothctl connect "$device"
+  notify-send "Headphones connected"
+fi
+
+if [ $? -ne 0 ]; then
+  notify-send "Error: Bluetooth operation failed"
+fi
+

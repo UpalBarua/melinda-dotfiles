@@ -64,6 +64,7 @@ bspc rule -a Zathura state=tiled follow=on
 bspc rule -a Anki desktop=^1 state=monocole follow=false
 bspc rule -a stacer state=floating
 bspc rule -a Lightdm-gtk-greeter-settings state=floating
+bspc rule -a Blueberry.py state=floating
 bspc rule -a Emacs state=tiled
 bspc rule -a obsidian desktop=^4 follow=false
 
