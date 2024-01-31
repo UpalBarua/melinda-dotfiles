@@ -2,15 +2,17 @@
 
 device="84:AC:60:79:EB:FF"
 
-if bluetoothctl info "$device" | grep 'Connected: yes' -q; then
-  bluetoothctl disconnect "$device"
-  notify-send "Headphones disconnected"
-else
-  bluetoothctl connect "$device"
-  notify-send "Headphones connected"
-fi
+is_device_connected() {
+  bluetoothctl info "$device" | grep 'Connected: yes' -q
+}
 
-if [ $? -ne 0 ]; then
-  notify-send "Error: Bluetooth operation failed"
-fi
+toggle_connection() {
+  if is_device_connected; then
+    bluetoothctl disconnect "$device" && notify-send "Headphones disconnected" || notify-send "Error: Disconnect failed"
+  else
+    bluetoothctl connect "$device" && notify-send "Headphones connected" || notify-send "Error: Connect failed"
+  fi
+}
+
+toggle_connection || notify-send "Error: Bluetooth operation failed"
 
