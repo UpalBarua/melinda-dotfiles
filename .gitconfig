@@ -7,3 +7,5 @@
 [user]
 	name = UpalBarua
 	email = upalbarua52@gmail.com
+[push]
+	autoSetupRemote = true

@@ -71,6 +71,8 @@ export BROWSER="brave"
 export TERMINAL="alacritty" 
 export EXA_ICON_SPACING="2" 
 export OPENAI_API_KEY=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
+export TERM='xterm-256color'
+export VISUAL='nvim'
 
 
 export LF_ICONS="\

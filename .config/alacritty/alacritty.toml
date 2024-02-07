@@ -107,7 +107,7 @@ mods = "Control"
 [[keyboard.bindings]]
 action = "ToggleViMode"
 key = "Space"
-mods = "Control"
+mods = "Alt"
 
 [[keyboard.bindings]]
 action = "ScrollToBottom"
@@ -367,7 +367,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 dynamic_padding = false
 dynamic_title = true
 # gtk_theme_variant = "None"
-opacity = 1.0
+opacity = 0.9
 title = "Alacritty"
 
 [window.class]
