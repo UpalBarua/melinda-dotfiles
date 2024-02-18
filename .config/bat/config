@@ -1,7 +1,8 @@
---theme="Solarized (dark)"
+--theme="tokyonight_night"
 --italic-text=always
 
 #--paging=never
 #--pager="less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse"
 #--map-syntax "\*.ino:C++"
 #--map-syntax ".ignore:Git Ignore"
+--theme="tokyonight_night"

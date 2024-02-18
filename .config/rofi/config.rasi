@@ -2,17 +2,25 @@ configuration {
   display-drun: "Applications";
   display-window: "Windows";
   drun-display-format: "{name}";
-  font: "JetBrains Mono 15";
+  font: "CaskaydiaCove Nerd Font 15";
   modi: "window,run,drun";
-  show-icons: false;
+
+  kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+  kb-row-down: "Down,Control+j";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  terminal: "alacritty";
+  kb-remove-to-eol: "Control+Shift+e";
+  /*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
+  kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+  kb-remove-char-back: "BackSpace";
 }
 
 @theme "/dev/null"
 
 * {
-  bg: #002b36;
-  fg: #839496;
-  ac: #2aa198;
+  bg: #1a1b26;
+  fg: #a9b1d6;
+  ac: #2ac3de;
 
   background-color: @bg;
 

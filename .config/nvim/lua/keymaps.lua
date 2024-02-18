@@ -10,7 +10,7 @@ keymap("n", "<C-i>", "<C-i>", opts)
 
 keymap("n", "<leader>q", "<cmd>:q!<cr>", opts)
 keymap("n", "<leader>w", "<cmd>:update<cr>", opts)
- 
+
 -- Move Lines
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", opts)
 keymap("n", "<A-k>", "<cmd>m .-2<cr>==", opts)
@@ -45,3 +45,7 @@ keymap("n", "<leader>W", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 vim.keymap.set("n", "<leader>gs", "<cmd>:Git<CR>", opts)
+keymap("n", "<leader>L", "<cmd>:Lazy<cr>", opts)
+
+-- Clear search with <esc>
+keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", opts)

@@ -253,30 +253,8 @@ ln=34:\
 di=34:\
 ex=34:\
 "
-_gen_fzf_default_opts() {
-
-local color00='#002b36'
-local color01='#073642'
-local color02='#586e75'
-local color03='#657b83'
-local color04='#839496'
-local color05='#93a1a1'
-local color06='#eee8d5'
-local color07='#fdf6e3'
-local color08='#dc322f'
-local color09='#cb4b16'
-local color0A='#b58900'
-local color0B='#859900'
-local color0C='#2aa198'
-local color0D='#268bd2'
-local color0E='#6c71c4'
-local color0F='#d33682'
-
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D"\
-" --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C"\
-" --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
-
-}
-
-_gen_fzf_default_opts
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+--color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
+--color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
+--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
+--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'

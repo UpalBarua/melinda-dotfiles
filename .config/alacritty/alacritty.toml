@@ -1,4 +1,4 @@
-import = ["/home/upal/.config/alacritty/themes/solarized_dark.toml"]
+import = ["/home/upal/.config/alacritty/themes/tokyo-night.toml"]
 live_config_reload = true
 working_directory = "None"
 
@@ -32,14 +32,14 @@ render_timer = false
 TERM = "alacritty"
 
 [font]
-size = 10.0
+size = 11.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Bold Italic"
 
 [font.glyph_offset]
@@ -47,16 +47,16 @@ x = 0
 y = 0
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Regular"
 
 [font.offset]
 x = 0
-y = 8
+y = 10 
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -367,7 +367,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 dynamic_padding = false
 dynamic_title = true
 # gtk_theme_variant = "None"
-opacity = 0.9
+opacity = 1.0
 title = "Alacritty"
 
 [window.class]

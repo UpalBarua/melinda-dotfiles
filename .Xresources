@@ -8,59 +8,77 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
+*.foreground:    #A9B1D6
+*.background:    #1A1B26
+*.cursorColor:   #A9B1D6
+*.highlightColor:#3A3F4B
 
-*background:            S_base03
-*foreground:            S_base0
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+!*fading:                  40
+!*fadeColor:               S_base03
+!*pointerColorBackground:  S_base01
+!*pointerColorForeground:  S_base1
 
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+! Normal      Bright
+! --------    -------
+! 0 Black      8 Black
+! 1 Red        9 Red
+! 2 Yellow    10 Yellow
+! 3 Green     11 Green
+! 4 Blue      12 Blue
+! 5 Magenta   13 Magenta
+! 6 Cyan      14 Cyan
+! 7 White     15 White
 
-!! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+! Black colours
+*.color0:        #1A1B26
+*.color8:        #4E5173
+! Red colours
+*.color1:        #F7768E
+*.color9:        #E06C75
+! Yellow colours
+*.color2:        #E0AF68
+*.color10:       #D19A66
+! Green colours
+*.color3:        #9ECE6A
+*.color11:       #98C379
+! Blue colours
+*.color4:        #7AA2F7
+*.color12:       #61AFEF
+! Magenta (pink, !green) colours
+*.color5:        #9A7ECC
+*.color13:       #C678DD
+! Cyan (blue + green)
+*.color6:        #4ABAAF
+*.color14:       #56B6C2
+! White colours
+*.color7:        #ACB0D0
+*.color15:       #ABB2BF
 
-!! red dark/light
-*color1:                S_red
-*color9:                S_orange
+! xterm.vt100.faceName:           Terminus:style=Regular:size=10
+! xterm.vt100.faceNameDoublesize: Cyberbit:style=Regular:size=10
 
-!! green dark/light
-*color2:                S_green
-*color10:               S_base01
+XTerm.vt100.bellIsUrgent:          true
+XTerm.vt100.alternateScroll: true
+XTerm.vt100.selectToClipboard: true
 
-!! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,selection-to-clipboard
+URxvt.clipboard.autocopy: true  ! sync primary and clipboard buffers
+URxvt.secondaryScreen:  1
+URxvt.secondaryScroll:  0
+URxvt.secondaryWheel:   1
+URxvt*urgentOnBell: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt.font: xft:Consolas:pixelsize=12, xft:Segoe UI Symbol:style=Regular:pixelsize=12, xft:Unifont:pixelsize=12
+URxvt.letterSpace : -2 ! Put characters slightly closer together
+URxvt.termName : rxvt-unicode-256color
+!Urxvt*termName:  screen-256color
+URxvt.iso14755 : false
+URxvt.iso14755_52: false
 
-!! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
+! transparency in i3
+!URxvt.transparent: true
+!URxvt.shading:20
 
-!! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
-
-!! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
-
-!! white dark/light
-*color7:                S_base2
-*color15:               S_base3

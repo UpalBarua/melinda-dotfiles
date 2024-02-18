@@ -8,8 +8,8 @@
 super + Return
     $TERMINAL
 
-super + ctrl + Return
-    $TERMINAL -e tmux
+super + shift + Return
+    $TERMINAL -e tmux attach || tmux
 
 # gui applications
 super + alt + {b, v, s, x, i, d, p, m, a, q, c, f, o}

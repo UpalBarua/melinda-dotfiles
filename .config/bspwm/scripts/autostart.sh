@@ -8,7 +8,6 @@ sxhkd &
 picom -b &
 dunst &
 greenclip daemon &
-thunar --daemon &
 xsetroot -cursor_name left_ptr &
 $HOME/.fehbg &
 $HOME/.config/polybar/scripts/bspwm-launch.sh &

@@ -1,21 +1,21 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  config = function()
-    require("lualine").setup({
-      options = {
-        theme = "solarized_dark",
-        section_separators = "",
-        component_separators = "",
-        ignore_focus = { "NvimTree" },
-      },
-      sections = {
-        lualine_a = {},
-        lualine_b = { "branch" },
-        lualine_c = { "diagnostics" },
-        lualine_x = { "copilot", "filetype" },
-        lualine_y = { "progress" },
-        lualine_z = {},
-      },
-    })
-  end,
+	"nvim-lualine/lualine.nvim",
+	config = function()
+		require("lualine").setup({
+			options = {
+				theme = "tokyonight",
+				section_separators = "",
+				component_separators = "",
+				ignore_focus = { "NvimTree", "Alpha" },
+			},
+			sections = {
+				lualine_a = { "buffers" },
+				lualine_b = {},
+				lualine_c = {},
+				lualine_x = { "diagnostics" },
+				lualine_y = { "location" },
+				lualine_z = { "branch" },
+			},
+		})
+	end,
 }

@@ -1,6 +1,6 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+-- vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.hlsearch = true

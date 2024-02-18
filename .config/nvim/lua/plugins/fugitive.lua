@@ -1,3 +1,5 @@
-return {
-	"pope/vim-fugitive",
-}
+return {}
+
+-- return {
+-- 	"tpope/vim-fugitive",
+-- }
