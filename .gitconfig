@@ -1,5 +1,5 @@
-[credential]
-	helper = store
+; [credential]
+	; helper = store
 [safe]
 	directory = /run/media/upal/general-disk/code
 	directory = /run/media/upal/general-disk/code/projects/my-portfolio
@@ -9,3 +9,5 @@
 	email = upalbarua52@gmail.com
 [push]
 	autoSetupRemote = true
+[credential]
+	helper = store

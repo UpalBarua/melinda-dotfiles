@@ -1,4 +1,5 @@
-Xft.dpi: 150
+! Xft.dpi: 150
+Xft.dpi: 144 
 Xcursor.size: 32
 
 Xft.autohint: 0

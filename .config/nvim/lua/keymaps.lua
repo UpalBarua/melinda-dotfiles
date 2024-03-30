@@ -8,7 +8,7 @@ vim.g.maplocalleader = " "
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
-keymap("n", "<leader>q", "<cmd>:q!<cr>", opts)
+keymap("n", "<leader>qq", "<cmd>:q!<cr>", opts)
 keymap("n", "<leader>w", "<cmd>:update<cr>", opts)
 
 -- Move Lines
@@ -24,19 +24,27 @@ keymap("n", "<S-h>", "<cmd>bprevious<cr>", opts)
 keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)
 keymap("n", "[b", "<cmd>bprevious<cr>", opts)
 keymap("n", "]b", "<cmd>bnext<cr>", opts)
-keymap("n", "<leader>bq", "<cmd>bdelete<cr>", opts)
+keymap("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
+keymap("n", "<leader>bD", "<cmd>:%bd|e#|bd#<cr>", opts)
+
+-- keymap("n", "<C-d>", "<C-d>zz", opts)
+-- keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("x", "p", [["_dP]])
+keymap("n", "x", '"_x')
+
+keymap("n", "<leader>+", "<C-a>")
+keymap("n", "<leader>-", "<C-x>")
 
 vim.cmd([[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]])
 vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
 
 vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
-vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+-- vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 -- tailwind bearable to work with
 keymap({ "n", "x" }, "j", "gj", opts)
@@ -46,6 +54,7 @@ keymap("n", "<leader>W", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 vim.keymap.set("n", "<leader>gs", "<cmd>:Git<CR>", opts)
 keymap("n", "<leader>L", "<cmd>:Lazy<cr>", opts)
+keymap("n", "<leader>M", "<cmd>:Mason<cr>", opts)
 
 -- Clear search with <esc>
 keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", opts)

@@ -132,6 +132,7 @@ alias v="nvim"
 alias sv="sudo nvim"
 alias vim="nvim"
 alias t="tmux"
+alias lg="lazygit"
 alias vc="vscodium"
 alias bt="btop"
 alias ht="htop"
@@ -230,6 +231,24 @@ clear
 export PNPM_HOME="/home/upalb/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# pomodoro timer setup
+
+declare -A pomo_options
+pomo_options["work"]="45"
+pomo_options["break"]="10"
+
+pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  val=$1
+  echo $val
+  timer ${pomo_options["$val"]}m
+  notify-send "'$val' session done"
+  fi
+}
+
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
 
 # --------------- EOF --------------- #
 
