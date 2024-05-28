@@ -77,7 +77,7 @@ cmd fzf_search ${{
 }}
 
 # cp with progess
-cmd paste $cp-p --lf-paste $id
+# cmd paste $cp-p --lf-paste $id
 
 # extract archive
 cmd extract ${{

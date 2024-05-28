@@ -1,8 +1,10 @@
 configuration {
-  display-drun: "Applications";
-  display-window: "Windows";
+  display-drun: "󰭎 Find";
+  display-window: "󱂬 Windows";
+  display-emoji: " Emoji";
+  display-clipboard: " Clipboard";
   drun-display-format: "{name}";
-  font: "CaskaydiaCove Nerd Font 15";
+  font: "GeistMono NF 15";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -18,9 +20,9 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1a1b26;
-  fg: #a9b1d6;
-  ac: #2ac3de;
+  bg: #1e1e2e;
+  fg: #cdd6f4;
+  ac: #94e2d5;
 
   background-color: @bg;
 
@@ -33,7 +35,8 @@ configuration {
 window {
   width: 35%;
   border: 1px;
-  border-color: @ac;
+  border-color: #6c7086;
+  // border-color: @ac;
   // border-radius: 8px;
 }
 

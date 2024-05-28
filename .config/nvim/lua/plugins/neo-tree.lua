@@ -21,6 +21,22 @@ return {
 				indent = {
 					with_markers = false,
 				},
+				name = {
+					use_git_status_colors = false,
+				},
+				git_status = {
+					symbols = {
+						added = "✚",
+						modified = "",
+						deleted = "󰛲",
+						renamed = "󰁕",
+						untracked = "",
+						ignored = "",
+						unstaged = "",
+						staged = "",
+						conflict = "",
+					},
+				},
 			},
 			window = {
 				mappings = {
@@ -31,7 +47,6 @@ return {
 				filtered_items = {
 					hide_dotfiles = false,
 					hide_gitignored = false,
-					hide_hidden = false, -- only works on Windows for hidden files/directories
 				},
 				follow_current_file = {
 					enabled = true,

@@ -34,6 +34,8 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    -- local icons = require("plugins.icons")
+
     -- require("luasnip.loaders.from_vscode").lazy_load({})
     require("luasnip.loaders.from_vscode").load_standalone({
       path = "~/.config/nvim/snippets/global-snippets.code-snippets",
@@ -66,7 +68,7 @@ return {
           local status_ok, luasnip = pcall(require, "luasnip")
           if status_ok and cmp.visible() then
             cmp.select_next_item()
-          elseif lstatus_ok and uasnip.expandable() then
+          elseif status_ok and luasnip.expandable() then
             luasnip.expand()
           elseif status_ok and luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
@@ -87,7 +89,7 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "nvim_lua" },
-        -- { name = "buffer" },
+        { name = "buffer" },
         { name = "path" },
       }),
       confirm_opts = {
@@ -95,7 +97,7 @@ return {
         select = false,
       },
       experimental = {
-        ghost_text = false,
+        ghost_text = true,
       },
     })
   end,

@@ -8,7 +8,7 @@
     offset = 0x50
     scale = 1
     notification_limit = 0
-    highlight = "#073642"
+    highlight = "#6c7086"
     indicate_hidden = yes
     # transparency = 1
     separator_height = 1
@@ -16,7 +16,7 @@
     horizontal_padding = 20
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#565f89"
+    frame_color = "#6c7086"
     separator_color = auto
     sort = yes
     gaps = true
@@ -30,7 +30,7 @@
     progress_bar_max_width = 350
 
     # Text
-    font = CaskaydiaCove Nerd Font 10
+    font = GeistMono NF 10
     line_height = 5 
     markup = full
     format = "<b>%s</b>\n%b"
@@ -78,19 +78,19 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1a1b26"
-    foreground = "#a9b1d6"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#a9b1d6"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
 
 [urgency_critical]
-    background = "#1a1b26"
-    foreground = "#f7768e"
-    frame_color = "#f7768e"
+    background = "#1e1e2e"
+    foreground = "f38ba8"
+    frame_color = "f38ba8"
     timeout = 10
 
 

@@ -4,6 +4,9 @@
 	directory = /run/media/upal/general-disk/code
 	directory = /run/media/upal/general-disk/code/projects/my-portfolio
 	directory = /home/upal/.cache/paru/clone/auto-cpufreq/src/opt/auto-cpufreq/
+	directory = /run/media/upal/general-disk/code/UpalBarua
+	directory = /run/media/upal/general-disk/code/projects/urban-mart
+	directory = /run/media/upal/general-disk/code/projects/savvy-pulse
 [user]
 	name = UpalBarua
 	email = upalbarua52@gmail.com

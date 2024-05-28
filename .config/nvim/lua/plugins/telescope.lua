@@ -51,6 +51,8 @@ return {
 			vim.keymap.set("n", "<leader>fl", builtin.resume, {})
 			vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
+			vim.keymap.set("n", "<leader>fq", builtin.quickfix, {})
 			vim.keymap.set("n", "<leader>fT", "<cmd>:TodoTelescope<cr>", {})
 
 			require("telescope").load_extension("ui-select")

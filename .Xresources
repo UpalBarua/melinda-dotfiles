@@ -1,4 +1,3 @@
-! Xft.dpi: 150
 Xft.dpi: 144 
 Xcursor.size: 32
 
@@ -9,77 +8,37 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-*.foreground:    #A9B1D6
-*.background:    #1A1B26
-*.cursorColor:   #A9B1D6
-*.highlightColor:#3A3F4B
+*background: #1E1E2E
+*foreground: #CDD6F4
 
-!*fading:                  40
-!*fadeColor:               S_base03
-!*pointerColorBackground:  S_base01
-!*pointerColorForeground:  S_base1
+! black
+*color0: #45475A
+*color8: #585B70
 
-! Normal      Bright
-! --------    -------
-! 0 Black      8 Black
-! 1 Red        9 Red
-! 2 Yellow    10 Yellow
-! 3 Green     11 Green
-! 4 Blue      12 Blue
-! 5 Magenta   13 Magenta
-! 6 Cyan      14 Cyan
-! 7 White     15 White
+! red
+*color1: #F38BA8
+*color9: #F38BA8
 
-! Black colours
-*.color0:        #1A1B26
-*.color8:        #4E5173
-! Red colours
-*.color1:        #F7768E
-*.color9:        #E06C75
-! Yellow colours
-*.color2:        #E0AF68
-*.color10:       #D19A66
-! Green colours
-*.color3:        #9ECE6A
-*.color11:       #98C379
-! Blue colours
-*.color4:        #7AA2F7
-*.color12:       #61AFEF
-! Magenta (pink, !green) colours
-*.color5:        #9A7ECC
-*.color13:       #C678DD
-! Cyan (blue + green)
-*.color6:        #4ABAAF
-*.color14:       #56B6C2
-! White colours
-*.color7:        #ACB0D0
-*.color15:       #ABB2BF
+! green
+*color2: #A6E3A1
+*color10: #A6E3A1
 
-! xterm.vt100.faceName:           Terminus:style=Regular:size=10
-! xterm.vt100.faceNameDoublesize: Cyberbit:style=Regular:size=10
+! yellow
+*color3: #F9E2AF
+*color11: #F9E2AF
 
-XTerm.vt100.bellIsUrgent:          true
-XTerm.vt100.alternateScroll: true
-XTerm.vt100.selectToClipboard: true
+! blue
+*color4: #89B4FA
+*color12: #89B4FA
 
-URxvt.scrollBar: false
-URxvt.perl-ext-common: default,selection-to-clipboard
-URxvt.clipboard.autocopy: true  ! sync primary and clipboard buffers
-URxvt.secondaryScreen:  1
-URxvt.secondaryScroll:  0
-URxvt.secondaryWheel:   1
-URxvt*urgentOnBell: true
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
-URxvt.font: xft:Consolas:pixelsize=12, xft:Segoe UI Symbol:style=Regular:pixelsize=12, xft:Unifont:pixelsize=12
-URxvt.letterSpace : -2 ! Put characters slightly closer together
-URxvt.termName : rxvt-unicode-256color
-!Urxvt*termName:  screen-256color
-URxvt.iso14755 : false
-URxvt.iso14755_52: false
+! magenta
+*color5: #F5C2E7
+*color13: #F5C2E7
 
-! transparency in i3
-!URxvt.transparent: true
-!URxvt.shading:20
+! cyan
+*color6: #94E2D5
+*color14: #94E2D5
 
+! white
+*color7: #BAC2DE
+*color15: #A6ADC8

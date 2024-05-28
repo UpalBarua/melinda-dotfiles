@@ -13,9 +13,8 @@ quiet=false
 # default theme
 loginbox=00000000
 loginshadow=00000000
-# locktext="upal x melinda"
-locktext=""
-font="JetBrains Mono"
+locktext="upal x melinda"
+font="GeistMono NF"
 ringcolor=ffffffff
 insidecolor=00000000
 separatorcolor=00000000
