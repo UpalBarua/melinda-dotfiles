@@ -13,3 +13,4 @@ $HOME/.fehbg &
 $HOME/.config/polybar/scripts/bspwm-launch.sh &
 $HOME/.local/bin/power-manager &
 $HOME/.local/bin/low-battery-notifier &
+

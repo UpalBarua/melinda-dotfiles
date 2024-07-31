@@ -1,6 +1,6 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
--- vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.hlsearch = true
@@ -31,7 +31,6 @@ vim.opt.ruler = false
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"
@@ -39,7 +38,7 @@ vim.opt.title = false
 vim.opt.colorcolumn = "80"
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append({
-	stl = " ",
+  stl = " ",
 })
 
 vim.opt.shortmess:append("c")
@@ -55,3 +54,9 @@ vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+
+-- wrapping
+vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0

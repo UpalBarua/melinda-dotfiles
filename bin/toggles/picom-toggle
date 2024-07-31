@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if pidof -x "picom" > /dev/null; then
-  notify-send "Picom killed"
-  killall -9 picom
-else
-  notify-send "Picom started"
-  picom -b
-fi

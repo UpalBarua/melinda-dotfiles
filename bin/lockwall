@@ -1,5 +1,6 @@
 #!/bin/sh
 
+notify-send "Setting lockscreen wallpaper..."
 killall convert
 
 wallpaper=$(cat $HOME/.fehbg | awk -F"'" '{print $2}' | tr -d '[:space:]')
@@ -8,5 +9,5 @@ if [ -e "$wallpaper" ]; then
   betterlockscreen -u "$wallpaper" --fx dimblur
   notify-send "Lockscreen wallpaper set"
 else
-  notify-send "Wallpaper file not found"
+  notify-send "Something went wrong"
 fi

@@ -1,10 +1,7 @@
-## SXHKDRC
+# SXHKDRC
 
-# ======================== #
-# LAUNCHING PROGRAMS       #
-# ======================== #
+# LAUNCHING PROGRAMS
 
-# terminals
 super + Return
   $TERMINAL
 
@@ -21,17 +18,10 @@ super + alt + i
   timeshift-launcher
 
 super + alt + p
-  pavucontrol
-
-super + alt + m
-  bspc rule -a * -o desktop='^4' && $BROWSER --app=https://www.facebook.com/messages/t
-
-super + alt + a
-  bspc rule -a * -o desktop='^5' &&
-  $BROWSER --app=https://chat.openai.com/
+  $TERMINAL -e pulsemixer
 
 super + alt + c
-  mate-color-select
+  gpick
 
 super + alt + t
   thunar
@@ -48,89 +38,75 @@ super + alt + z
 super + alt + f
   $TERMINAL -e lfub
 
-# ======================== #
-# ROFI APPLETS             #
-# ======================== #
+super + ctrl + o
+  blueberry
+
+# ROFI
 
 super + r
-    rofi -show drun
+  rofi -show drun
 
 super + w
-    rofi -show window
+  rofi -show window
 
 super + e
-    rofi -show emoji -modi emoji
+  rofi -show emoji -modi emoji
 
 super + v
-    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+  rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 super + c
-    rofi -show calc -modi calc -no-show-match -no-sort
-
-super + ctrl + p
-  ~/.local/bin/toggles/polkit-toggle
-
-super + ctrl + b
-  ~/.local/bin/toggles/ibus-toggle
+  rofi -show calc -modi calc -no-show-match -no-sort
 
 super + ctrl + t
-  ~/.local/bin/toggles/transmission-toggle
+  ~/.local/bin/toggler
 
 super + ctrl + i
   xcalib -invert -alter
 
-super + ctrl + o
-  blueberry
-
-# ======================== #
-# SYSTEM CONTROLS          #
-# ======================== #
+# SYSTEM CONTROLS
 
 # power controls
-super + ctrl + alt + {p, r, s, l, q}
-    {systemctl poweroff, systemctl reboot, systemctl suspend, betterlockscreen -l dimblur, bspc quit}
 
-# volume controls
-alt + {F3, F2, F4}
-    {pamixer -i 5, pamixer -d 5, pamixer --toggle-mute};\
-    /home/upal/.config/dunst/scripts/volume.sh;
+super + ctrl + alt + {p, r, s, l, q}
+  {systemctl poweroff, systemctl reboot, systemctl suspend, betterlockscreen -l dimblur, bspc quit}
+
+# audio controls
 
 alt + F1
-    amixer set Capture toggle;\
-    notify-send "mic toggled";
+  amixer set Capture toggle;\
+  notify-send "Microphone toggled";
+
+alt + {F3, F2}
+  {pamixer -i 5, pamixer -d 5};\
+  /home/upal/.config/dunst/scripts/volume.sh;
+
+alt + F4
+  pamixer --toggle-mute
 
 alt + F6
-    ~/.local/bin/connect-headphones
+  ~/.local/bin/connect-headphones
 
 # brightness controls
+
 alt + {F12, F11}
     {brightnessctl set +5%, brightnessctl set 5%-};\
     /home/upal/.config/dunst/scripts/brightness.sh screen;
 
 # screenshot
+ 
 Print
-    scrot ~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png -e 'xclip -selection clipboard -target image/png -i $f';\
-    sleep 0.5s; \
-    notify-send "Screenshot captured";
+  flameshot full --clipboard --path ~/pictures/screenshots/
 
 shift + Print
-    scrot -a $(slop -f '%x,%y,%w,%h') ~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png -e 'xclip -selection clipboard -target image/png -i $f';\
-    sleep 0.5s; \
-    notify-send "Screenshot captured";
+  flameshot gui --clipboard --path ~/pictures/screenshots/
 
-# ======================== #
-# WALLPAPERS               #
-# ======================== #
-alt + F5
-    feh --recursive --bg-fill --randomize $HOME/pictures/wallpapers;\
-    # ~/.local/bin/lockwall;
+# wallpapers
 
-alt + F5 + {d, l}
-    {~/.local/bin/delwall, ~/.local/bin/lockwall};
+alt + w + {c, d, l}
+  {feh --recursive --bg-fill --randomize $HOME/pictures/wallpapers, ~/.local/bin/delwall, ~/.local/bin/lockwall};
 
-# ======================== #
-# BSPWM CONTROLS           #
-# ======================== #
+# BSPWM CONTROLS
 
 # restart sxhkd
 super + shift + c
@@ -159,9 +135,7 @@ super + g
 super + {_,shift + }a
     bspc node @/ --flip {vertical,horizontal}
 
-# ======================== #
-# STATE / FLAGS            #
-# ======================== #
+# STATE / FLAGS
 
 # set the window state
 super + {t,shift + t,s,f}
@@ -171,7 +145,7 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
     bspc node -g {marked,locked,sticky,private}
 
-## focus/swap ============================================
+# focus/swap 
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -203,7 +177,7 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9,10}'
 
-## preselect ==========================================
+# preselect
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -221,7 +195,7 @@ super + ctrl + space
 super + ctrl + shift + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-## move/resize =============================================
+# move/resize
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}

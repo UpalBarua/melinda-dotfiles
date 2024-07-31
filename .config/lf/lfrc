@@ -165,7 +165,7 @@ map gs :fzf_search
 # jumps
 map gh cd ~/
 map gC cd ~/.config
-map gT cd ~/.loca/share/Trash
+map gT cd ~/.local/share/Trash
 map ge. cd /run/media/upal
 map gd cd ~/downloads
 map gc cd ~/code

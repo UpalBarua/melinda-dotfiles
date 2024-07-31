@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if pidof -x "transmission-daemon" > /dev/null; then
-  notify-send "Transmission daemon killed"
-  killall -9 transmission-daemon
-else
-  notify-send "Transmission daemon started"
-  transmission-daemon
-fi

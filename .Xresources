@@ -8,37 +8,33 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-*background: #1E1E2E
-*foreground: #CDD6F4
+*.foreground:    #A9B1D6
+*.background:    #1A1B26
+*.cursorColor:   #A9B1D6
+*.highlightColor:#3A3F4B
 
-! black
-*color0: #45475A
-*color8: #585B70
+! Black colours
+*.color0:        #1A1B26
+*.color8:        #4E5173
+! Red colours
+*.color1:        #F7768E
+*.color9:        #E06C75
+! Yellow colours
+*.color2:        #E0AF68
+*.color10:       #D19A66
+! Green colours
+*.color3:        #9ECE6A
+*.color11:       #98C379
+! Blue colours
+*.color4:        #7AA2F7
+*.color12:       #61AFEF
+! Magenta (pink, !green) colours
+*.color5:        #9A7ECC
+*.color13:       #C678DD
+! Cyan (blue + green)
+*.color6:        #4ABAAF
+*.color14:       #56B6C2
+! White colours
+*.color7:        #ACB0D0
+*.color15:       #ABB2BF
 
-! red
-*color1: #F38BA8
-*color9: #F38BA8
-
-! green
-*color2: #A6E3A1
-*color10: #A6E3A1
-
-! yellow
-*color3: #F9E2AF
-*color11: #F9E2AF
-
-! blue
-*color4: #89B4FA
-*color12: #89B4FA
-
-! magenta
-*color5: #F5C2E7
-*color13: #F5C2E7
-
-! cyan
-*color6: #94E2D5
-*color14: #94E2D5
-
-! white
-*color7: #BAC2DE
-*color15: #A6ADC8
