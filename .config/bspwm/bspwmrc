@@ -48,6 +48,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Brave-browser desktop=^2 follow=false
+bspc rule -a Brave-browser-nightly desktop=^2 follow=false
 bspc rule -a Thorium-browser desktop=^2 follow=false
 bspc rule -a pomofocus.io desktop=^2 follow=false
 bspc rule -a ChatGPT desktop=^5 follow=false

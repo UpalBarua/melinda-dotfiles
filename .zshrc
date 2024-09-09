@@ -111,6 +111,9 @@ source /usr/share/autojump/autojump.zsh
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 autoload -U compinit && compinit -u
 
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
 ##--------------- Aliases --------------##
 # Navigation
 alias l="eza -l --icons --no-user --sort=extension --group-directories-first"

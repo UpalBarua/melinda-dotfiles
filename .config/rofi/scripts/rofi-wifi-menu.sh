@@ -12,7 +12,7 @@ elif [[ "$connected" =~ "disabled" ]]; then
 fi
 
 # Use rofi to select wifi network
-chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | rofi -dmenu -theme /home/upal/.config/rofi/gruvbox/gruvbox-powermenu.rasi -i -selected-row 0 -p "Wi-Fi SSID: " )
+chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 0 -p "Wi-Fi SSID: " )
 # Get name of connection
 chosen_id=$(echo "${chosen_network:3}" | xargs)
 
@@ -31,7 +31,7 @@ else
 		nmcli connection up id "$chosen_id" | grep "successfully" && notify-send "Connection Established" "$success_message"
 	else
 		if [[ "$chosen_network" =~ "" ]]; then
-			wifi_password=$(rofi -theme /home/upal/.config/rofi/nord-powermenu.rasi -i -dmenu -p "Password: " )
+			wifi_password=$(rofi -i -dmenu -p "Password: " )
 		fi
 		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "Connection Established" "$success_message"
 	fi

@@ -51,9 +51,9 @@ return {
 				"tsserver",
 				"tailwindcss",
 				"html",
-				"cssls",
 				"emmet_language_server",
 				"clangd",
+				-- "cssls",
 			}
 
 			for _, server in pairs(servers) do
@@ -63,6 +63,7 @@ return {
 			end
 
 			lspconfig.cssls.setup({
+				capabilities = capabilities,
 				settings = {
 					css = {
 						validate = true,

@@ -58,11 +58,20 @@ super + v
 super + c
   rofi -show calc -modi calc -no-show-match -no-sort
 
+super + x
+  ~/.local/bin/rofi-search
+
 super + ctrl + t
   ~/.local/bin/toggler
 
 super + ctrl + i
   xcalib -invert -alter
+
+super + ctrl + b
+  ~/.config/rofi/scripts/rofi-bluetooth
+
+super + ctrl + w
+  ~/.config/rofi/scripts/rofi-wifi-menu.sh
 
 # SYSTEM CONTROLS
 
