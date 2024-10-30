@@ -1,4 +1,5 @@
-vim.opt.backup = false
+vim.g.netrw_banner = 0
+vim.g.netrw_mouse = 2
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
@@ -12,6 +13,7 @@ vim.opt.showmode = false
 vim.opt.showtabline = 1
 vim.opt.smartcase = true
 vim.opt.smartindent = true
+vim.o.autoindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
@@ -19,6 +21,7 @@ vim.opt.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.undofile = true
 vim.opt.updatetime = 100
+vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
@@ -36,27 +39,16 @@ vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"
 vim.opt.title = false
 vim.opt.colorcolumn = "80"
+vim.opt.shortmess:append("c")
+vim.opt.iskeyword:append("-")
+vim.opt.wrap = false
+vim.opt.wrapmargin = 0
+vim.o.whichwrap = "bs<>[]hl"
+vim.opt.linebreak = true
+vim.opt.textwidth = 0
+vim.o.backspace = "indent,eol,start"
+vim.opt.formatoptions:remove({ "c", "r", "o" })
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append({
   stl = " ",
 })
-
-vim.opt.shortmess:append("c")
-
-vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd([[set iskeyword+=-]])
-
-vim.g.netrw_banner = 0
-vim.g.netrw_mouse = 2
-
--- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
-
--- wrapping
-vim.opt.wrap = false
-vim.opt.linebreak = true
-vim.opt.textwidth = 0
-vim.opt.wrapmargin = 0

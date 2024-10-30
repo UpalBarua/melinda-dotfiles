@@ -8,7 +8,7 @@
   "workbench.tips.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tree.renderIndentGuides": "none",
-  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.colorCustomizations": {
     "[Solarized Dark]": {
       "sideBar.background": "#002B36",
@@ -74,7 +74,7 @@
   "editor.showFoldingControls": "never",
   "editor.overviewRulerBorder": false,
   "editor.matchBrackets": "never",
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.linkedEditing": true,
   "editor.renderLineHighlight": "none",
   "editor.wordWrapColumn": 80,
@@ -144,7 +144,7 @@
   "editor.guides.indentation": false,
   "cSpell.ignoreWords": ["Thrivenvision", "nextui", "tailwindcss"],
   "workbench.editor.enablePreview": false,
-  "git.autofetch": true
+  "git.autofetch": true,
   "scm.diffDecorations": "none"
   // "editor.lineDecorationsWidth": 5,
 }

@@ -105,10 +105,10 @@ alt + {F12, F11}
 # screenshot
  
 Print
-  flameshot full --clipboard --path ~/pictures/screenshots/
+  disown & flameshot & flameshot screen -p ~/pictures/screenshots/ --clipboard
 
 shift + Print
-  flameshot gui --clipboard --path ~/pictures/screenshots/
+  disown & flameshot & flameshot gui -p ~/pictures/screenshots/ --clipboard
 
 # wallpapers
 

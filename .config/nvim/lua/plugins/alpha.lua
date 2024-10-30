@@ -1,15 +1,17 @@
 return {
   "goolord/alpha-nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
     dashboard.section.header.val = {
-      "▄• ▄▌ ▄▄▄· ▄▄▄· ▄▄▌      ▄▄▄▄·  ▄▄▄· ▄▄▄  ▄• ▄▌ ▄▄▄· ",
-      "█▪██▌▐█ ▄█▐█ ▀█ ██•      ▐█ ▀█▪▐█ ▀█ ▀▄ █·█▪██▌▐█ ▀█ ",
-      "█▌▐█▌ ██▀·▄█▀▀█ ██▪      ▐█▀▀█▄▄█▀▀█ ▐▀▀▄ █▌▐█▌▄█▀▀█ ",
-      "▐█▄█▌▐█▪·•▐█ ▪▐▌▐█▌▐▌    ██▄▪▐█▐█ ▪▐▌▐█•█▌▐█▄█▌▐█ ▪▐▌",
-      " ▀▀▀ .▀    ▀  ▀ .▀▀▀     ·▀▀▀▀  ▀  ▀ .▀  ▀ ▀▀▀  ▀  ▀ ",
+      "  ██╗   ██╗██████╗  █████╗ ██╗        ██████╗ ███████╗██╗   ██╗  ",
+      "  ██║   ██║██╔══██╗██╔══██╗██║        ██╔══██╗██╔════╝██║   ██║  ",
+      "  ██║   ██║██████╔╝███████║██║        ██║  ██║█████╗  ██║   ██║  ",
+      "  ██║   ██║██╔═══╝ ██╔══██║██║        ██║  ██║██╔══╝  ╚██╗ ██╔╝  ",
+      "  ╚██████╔╝██║     ██║  ██║███████╗██╗██████╔╝███████╗ ╚████╔╝  ",
+      "   ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝╚═════╝ ╚══════╝  ╚═══╝  ",
     }
 
     -- Set menu
@@ -22,13 +24,8 @@ return {
       dashboard.button("q", "󰅚  Quit", "<Cmd>qa<CR>"),
     }
 
-    -- local fortune = require("alpha.fortune")
-    -- dashboard.section.footer.val = fortune()
-
-    -- Send config to alpha
     alpha.setup(dashboard.opts)
 
-    -- Disable folding on alpha buffer
     vim.cmd([[
       autocmd FileType alpha setlocal nofoldenable
     ]])

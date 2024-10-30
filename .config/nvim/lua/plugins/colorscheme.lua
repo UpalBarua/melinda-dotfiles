@@ -1,19 +1,11 @@
 return {
 	{
-		"folke/tokyonight.nvim",
+		"Mofiqul/dracula.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				style = "night",
-				-- transparent = true,
-				-- styles = {
-				-- 	sidebars = "transparent",
-				-- 	floats = "transparent",
-				-- },
-			})
-
-			vim.cmd([[colorscheme tokyonight]])
+			require("dracula").setup({})
+			vim.cmd([[colorscheme dracula]])
 		end,
 	},
 }

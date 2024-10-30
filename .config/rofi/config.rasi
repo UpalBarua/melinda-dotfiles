@@ -4,7 +4,7 @@ configuration {
   display-emoji: " Emoji";
   display-clipboard: " Clipboard";
   drun-display-format: "{name}";
-  font: "CaskaydiaCove Nerd Font 15";
+  font: "ComicShannsMono Nerd Font 16";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -20,9 +20,10 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1a1b26;
-  fg: #a9b1d6;
-  ac: #2ac3de;
+  bg: #282a36;
+  fg: #f8f8f2;
+  ac: #bd93f9;
+  bd: #44475a;
 
   background-color: @bg;
 
@@ -35,7 +36,7 @@ configuration {
 window {
   width: 35%;
   border: 1px;
-  border-color: #6c7086;
+  border-color: @bd;
   // border-color: @ac;
   // border-radius: 8px;
 }

@@ -40,9 +40,24 @@ cmd delete %{{
   [ $ans = "y" ] && rm -rf $fx
 }}
 
-# autojump integration
-cmd autojump &{{
-  lf -remote "send $id cd '$(autojump $1 | sed 's/\\/\\\\/g;s/"/\\"/g')'"
+# zoxide integration
+cmd z %{{
+    result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
+
+cmd zi ${{
+    result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id cd \"$result\""
+}}
+
+cmd on-cd &{{
+    zoxide add "$PWD"
+}}
+
+cmd on-cd &{{
+    fmt="$(STARSHIP_SHELL= starship prompt | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id set promptfmt \"$fmt\""
 }}
 
 # eza integration
@@ -159,7 +174,7 @@ map TC trash-clear
 map f fzf_jump 
 map o push :open-with<space>
 map br $vimv $fx
-map a push :autojump<space>
+map z push :z<space>
 map gs :fzf_search
 
 # jumps
