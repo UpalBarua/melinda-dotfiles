@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "dracula-nvim",
+				theme = "solarized",
 				section_separators = "",
 				component_separators = "",
 			},

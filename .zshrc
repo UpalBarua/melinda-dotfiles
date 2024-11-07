@@ -59,7 +59,7 @@ alias k="killall -9"
 # Programs
 alias x="startx"
 alias d="devour"
-alias s="devour sxiv"
+alias s="devour nsxiv"
 alias m="devour mpv"
 alias z="devour zathura"
 alias v="nvim"
@@ -90,3 +90,19 @@ alias rm='trash-put'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# Pomodoro timer (requires https://github.com/caarlos0/timer)
+declare -A pomo_options
+pomo_options["work"]="25"
+pomo_options["break"]="5"
+pomo_options["long-break"]="5"
+
+pomo() {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+    val=$1
+    clear
+    echo $val 
+    timer ${pomo_options["$val"]}m
+    notify-send -u critical -t 0 "⏳ $val session done"
+  fi
+}

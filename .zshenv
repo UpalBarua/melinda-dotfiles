@@ -9,11 +9,14 @@ export TERMINAL="alacritty"
 export EXA_ICON_SPACING="2" 
 export TERM='xterm-256color'
 export VISUAL='nvim'
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/toggles:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PNPM_HOME=${XDG_DATA_HOME:="$HOME/.local/share/pnpm"} 
 export PATH="$PNPM_HOME:$PATH"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:#073642,bg:#002b36,spinner:#2aa198,hl:#268bd2"\
+" --color=fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198"\
+" --color=marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
 

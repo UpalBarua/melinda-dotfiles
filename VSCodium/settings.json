@@ -8,7 +8,7 @@
   "workbench.tips.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tree.renderIndentGuides": "none",
-  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.colorTheme": "Solarized Dark",
   "workbench.colorCustomizations": {
     "[Solarized Dark]": {
       "sideBar.background": "#002B36",

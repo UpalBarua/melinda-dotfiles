@@ -1,0 +1,45 @@
+format = """$directory$git_branch$git_status$character"""
+right_format = """$all"""
+
+add_newline = false
+palette = "solarized"
+
+[directory]
+style = 'bold fg:yellow'
+format = '[$path ]($style)'
+truncation_length = 3
+truncation_symbol = '…/'
+truncate_to_repo = false
+
+[directory.substitutions]
+'~' = ""
+'documents' = '󰈙'
+'downloads' = ' '
+'music' = ' '
+'pictures' = ' '
+
+[git_branch]
+style = 'fg:green'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
+
+[git_status]
+style = 'fg:green'
+format = '([$all_status$ahead_behind]($style) )'
+
+[character] 
+success_symbol = '[ ](bold #268bd2)' 
+
+[palettes.solarized]
+background = "#002b36"
+current_line = "#073642"
+foreground = "#839496"
+comment = "#586e75"
+cyan = "#2aa198"
+green = "#859900"
+orange = "#cb4b16"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#dc322f"
+yellow = "#b58900"
+
