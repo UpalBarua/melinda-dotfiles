@@ -20,10 +20,10 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #002b36;
-  fg: #839496;
-  ac: #268bd2;
-  bd: #586e75;
+  bg: #222436;
+  fg: #c8d3f5;
+  ac: #86e1fc;
+  bd: #565f89;
 
   background-color: @bg;
 

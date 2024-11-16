@@ -15,8 +15,26 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PNPM_HOME=${XDG_DATA_HOME:="$HOME/.local/share/pnpm"} 
 export PATH="$PNPM_HOME:$PATH"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:#073642,bg:#002b36,spinner:#2aa198,hl:#268bd2"\
-" --color=fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198"\
-" --color=marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
-
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none
+  --color=bg+:#2d3f76 \
+  --color=bg:#1e2030 \
+  --color=border:#589ed7 \
+  --color=fg:#c8d3f5 \
+  --color=gutter:#1e2030 \
+  --color=header:#ff966c \
+  --color=hl+:#65bcff \
+  --color=hl:#65bcff \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#65bcff \
+  --color=query:#c8d3f5:regular \
+  --color=scrollbar:#589ed7 \
+  --color=separator:#ff966c \
+  --color=spinner:#ff007c \
+"

@@ -5,40 +5,43 @@
 super + Return
   $TERMINAL
 
-super + alt + b
+super + shift + Return
+  st
+
+super + space; b
   $BROWSER
 
-super + alt + v
+super + space; v
   vscodium
 
-super + alt + x
+super + space; x
   firefox
 
-super + alt + i
+super + space; i
   timeshift-launcher
 
-super + alt + p
+super + space; p
   $TERMINAL -e pulsemixer
 
-super + alt + c
+super + space; c
   gpick
 
-super + alt + t
+super + space; t
   thunar
 
-super + alt + o
+super + space; o
   obsidian
 
-super + alt + y
+super + space; y
   $TERMINAL -e btop
 
-super + alt + z
+super + space; z
   $TERMINAL -e htop
 
-super + alt + f
+super + space; f
   $TERMINAL -e lfub
 
-super + ctrl + o
+super + space; o
   blueberry
 
 # ROFI
@@ -57,9 +60,6 @@ super + v
 
 super + c
   rofi -show calc -modi calc -no-show-match -no-sort
-
-super + x
-  ~/.local/bin/rofi-search
 
 super + ctrl + t
   ~/.local/bin/toggler
@@ -99,8 +99,8 @@ alt + F6
 # brightness controls
 
 alt + {F12, F11}
-    {brightnessctl set +5%, brightnessctl set 5%-};\
-    /home/upal/.config/dunst/scripts/brightness.sh screen;
+  {brightnessctl set +5%, brightnessctl set 5%-};\
+  /home/upal/.config/dunst/scripts/brightness.sh screen;
 
 # screenshot
  
@@ -112,47 +112,47 @@ shift + Print
 
 # wallpapers
 
-alt + w + {c, d, l}
+alt + w; {c, d, l}
   {feh --recursive --bg-fill --randomize $HOME/pictures/wallpapers, ~/.local/bin/delwall, ~/.local/bin/lockwall};
 
 # BSPWM CONTROLS
 
 # restart sxhkd
-super + shift + c
-    pkill -USR1 -x sxhkd
+super + shift + s
+  pkill -USR1 -x sxhkd
 
 # restart bspwm
 super + shift + r
-    bspc wm -r
+  bspc wm -r
 
 # close and kill
 super + shift + q
-    bspc node -c
+  bspc node -c
 
 super + m
-    bspc desktop -l next
+  bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 super + y
-    bspc node newest.marked.local -n newest.!automatic.local
+  bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
 super + g
-    bspc node -s biggest.window
+  bspc node -s biggest.window
 
 # Flip layout vertically/horizontally
 super + {_,shift + }a
-    bspc node @/ --flip {vertical,horizontal}
+  bspc node @/ --flip {vertical,horizontal}
 
 # STATE / FLAGS
 
 # set the window state
 super + {t,shift + t,s,f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+  bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
-    bspc node -g {marked,locked,sticky,private}
+  bspc node -g {marked,locked,sticky,private}
 
 # focus/swap 
 

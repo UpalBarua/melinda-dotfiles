@@ -2,7 +2,7 @@ format = """$directory$git_branch$git_status$character"""
 right_format = """$all"""
 
 add_newline = false
-palette = "solarized"
+palette = "tokyonight-moon"
 
 [directory]
 style = 'bold fg:yellow'
@@ -28,18 +28,16 @@ style = 'fg:green'
 format = '([$all_status$ahead_behind]($style) )'
 
 [character] 
-success_symbol = '[ ](bold #268bd2)' 
+success_symbol = '[󰻈 ](bold #86e1fc)' 
 
-[palettes.solarized]
-background = "#002b36"
-current_line = "#073642"
-foreground = "#839496"
-comment = "#586e75"
-cyan = "#2aa198"
-green = "#859900"
-orange = "#cb4b16"
-pink = "#ff79c6"
-purple = "#bd93f9"
-red = "#dc322f"
-yellow = "#b58900"
+[palettes.tokyonight-moon]
+background = "#222436"
+foreground = "#c8d3f5"
+comment = "#565f89"
+cyan = "#86e1fc"
+green = "#c3e88d"
+magenta = "#c099ff"
+red = "#ff757f"
+yellow = "#ffc777"
+blue = "#82aaff"
 
