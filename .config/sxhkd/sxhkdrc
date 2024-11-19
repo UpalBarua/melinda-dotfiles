@@ -1,55 +1,53 @@
 # SXHKDRC
 
 # LAUNCHING PROGRAMS
-
 super + Return
   $TERMINAL
 
-super + shift + Return
-  st
-
-super + space; b
+super + alt + b
   $BROWSER
 
-super + space; v
+super + alt + v
   vscodium
 
-super + space; x
+super + alt + x
   firefox
 
-super + space; i
+super + alt + i
   timeshift-launcher
 
-super + space; p
+super + alt + p
   $TERMINAL -e pulsemixer
 
-super + space; c
+super + alt + c
   gpick
 
-super + space; t
+super + alt + t
   thunar
 
-super + space; o
+super + alt + o
   obsidian
 
-super + space; y
+super + alt + y
   $TERMINAL -e btop
 
-super + space; z
+super + alt + z
   $TERMINAL -e htop
 
-super + space; f
+super + alt + f
   $TERMINAL -e lfub
 
-super + space; o
+super + alt + o
   blueberry
 
 # ROFI
-
 super + r
   rofi -show drun
 
-super + w
+super + ctrl + r
+  rofi -show run
+
+super + ctrl + w
   rofi -show window
 
 super + e
@@ -70,40 +68,28 @@ super + ctrl + i
 super + ctrl + b
   ~/.config/rofi/scripts/rofi-bluetooth
 
-super + ctrl + w
+super + ctrl + n
   ~/.config/rofi/scripts/rofi-wifi-menu.sh
 
 # SYSTEM CONTROLS
-
 # power controls
-
 super + ctrl + alt + {p, r, s, l, q}
   {systemctl poweroff, systemctl reboot, systemctl suspend, betterlockscreen -l dimblur, bspc quit}
 
 # audio controls
-
 alt + F1
-  amixer set Capture toggle;\
-  notify-send "Microphone toggled";
-
-alt + {F3, F2}
-  {pamixer -i 5, pamixer -d 5};\
-  /home/upal/.config/dunst/scripts/volume.sh;
-
-alt + F4
   pamixer --toggle-mute
 
-alt + F6
-  ~/.local/bin/connect-headphones
+alt + {F3, F2}
+  {pamixer -i 3, pamixer -d 3};\
+  $HOME/.config/dunst/scripts/volume.sh;
 
 # brightness controls
+alt + {F5, F6}
+  {brightnessctl set +3%, brightnessctl set 3%-};\
+  $HOME/.config/dunst/scripts/brightness.sh screen;
 
-alt + {F12, F11}
-  {brightnessctl set +5%, brightnessctl set 5%-};\
-  /home/upal/.config/dunst/scripts/brightness.sh screen;
-
-# screenshot
- 
+# screenshots
 Print
   disown & flameshot & flameshot screen -p ~/pictures/screenshots/ --clipboard
 
@@ -111,12 +97,10 @@ shift + Print
   disown & flameshot & flameshot gui -p ~/pictures/screenshots/ --clipboard
 
 # wallpapers
-
 alt + w; {c, d, l}
   {feh --recursive --bg-fill --randomize $HOME/pictures/wallpapers, ~/.local/bin/delwall, ~/.local/bin/lockwall};
 
-# BSPWM CONTROLS
-
+## BSPWM CONTROLS
 # restart sxhkd
 super + shift + s
   pkill -USR1 -x sxhkd
@@ -129,23 +113,10 @@ super + shift + r
 super + shift + q
   bspc node -c
 
-super + m
+super + shift + m
   bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-  bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest window
-super + g
-  bspc node -s biggest.window
-
-# Flip layout vertically/horizontally
-super + {_,shift + }a
-  bspc node @/ --flip {vertical,horizontal}
-
-# STATE / FLAGS
-
+# STATE/FLAGS
 # set the window state
 super + {t,shift + t,s,f}
   bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
@@ -154,8 +125,7 @@ super + {t,shift + t,s,f}
 super + ctrl + {m,x,y,z}
   bspc node -g {marked,locked,sticky,private}
 
-# focus/swap 
-
+# FOCUS/SWAP 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
@@ -176,53 +146,43 @@ super + bracket{left,right}
 super + {grave,Tab}
     bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
+# focus the older or newer node
+super + shift + {o,i}
     bspc wm -h off; \
     bspc node {older,newer} -f; \
     bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
+  bspc {desktop -f,node -d} '^{1-9,10}'
 
-# preselect
-
+## PRESELECT
 # preselect the direction
 super + ctrl + {h,j,k,l}
-    bspc node -p {west,south,north,east}
+  bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-    bspc node -o 0.{1-9}
+  bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-    bspc node -p cancel
+  bspc node -p cancel
 
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-# move/resize
-
-# expand a window by moving one of its side outward
+## MOVE/RESIZE
+# expand a window
 super + alt + {h,j,k,l}
-    bspc node -z {left -100 0,bottom 0 100,top 0 -100,right 100 0}
+  bspc node -z {left -100 0,bottom 0 100,top 0 -100,right 100 0}
 
-# contract a window by moving one of its side inward
+# contract a window
 super + alt + shift + {h,j,k,l}
-    bspc node -z {right -100 0,top 0 100,bottom 0 -100,left 100 0}
+  bspc node -z {right -100 0,top 0 100,bottom 0 -100,left 100 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-    bspc node -v {-20 0,0 20,0 -20,20 0}
+  bspc node -v {-50 0,0 50,0 -50,50 0}
 
-#Rotate desktop
+# rotate desktop
 super + shift + space
-	bspc node @/ --rotate {90,-90}
-
-# set the window state
-alt + Tab
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+  bspc node @/ --rotate {90,-90}
 

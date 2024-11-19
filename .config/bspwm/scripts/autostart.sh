@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
 
-# kill existing process
-killall -9 sxhkd picom dunst greenclip xidlehook
+# Check if a process is running and kill it
+kill_process() {
+    if pgrep -x "$1" > /dev/null; then
+        killall "$1"
+    fi
+}
+
+# Kill existing processes if running
+kill_process sxhkd
+kill_process picom
+kill_process dunst
+kill_process greenclip
+kill_process xidlehook
 
 # Start programs
 sxhkd &
@@ -12,5 +23,4 @@ xsetroot -cursor_name left_ptr &
 $HOME/.fehbg &
 $HOME/.config/polybar/scripts/bspwm-launch.sh &
 $HOME/.local/bin/power-manager &
-# $HOME/.local/bin/low-battery-notifier &
 

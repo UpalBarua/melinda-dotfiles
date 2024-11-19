@@ -63,7 +63,6 @@ element-icon {
 
 entry {
   background-color: @bg;
-  padding: 12;
   text-color: @fg;
   padding: 10px 0px;
   margin: 15px 0px 0px 15px;

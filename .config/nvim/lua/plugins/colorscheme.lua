@@ -3,13 +3,8 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("tokyonight").setup({
-			transparent = true,
-			styles = {
-				floats = "transparent",
-			},
-		})
-		vim.cmd.colorscheme("tokyonight")
+		require("tokyonight").setup({})
+		vim.cmd.colorscheme("tokyonight-night")
 		vim.g.tokyonight_dark_float = false
 	end,
 }
