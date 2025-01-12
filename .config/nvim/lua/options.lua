@@ -38,7 +38,7 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"
 vim.opt.title = false
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.opt.wrap = false
@@ -50,5 +50,5 @@ vim.o.backspace = "indent,eol,start"
 vim.opt.formatoptions:remove({ "c", "r", "o" })
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append({
-  stl = " ",
+	stl = " ",
 })

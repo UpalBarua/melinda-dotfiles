@@ -24,7 +24,7 @@ return {
 		local lspconfig = require("lspconfig")
 
 		local default_diagnostic_config = {
-			virtual_text = true,
+			virtual_text = false,
 			update_in_insert = false,
 			underline = true,
 			severity_sort = true,

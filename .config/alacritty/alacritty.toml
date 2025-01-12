@@ -75,7 +75,7 @@ style = "Bold Italic"
 
 [font.glyph_offset]
 x = 0
-y = 5 
+y = 6 
 
 [font.offset]
 x = 1

@@ -1,32 +1,40 @@
-#!/bin/sh
+#!/bin/bash
 
-# Check for active internet connection
-check_connection() {
-    ping -q -c 1 -W 1 8.8.8.8 >/dev/null 2>&1
-}
+# Get network interfaces
+INTERFACE=$(ip -o -4 route show to default | awk '{print $5}')
 
-# Update the traffic data and calculate the difference
-update() {
-    local file="$1"
-    local current=$(awk '{sum += $1} END {print sum}' "$file")
-    local cache="/tmp/${file##*/}"
-    local previous=$(cat "$cache" 2>/dev/null || echo 0)
-    echo "$current" > "$cache"
-    echo $((current - previous))
-}
-
-# Handle button interactions
-case $BLOCK_BUTTON in
-    1) setsid -f "$TERMINAL" -e bmon ;; # Open bmon on left-click
-    3) notify-send "🌐 Network traffic module" "🔻: Download speed (received data)" ;; # Show help on right-click
-    6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;; # Edit script on long-click
-esac
-
-# Main logic
-if check_connection; then
-    rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
-    printf "🔻%4sB/s\\n" "$(numfmt --to=iec "$rx")"
-else
-    echo "❌ No Internet Connection"
+# Check if connected to any network interface (Wi-Fi or Ethernet)
+if [[ -z "$INTERFACE" || ! -d "/sys/class/net/$INTERFACE" ]]; then
+    echo "^c#f7768e^  no internet^d^"
+    exit 1
 fi
+
+# Get RX bytes from /sys/class/net for the active interface
+RX_BYTES=$(cat /sys/class/net/"$INTERFACE"/statistics/rx_bytes)
+
+# Save last RX bytes to a temp file
+TEMP_FILE="/tmp/network_rx_bytes"
+if [[ -f $TEMP_FILE ]]; then
+    LAST_RX_BYTES=$(cat "$TEMP_FILE")
+else
+    LAST_RX_BYTES=0
+fi
+
+# Save current RX bytes for the next run
+echo "$RX_BYTES" > "$TEMP_FILE"
+
+# Calculate download speed in bytes per second
+RX_SPEED=$((RX_BYTES - LAST_RX_BYTES))
+
+# Convert to human-readable format (KB/s, MB/s)
+if [[ $RX_SPEED -ge 1048576 ]]; then
+    RX_HR=$(echo "$RX_SPEED" | awk '{printf "%.2f MB/s", $1/1048576}')
+elif [[ $RX_SPEED -ge 1024 ]]; then
+    RX_HR=$(echo "$RX_SPEED" | awk '{printf "%.2f KB/s", $1/1024}')
+else
+    RX_HR="${RX_SPEED} B/s"
+fi
+
+# Display download speed
+echo "^c#9ece6a^ ^d^$RX_HR"
 

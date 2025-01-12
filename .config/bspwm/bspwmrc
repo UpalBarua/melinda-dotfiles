@@ -2,11 +2,11 @@
 
 # AUTOSTART
 $HOME/.config/bspwm/scripts/autostart.sh &
-$HOME/.config/bspwm/scripts/window-borders.sh &
+# $HOME/.config/bspwm/scripts/window-borders.sh &
 
 # BSPWM CONFIG
-bspc monitor eDP-1 -d 1 2 3 4 5
-# bspc monitor HDMI-2 -d 6 7 8 9 10
+bspc monitor HDMI-2 -d 1 2 3
+bspc monitor eDP-1 -d 1 2 3
 
 # borders & gaps
 bspc config border_width                  2

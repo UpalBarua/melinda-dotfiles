@@ -5,7 +5,7 @@ export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export EDITOR="nvim"
 export BROWSER="brave-nightly" 
-export TERMINAL="alacritty" 
+export TERMINAL="kitty" 
 export EXA_ICON_SPACING="2" 
 export TERM='xterm-256color'
 export VISUAL='nvim'
@@ -15,28 +15,16 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PNPM_HOME=${XDG_DATA_HOME:="$HOME/.local/share/pnpm"} 
 export PATH="$PNPM_HOME:$PATH"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none
-  --color=bg+:#2d3f76 \
-  --color=bg:#1e2030 \
-  --color=border:#589ed7 \
-  --color=fg:#c8d3f5 \
-  --color=gutter:#1e2030 \
-  --color=header:#ff966c \
-  --color=hl+:#65bcff \
-  --color=hl:#65bcff \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#65bcff \
-  --color=query:#c8d3f5:regular \
-  --color=scrollbar:#589ed7 \
-  --color=separator:#ff966c \
-  --color=spinner:#ff007c \
-"
 
-BEMOJI_PICKER_CMD="/usr/local/bin/dmenu"
+# FZF
+	export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+	--color=fg:#c0caf5,bg:-1,hl:#bb9af7
+	--color=fg+:#c0caf5,bg+:-1,hl+:#7dcfff
+	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
+	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+
+# clipmenud
+export CM_DIR=$HOME/.cache/
+export CM_MAX_CLIPS=100
+export CM_OUTPUT_CLIP=1
+export CM_HISTLENGTH=10

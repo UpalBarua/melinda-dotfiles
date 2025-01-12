@@ -2,15 +2,15 @@
     # General
     monitor = 0
     follow = none
-    width = 320
-    height = 360
+    width = 350
+    height = auto
     origin = top-center
-    offset = 0x50
+    offset = (0, 60)
     scale = 1
     notification_limit = 0
-    highlight = "#86e1fc"
+    highlight = "#7aa2f7"
     indicate_hidden = yes
-    # transparency = 1
+    transparency = 1
     separator_height = 1
     padding = 20
     horizontal_padding = 20
@@ -20,7 +20,7 @@
     separator_color = auto
     sort = yes
     gaps = true
-    gap_size = 5
+    gap_size = 10
 
     # Progress bar
     progress_bar = false
@@ -30,8 +30,8 @@
     progress_bar_max_width = 350
 
     # Text
-    font = CaskaydiaCove Nerd Font 9 
-    line_height = 5 
+    font = FantasqueSansM Nerd Font 10 
+    line_height = 10 
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -44,7 +44,7 @@
     show_indicators = yes
 
     # Icons
-    icon_position = left
+    icon_position = off
     min_icon_size = 48
     max_icon_size = 48
     icon_path = /usr/share/icons/Papirus-Dark/48x48/apps:/usr/share/icons/Papirus-Dark/48x48/categories:/usr/share/icons/Papirus-Dark/48x48/devices:/usr/share/icons/Papirus-Dark/48x48/emblems:/usr/share/icons/Papirus-Dark/48x48/mimetypes:/usr/share/icons/Papirus-Dark/48x48/places:/usr/share/icons/Papirus-Dark/48x48/status
@@ -77,17 +77,17 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1e2030"
-    foreground = "#c8d3f5"
+    background = "#16161e"
+    foreground = "#c0caf5"
     timeout = 10
 
 [urgency_normal]
-    background = "#222436"
-    foreground = "#c8d3f5"
+    background = "#16161e"
+    foreground = "#c0caf5"
     timeout = 10
 
 [urgency_critical]
-    background = "#2f334d"
+    background = "#16161e"
     foreground = "#c53b53"
     timeout = 10
 

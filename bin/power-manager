@@ -8,7 +8,7 @@ xidlehook \
   --not-when-fullscreen \
   --not-when-audio \
   --timer 300 \
-    'betterlockscreen -l dimblur' \
+    'slock' \
     '' \
   --timer 900 \
     'systemctl suspend' \

@@ -6,12 +6,17 @@ return {
 		local dashboard = require("alpha.themes.dashboard")
 
 		dashboard.section.header.val = {
-			"First, solve the problem. Then, write the code. – John Johnson",
+			"██╗   ██╗██████╗  █████╗ ██╗     ██████╗",
+			"██║   ██║██╔══██╗██╔══██╗██║     ██╔══██╗",
+			"██║   ██║██████╔╝███████║██║     ██████╔╝",
+			"██║   ██║██╔═══╝ ██╔══██║██║     ██╔══██╗",
+			"╚██████╔╝██║     ██║  ██║███████╗██████╔╝██╗",
+			" ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝",
 		}
 
 		-- Set menu
 		dashboard.section.buttons.val = {
-			-- dashboard.button("SPC e", "  File tree"),
+			dashboard.button("SPC e", "  File tree"),
 			dashboard.button("SPC f f", "  Find file"),
 			dashboard.button("SPC f r", "󰈢  Recent files"),
 			dashboard.button("SPC gg", "  Git repo"),

@@ -28,7 +28,7 @@ style = 'fg:green'
 format = '([$all_status$ahead_behind]($style) )'
 
 [character] 
-success_symbol = '[󰻈 ](bold #86e1fc)' 
+success_symbol = '[](bold #7aa2f7)' 
 
 [palettes.tokyonight-moon]
 background = "#222436"
