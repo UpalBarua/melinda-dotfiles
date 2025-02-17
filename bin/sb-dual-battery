@@ -30,9 +30,9 @@ battery_print() {
     battery_percent=$((battery_percent > 100 ? 100 : battery_percent))
 
     if [ "$ac" -eq 1 ]; then
-        echo "^c#ff9e64^ ^d^$battery_percent%"
+        echo "^c#f6c177^ ^d^$battery_percent%"
     else
-        echo "^c#9ece6a^ ^d^$battery_percent%"
+        echo "^c#31748f^ ^d^$battery_percent%"
     fi
 }
 

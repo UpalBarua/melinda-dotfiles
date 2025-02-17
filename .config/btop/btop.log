@@ -151,3 +151,126 @@
 
 2025/01/11 (09:18:11) | ===> btop++ v.1.4.0
 2025/01/11 (09:18:11) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/01/14 (21:55:00) | ===> btop++ v.1.4.0
+2025/01/14 (21:55:00) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/01/16 (17:34:19) | ===> btop++ v.1.4.0
+2025/01/16 (17:34:19) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/01/17 (21:52:55) | ===> btop++ v.1.4.0
+2025/01/17 (21:52:55) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/01/18 (20:20:54) | ===> btop++ v.1.4.0
+2025/01/18 (20:20:54) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/01/18 (21:13:13) | ===> btop++ v.1.4.0
+2025/01/18 (21:13:13) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:13) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:13) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:13) | WARNING: Intel GPU: Failed to initialize PMU
+2025/01/18 (21:13:13) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:14) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:15) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:16) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:17) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:19) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:20) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:21) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:23) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:25) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:27) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:29) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:29) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/01/18 (21:13:30) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+
+2025/01/19 (09:24:23) | ===> btop++ v.1.4.0
+2025/01/19 (09:24:23) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/01/30 (10:03:31) | ===> btop++ v.1.4.0
+2025/01/30 (10:03:31) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/02/03 (15:21:06) | ===> btop++ v.1.4.0
+2025/02/03 (15:21:06) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:06) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:06) | WARNING: Intel GPU: Failed to initialize PMU
+2025/02/03 (15:21:06) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:06) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:06) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:06) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:07) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:08) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:09) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:10) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:12) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:14) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:14) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:15) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:16) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:17) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:18) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:19) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:20) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:21) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/03 (15:21:22) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+
+2025/02/03 (22:44:01) | ===> btop++ v.1.4.0
+2025/02/03 (22:44:01) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/02/05 (12:35:39) | ===> btop++ v.1.4.0
+2025/02/05 (12:35:39) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:39) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:39) | WARNING: Intel GPU: Failed to initialize PMU
+2025/02/05 (12:35:39) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:40) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:41) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:42) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:43) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:44) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:45) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:46) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:47) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:48) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:49) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:50) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:51) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:52) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:53) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:54) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:55) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:57) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:57) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:58) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:35:59) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:00) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:01) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:03) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:03) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:04) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:05) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:07) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:09) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:11) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:13) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:14) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:15) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:17) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:19) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:20) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:21) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:23) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:23) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:24) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:25) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:27) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:28) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:29) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:30) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:31) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+2025/02/05 (12:36:32) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
+
+2025/02/10 (20:09:54) | ===> btop++ v.1.4.0
+2025/02/10 (20:09:54) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/02/15 (12:21:00) | ===> btop++ v.1.4.0
+2025/02/15 (12:21:00) | WARNING: Intel GPU: Failed to initialize PMU

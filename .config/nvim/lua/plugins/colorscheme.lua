@@ -1,15 +1,8 @@
 return {
-	"folke/tokyonight.nvim",
+	"rose-pine/neovim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("tokyonight").setup({
-			transparent = true,
-			styles = {
-				floats = "transparent",
-			},
-		})
-		vim.cmd.colorscheme("tokyonight-storm")
-		vim.g.tokyonight_dark_float = false
+		vim.cmd.colorscheme("rose-pine")
 	end,
 }

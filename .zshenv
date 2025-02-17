@@ -5,7 +5,7 @@ export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export EDITOR="nvim"
 export BROWSER="brave-nightly" 
-export TERMINAL="kitty" 
+export TERMINAL="ghostty" 
 export EXA_ICON_SPACING="2" 
 export TERM='xterm-256color'
 export VISUAL='nvim'

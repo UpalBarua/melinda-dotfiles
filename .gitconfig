@@ -6,9 +6,12 @@
 	directory = /run/media/upal/general-disk/code/projects/urban-mart
 	directory = /run/media/upal/general-disk/code/projects/savvy-pulse
 	directory = /run/media/upal/general-disk/code/projects/degikon
+	directory = /run/media/upal/general-disk/code/repos/my-portfolio
 [user]
-	name = UpalBarua
-	email = upalbarua52@gmail.com
+	; name = UpalBarua
+	; email = upalbarua52@gmail.com
+	name = devdatapollex 
+	email = dev.datapollex@gmail.com 
 [push]
 	autoSetupRemote = true
 [credential]
