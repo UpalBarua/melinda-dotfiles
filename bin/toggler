@@ -13,7 +13,7 @@ options=(
 menu_items=$(printf "%s\n" "${options[@]}" | cut -d':' -f1)
 
 # Use rofi to select an option
-selection=$(echo "$menu_items" | rofi -dmenu -p "Toggle:")
+selection=$(echo "$menu_items" | dmenu -p "Toggle:")
 
 if [ -z "$selection" ]; then
   echo "No program selected. Exiting."

@@ -2,7 +2,7 @@ format = """$directory$git_branch$git_status$character"""
 right_format = """$all"""
 
 add_newline = false
-palette = "tokyonight-moon"
+palette = "gruvbox_dark"
 
 [directory]
 style = 'bold fg:yellow'
@@ -28,16 +28,16 @@ style = 'fg:green'
 format = '([$all_status$ahead_behind]($style) )'
 
 [character] 
-success_symbol = '[](bold #7aa2f7)' 
+success_symbol = '[ ](bold #89B482)' 
 
-[palettes.tokyonight-moon]
-background = "#222436"
-foreground = "#c8d3f5"
-comment = "#565f89"
-cyan = "#86e1fc"
-green = "#c3e88d"
-magenta = "#c099ff"
-red = "#ff757f"
-yellow = "#ffc777"
-blue = "#82aaff"
-
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'

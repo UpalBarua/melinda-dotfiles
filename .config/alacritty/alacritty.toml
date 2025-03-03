@@ -4,7 +4,7 @@ TERM = "xterm-256color"
 [general]
 live_config_reload = true
 working_directory = "None"
-import = ["/home/upal/.config/alacritty/themes/tokyonight_storm.toml"]
+import = ["/home/upal/.config/alacritty/themes/gruvbox_material.toml"]
 
 [window]
 dynamic_padding = false
@@ -21,8 +21,8 @@ columns = 0
 lines = 0
 
 [window.padding]
-x = 8
-y = 8
+x = 5
+y = 5
 
 [window.position]
 x = 0
@@ -43,7 +43,7 @@ unfocused_hollow = false
 
 [cursor.style]
 blinking = "Always"
-shape = "Beam"
+shape = "Block"
 
 [cursor.vi_mode_style]
 shape = "Beam"
@@ -55,22 +55,22 @@ print_events = false
 render_timer = false
 
 [font]
-size = 12.0
+size = 10.0
 
 [font.normal]
-family = "FantasqueSansM Nerd Font"
+family = "CodeNewRoman Nerd Font"
 style = "Regular"
 
 [font.italic]
-family = "FantasqueSansM Nerd Font"
+family = "CodeNewRoman Nerd Font"
 style = "Italic"
 
 [font.bold]
-family = "FantasqueSansM Nerd Font"
+family = "CodeNewRoman Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "FantasqueSansM Nerd Font"
+family = "CodeNewRoman Nerd Font"
 style = "Bold Italic"
 
 [font.glyph_offset]

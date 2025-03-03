@@ -57,12 +57,9 @@ alias ll="eza -la --icons --group-directories-first --sort=ext --no-user --no-pe
 alias q="exit"
 alias c="clear"
 alias k="killall -9"
+
 # Programs
 alias x="startx"
-alias d="devour"
-alias s="devour nsxiv"
-alias m="devour mpv"
-alias z="devour zathura"
 alias v="nvim"
 alias sv="sudo nvim"
 alias vim="nvim"
@@ -79,34 +76,21 @@ alias yta="yt-dlp -f 140"
 alias ytv1="yt-dlp -f 140+137"
 alias ytv2="yt-dlp -f 140+299"
 alias tr="transmission-remote"
+
 # pacman
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias clean='sudo pacman -Rns $(pacman -Qtdq)'
 alias mirrorup="sudo reflector --verbose --country 'Bangladesh,India,China,Hong Kong' -l 30 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+
 # confirm before overwriting
 alias cp="cp -iv"
 alias mv='mv -i'
 alias rm='trash-put'
+
 # colorize grep output
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-
-# Pomodoro timer (requires https://github.com/caarlos0/timer)
-declare -A pomo_options
-pomo_options["work"]="25"
-pomo_options["break"]="5"
-pomo_options["long-break"]="5"
-
-pomo() {
-  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
-    val=$1
-    clear
-    echo $val 
-    timer ${pomo_options["$val"]}m
-    notify-send -u critical -t 0 "⏳ $val session done"
-  fi
-}
 
 function sesh-sessions() {
   {

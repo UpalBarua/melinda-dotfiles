@@ -1,18 +1,23 @@
 [safe]
-	directory = /run/media/upal/general-disk/code
-	directory = /run/media/upal/general-disk/code/projects/my-portfolio
-	directory = /home/upal/.cache/paru/clone/auto-cpufreq/src/opt/auto-cpufreq/
-	directory = /run/media/upal/general-disk/code/UpalBarua
-	directory = /run/media/upal/general-disk/code/projects/urban-mart
-	directory = /run/media/upal/general-disk/code/projects/savvy-pulse
-	directory = /run/media/upal/general-disk/code/projects/degikon
-	directory = /run/media/upal/general-disk/code/repos/my-portfolio
+  directory = /home/upal/code/repos
+
 [user]
-	; name = UpalBarua
-	; email = upalbarua52@gmail.com
-	name = devdatapollex 
-	email = dev.datapollex@gmail.com 
+  name = UpalBarua
+  email = upalbarua52@gmail.com
+
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+  default = simple
+  followTags = true
+
 [credential]
-	helper = store
+  helper = store
+
+[core]
+  editor = nvim
+
+[pull]
+  rebase = true
+
+[init]
+  defaultBranch = main

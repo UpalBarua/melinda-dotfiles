@@ -1,26 +1,38 @@
 #!/bin/sh
 
+# Get the volume status
 vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
 
 # If muted, print 🔇 and exit.
-[ "$vol" != "${vol%\[MUTED\]}" ] && echo "^c#eb6f92^ MUTED^d^" && exit
+if echo "$vol" | grep -q "MUTED"; then
+    echo "^c#ea6962^ MUTED^d^"
+    exit 0
+fi
 
+# Extract the volume level
 vol="${vol#Volume: }"
 
+# Function to split the volume level and remove the decimal point
 split() {
-	# For ommiting the . without calling and external program.
-	IFS=$2
-	set -- $1
-	printf '%s' "$@"
+    IFS=$2
+    set -- $1
+    printf '%s' "$@"
 }
 
+# Remove the decimal point and convert to integer
 vol="$(printf "%.0f" "$(split "$vol" ".")")"
 
-case 1 in
-	$((vol >= 60)) ) icon="" ;;
-	$((vol >= 30)) ) icon="" ;;
-	$((vol >= 1)) ) icon="" ;;
-	* ) echo "" && exit ;;
-esac
+# Determine the icon based on the volume level
+if [ "$vol" -ge 60 ]; then
+    icon=""
+elif [ "$vol" -ge 30 ]; then
+    icon=""
+elif [ "$vol" -ge 1 ]; then
+    icon=""
+else
+    echo ""
+    exit 0
+fi
 
-echo "^c#c4a7e7^$icon^d^ $vol%"
+# Print the volume icon and percentage
+echo "^c#d3869b^$icon^d^ $vol%"

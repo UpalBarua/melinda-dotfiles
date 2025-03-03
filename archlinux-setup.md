@@ -121,10 +121,3 @@
   ```sh
   sudo systemctl start cronie.service
   ```
-
-
-
-
-
-
-
