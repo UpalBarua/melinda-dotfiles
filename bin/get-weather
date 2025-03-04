@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-notify-send -t 4500 "Weather" "$(curl -s 'wttr.in/{Chittagong}?format=4')"

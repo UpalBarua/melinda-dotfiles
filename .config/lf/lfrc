@@ -91,9 +91,6 @@ cmd fzf_search ${{
   [ -n "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
-# cp with progess
-# cmd paste $cp-p --lf-paste $id
-
 # extract archive
 cmd extract ${{
   set -f
@@ -105,7 +102,7 @@ cmd zip %zip -r "$f" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 
 # set as bg
-cmd setwallpaper %feh --bg-fill "$f" && ~/.local/bin/lockwall
+cmd setwallpaper %feh --bg-fill "$f"
 
 # open with
 cmd open-with %"$@" "$fx"
@@ -181,9 +178,9 @@ map gs :fzf_search
 map gh cd ~/
 map gC cd ~/.config
 map gT cd ~/.local/share/Trash
-map ge. cd /run/media/upal
-map gd cd ~/downloads
+map ge. cd /mnt/disk/
+map gd cd ~/Downloads
 map gc cd ~/code
 
-map gpw cd "~/pictures/wallpapers"
-map gps cd ~/pictures/screenshots
+map gpw cd "~/Pictures/wallpapers"
+map gps cd ~/Pictures/screenshots
