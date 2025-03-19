@@ -3,9 +3,13 @@
 # Terminate already running bar instances
 killall -q polybar
 
-# Wait until the processes have been shut down
+# # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch Polybar
-polybar bspwm -c ~/.config/polybar/config.ini &
-polybar bspwm2 -c ~/.config/polybar/config.ini &
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload bspwm &
+  done
+else
+  polybar --reload bspwm &
+fi

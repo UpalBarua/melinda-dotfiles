@@ -16,15 +16,15 @@ set $ws9 "9"
 set $ws10 "10"
 
 floating_modifier $mod
-font pango:JetBrainsMono Nerd Font 10
+font pango:UbuntuMono Nerd Font 10
 
 # AUTOSTART
 exec_always --no-startup-id $HOME/.config/i3/scripts/autostart.sh
 
 # TITLE BAR & BORDERS
-default_border pixel 3
-default_floating_border pixel 3
-for_window [class="^.*"] border pixel 3
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # INNER & OUTER GAPS
 gaps inner 5
@@ -35,7 +35,7 @@ smart_gaps on
 smart_borders on
 
 # I3 COLORS
-# class                 border  backgr. text    indicator child_border
+# class                 border  background text    indicator child_border
 client.focused          #d19a66 #d19a66 #282c34 #d19a66   #d19a66
 client.focused_inactive #282c34 #282c34 #abb2bf #282c34   #282c34
 client.unfocused        #282c34 #282c34 #abb2bf #282c34   #282c34
@@ -61,7 +61,7 @@ for_window [class="st"] , move scratchpad
 # i3 KEYBINDINGS       #
 # -------------------- #
 # KILL WINDOW
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # CHANGE FOCUS (VIM KEYS)
 bindsym $mod+h focus left
@@ -108,10 +108,10 @@ bindsym $mod+d focus child
 # RELOAD, RESTART & EXIT I3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You wann head out?' -B 'yay' 'i3-msg exit'"
 
 # RESIZE WINDOWS
 bindsym $mod+r mode "resize"
+
 mode "resize" {
         # Originally set to jkl;.
         bindsym h resize shrink width 4 px or 4 ppt
@@ -213,14 +213,7 @@ bindsym $mod+Ctrl+$Alt+s exec --no-startup-id systemctl suspend
 bindsym $mod+Ctrl+$Alt+l exec --no-startup-id betterlockscreen -l dimblur
 bindsym $mod+Ctrl+$Alt+q exec --no-startup-id i3 exit 
 
-# TOGGLES
-bindsym $mod+F1 exec --no-startup-id ~/.local/bin/toggles/picom-toggle
-bindsym $mod+F2 exec --no-startup-id ~/.local/bin/toggles/transmission-toggle
-bindsym $mod+F3 exec --no-startup-id ~/.local/bin/toggles/polkit-toggle
-bindsym $mod+F4 exec --no-startup-id ~/.local/bin/toggles/ibus-toggle
-
-# MISCELLANEOUS
-bindsym XF86Mail exec --no-startup-id nitrogen --set-zoom-fill --random --save $HOME/Pictures/Wallpapers/ && ~/.local/bin/lockwall
-
-exec_always --no-startup-id "st -c st,st"
-bindsym $mod+BackSpace [class="st"] scratchpad show
+bar {
+    position top
+    status_command i3status
+}

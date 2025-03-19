@@ -4,7 +4,7 @@ configuration {
   display-emoji: " Emoji";
   display-clipboard: " Clipboard";
   drun-display-format: "{name}";
-  font: "ComicShannsMono Nerd Font 16";
+  font: "UbuntuMono Nerd Font 14";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -20,10 +20,10 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #222436;
-  fg: #c8d3f5;
-  ac: #86e1fc;
-  bd: #565f89;
+  bg: #282828;
+  fg: #dfbf8e;
+  ac: #89b482;
+  bd: #928374;
 
   background-color: @bg;
 
@@ -34,7 +34,7 @@ configuration {
 }
 
 window {
-  width: 35%;
+  width: 30%;
   border: 1px;
   border-color: @bd;
   // border-color: @ac;

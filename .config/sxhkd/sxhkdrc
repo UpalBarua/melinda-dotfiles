@@ -16,14 +16,11 @@ super + alt + x
 super + alt + i
   timeshift-launcher
 
-super + alt + p
-  $TERMINAL -e pulsemixer
-
 super + alt + c
   gpick
 
 super + alt + t
-  thunar
+  pcmanfm
 
 super + alt + o
   obsidian
