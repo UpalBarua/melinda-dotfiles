@@ -1,7 +1,13 @@
 #!/bin/sh
 
 # Get the volume status
-vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null)"
+
+# Check if wpctl command succeeded
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to get volume status!"
+    exit 1
+fi
 
 # If muted, print 🔇 and exit.
 if echo "$vol" | grep -q "MUTED"; then
@@ -11,6 +17,12 @@ fi
 
 # Extract the volume level
 vol="${vol#Volume: }"
+
+# Check if the volume level is valid
+if ! echo "$vol" | grep -qE '^[0-9.]+$'; then
+    echo "Error: Invalid volume level!"
+    exit 1
+fi
 
 # Function to split the volume level and remove the decimal point
 split() {
@@ -30,8 +42,7 @@ elif [ "$vol" -ge 30 ]; then
 elif [ "$vol" -ge 1 ]; then
     icon=""
 else
-    echo ""
-    exit 0
+    icon=""
 fi
 
 # Print the volume icon and percentage

@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -14,7 +15,7 @@ static const char *fonts[]          = {
     "JoyPixels:size=14:antialias=true:autohint=true",
  };
 static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#282828";
+static const char col_gray2[]       = "#928374";
 static const char col_gray3[]       = "#d4be98";
 static const char col_gray4[]       = "#282828";
 static const char col_cyan[]        = "#89b482";
@@ -98,6 +99,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
   { MODKEY|Mod1Mask,              XK_b,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY|Mod1Mask,              XK_v,      spawn,          SHCMD("vscodium") },
 	{ MODKEY|Mod1Mask,              XK_x,      spawn,          SHCMD("firefox") },
