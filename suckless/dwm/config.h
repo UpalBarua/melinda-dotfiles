@@ -15,7 +15,7 @@ static const char *fonts[]          = {
     "JoyPixels:size=14:antialias=true:autohint=true",
  };
 static const char col_gray1[]       = "#282828";
-static const char col_gray2[]       = "#928374";
+static const char col_gray2[]       = "#45403d";
 static const char col_gray3[]       = "#d4be98";
 static const char col_gray4[]       = "#282828";
 static const char col_cyan[]        = "#89b482";

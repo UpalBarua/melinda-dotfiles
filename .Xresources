@@ -1,5 +1,5 @@
 Xft.dpi: 120
-Xcursor.size: 32
+! Xcursor.size: 32
 
 Xft.autohint: 0
 Xft.antialias: 1
