@@ -1,0 +1,240 @@
+#  ▄▖         ▄▖    ▐▘▘    
+#  ▚ ▌▌▌▀▌▌▌  ▌ ▛▌▛▌▜▘▌▛▌  
+#  ▄▌▚▚▘█▌▙▌  ▙▖▙▌▌▌▐ ▌▙▌▗ 
+#         ▄▌           ▄▌  # Upal_Barua
+
+
+# VARIABLES
+
+# modifier key
+set $mod Mod4
+set $Alt Mod1
+
+# vim like direction keys
+set $left h
+set $down j
+set $up k
+set $right l
+
+# AUTOSTART
+exec_always --no-startup-id ~/.config/sway/scripts/autostart.sh
+
+# DISPLAY CONFIGURATION
+
+# monitors (swaymsg -t get_outputs)
+output eDP-1 resolution 1920x1080 scale 1.25 position 0,0
+output HDMI-A-2 resolution 1920x1080 scale 1.25 position 1536,0
+exec swaymsg focus output eDP-1
+
+# title bars
+default_border pixel 1
+
+# gaps
+gaps inner 5
+gaps outer 5
+
+# colors
+# class                 border background text indicator child_border
+client.focused          #d19a66 #d19a66 #282c34 #d19a66   #d19a66
+client.focused_inactive #282c34 #282c34 #abb2bf #282c34   #282c34
+client.unfocused        #282c34 #282c34 #abb2bf #282c34   #282c34
+client.urgent           #e06c75 #e06c75 #abb2bf #e06c75   #e06c75
+client.placeholder      #000000 #0c0c0c #abb2bf #000000   #0c0c0c
+client.background       #abb2bf
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+
+# kEY BINDINGS
+
+# basics:
+    # start a terminal
+    bindsym $mod+Return exec $TERMINAL
+
+    # kill focused window
+    bindsym $mod+Shift+q kill
+
+    # start application launcher
+    bindsym $mod+p exec rofi -show drun -show-icons
+
+    # drag floating windows
+    floating_modifier $mod normal
+
+    # reload the config file
+    bindsym $mod+Shift+c reload
+
+    # exit sway
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+# navigation:
+    # move focus around (vim keys)
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # move focus around (arrow keys)
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # move window around (vim keys)
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+
+    # move window around (arrow keys)
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+# workspaces:
+    # switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+
+    # move window to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+# layouts:
+    # horizontal & vertical splits
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # switch layouts
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # make window fullscreen
+    bindsym $mod+f fullscreen
+
+    # toggle tiling & floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # swap focus between the tiling area & the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # move focus to the parent window
+    bindsym $mod+a focus parent
+
+# scratchpads:
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+
+# resizing:
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+    # resize window (vim keys)
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # resize window (arrow keys)
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# rofi applets
+    # bindsym $mod+Shift+e exec --no-startup-id rofi -show emoji -modi emoji
+    bindsym $mod+Shift+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+    # bindsym $mod+w exec --no-startup-id rofi -show window
+    bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort
+
+# gui applications
+    bindsym $mod+$Alt+b exec --no-startup-id $BROWSER
+    bindsym $mod+$Alt+v exec --no-startup-id vscodium
+    bindsym $mod+$Alt+t exec --no-startup-id thunar
+    bindsym $mod+$Alt+x exec --no-startup-id firefox
+    bindsym $mod+$Alt+i exec --no-startup-id timeshift-launcher
+    bindsym $mod+$Alt+g exec --no-startup-id gpick
+    bindsym $mod+$Alt+o exec --no-startup-id obsidian
+    bindsym $mod+$Alt+p exec --no-startup-id pavucontrol
+
+# tui applications
+    bindsym $mod+$Alt+f exec --no-startup-id $TERMINAL -e lfub
+    bindsym $mod+$Alt+y exec --no-startup-id $TERMINAL -e btop
+    bindsym $mod+$Alt+z exec --no-startup-id $TERMINAL -e htop
+
+# VOLUME CONTROLS
+    bindsym $Alt+F1 exec --no-startup-id amixer set Capture toggle && notify-send "Microphone" "mic toggled"
+    bindsym $Alt+F2 exec --no-startup-id pamixer -d 5 && /home/upalb/.config/dunst/scripts/volume.sh
+    bindsym $Alt+F3 exec --no-startup-id pamixer -i 5 && /home/upalb/.config/dunst/scripts/volume.sh
+    bindsym $Alt+F4 exec --no-startup-id pamixer --toggle-mute
+
+# BRIGHTNESS CONTROLS
+    bindsym $Alt+F11 exec --no-startup-id brightnessctl set 5%- && /home/upalb/.config/dunst/scripts/brightness.sh screen
+    bindsym $Alt+F12 exec --no-startup-id brightnessctl set +5% && /home/upalb/.config/dunst/scripts/brightness.sh screen
+
+# screenshot
+    bindsym Print exec --no-startup-id scrot ~/Pictures/Screenshots/ss-%y%m%d-%H%M.png && notify-send "Screenshot" "screenshot saved"
+    bindsym Shift+Print exec --no-startup-id scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f' && notify-send "Screenshot" "screenshot copied"
+    bindsym $mod+Shift+Print exec --no-startup-id scrot -a $(slop -f '%x,%y,%w,%h') ~/Pictures/Screenshots/screenshot-%y-%m_%d__%H-%M.png && notify-send "Screenshot" "screenshot saved";
+
+# session
+    bindsym $mod+Ctrl+$Alt+p exec --no-startup-id systemctl poweroff
+    bindsym $mod+Ctrl+$Alt+r exec --no-startup-id systemctl reboot
+    bindsym $mod+Ctrl+$Alt+s exec --no-startup-id systemctl suspend
+    bindsym $mod+Ctrl+$Alt+l exec --no-startup-id betterlockscreen -l dimblur
+    bindsym $mod+Ctrl+$Alt+q exec --no-startup-id i3 exit 

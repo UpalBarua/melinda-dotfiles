@@ -1,12 +1,37 @@
 /* user and group to drop privileges to */
-static const char *user  = "upal";
+static const char *user = "upal";
 static const char *group = "upal";
 
+/*Font settings for the time text*/
+static const float textsize = 64.0;
+static const char *textfamily = "JetBrains Mono Nerd Font";
+static const double textcolorred = 255;
+static const double textcolorgreen = 255;
+static const double textcolorblue = 255;
+
 static const char *colorname[NUMCOLS] = {
-	[INIT] =   "#282828",     /* after initialization */
-	[INPUT] =  "#89b482",   /* during input */
-	[FAILED] = "#ea6962",   /* wrong password */
+    [INIT] = "#282828",   /* after initialization */
+    [INPUT] = "#89b482",  /* during input */
+    [FAILED] = "#ea6962", /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
+
+/* default message */
+static const char *message = "Suckless: Software that sucks less.";
+
+/* text color */
+static const char *text_color = "#ffffff";
+
+/* text size (must be a valid size) */
+static const char *font_name = "fixed";
+
+/*Enable blur*/
+#define BLUR
+/*Set blur radius*/
+static const int blurRadius = 6;
+/*Enable Pixelation*/
+// #define PIXELATION
+/*Set pixelation radius*/
+// static const int pixelSize = 10;

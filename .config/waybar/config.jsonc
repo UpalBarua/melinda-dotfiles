@@ -1,0 +1,58 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 20,
+  "modules-left": ["river/tags"],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "backlight",
+    "battery",
+    "clock",
+    "tray",
+  ],
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""],
+    },
+    "tooltip": false,
+  },
+  "network": {
+    "format-wifi": " {bandwidthDownBytes}",
+    "format-ethernet": " {bandwidthDownBytes}",
+    "format-disconnected": "  No Internet",
+    "interval": 5,
+    "tooltip": false,
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", ""],
+    "tooltip": false,
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": " {capacity}%",
+    "format-charging": " {capacity}%",
+    "tooltip": false,
+  },
+  "clock": {
+    "format": " {:%a %b %d  %I:%M %p}",
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+    "tooltip": false,
+  },
+  "river/tags": {
+    "num-tags": 6,
+  },
+}

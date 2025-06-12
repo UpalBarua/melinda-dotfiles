@@ -1,5 +1,8 @@
 #!/bin/sh
 
+PRIMARY=#7dcfff
+ERROR=#f7768e
+
 # Get the volume status
 vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null)"
 
@@ -11,7 +14,7 @@ fi
 
 # If muted, print 🔇 and exit.
 if echo "$vol" | grep -q "MUTED"; then
-    echo "^c#ea6962^ MUTED^d^"
+    echo "^c$ERROR^ MUTED^d^"
     exit 0
 fi
 
@@ -46,4 +49,4 @@ else
 fi
 
 # Print the volume icon and percentage
-echo "^c#d3869b^$icon^d^ $vol%"
+echo "^c$PRIMARY^$icon^d^ $vol%"

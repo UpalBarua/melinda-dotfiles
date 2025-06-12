@@ -1,11 +1,13 @@
 #!/bin/sh
 
+PRIMARY=#e0af68
+
 curr_brightness=$(cat /sys/class/backlight/*/brightness)
 max_brightness=$(cat /sys/class/backlight/*/max_brightness)
 brightness_per=$((100 * curr_brightness / max_brightness))
 
 if [ "$brightness_per" -lt 50 ]; then
-    echo "^c#e78a4e^^d^ ${brightness_per}%"
+    echo "^c$PRIMARY^^d^ ${brightness_per}%"
 else
-    echo "^c#e78a4e^^d^ ${brightness_per}%"
+    echo "^c$PRIMARY^^d^ ${brightness_per}%"
 fi

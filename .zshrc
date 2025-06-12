@@ -52,25 +52,22 @@ lazyload nvm -- 'source ~/.nvm/nvm.sh'
 
 # Aliases
 # Navigation
-alias l="eza -l --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes --no-time --no-filesize -T --level=1"
-alias ll="eza -la --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes --no-time --no-filesize -T --level=1"
+alias l="eza -l --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes --no-time --no-filesize"
+alias ll="eza -la --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes --no-time --no-filesize"
 alias q="exit"
 alias c="clear"
 alias k="killall -9"
 
 # Programs
-alias x="startx"
 alias v="nvim"
 alias sv="sudo nvim"
 alias vim="nvim"
-alias t="tmux"
 alias lg="lazygit"
 alias vc="vscodium"
 alias bt="btop"
 alias ht="htop"
 alias lf="lfub"
-alias nf="fastfetch"
-alias pf="pfetch"
+alias nf="neofetch"
 alias ytd="yt-dlp"
 alias yta="yt-dlp -f 140"
 alias ytv1="yt-dlp -f 140+137"
@@ -80,7 +77,7 @@ alias tr="transmission-remote"
 # pacman
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias clean='sudo pacman -Rns $(pacman -Qtdq)'
-alias mirrorup="sudo reflector --verbose --country 'Bangladesh,India,China,Hong Kong' -l 30 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirrorup="sudo reflector --verbose --country 'Bangladesh,India,China,Hong Kong,Vietnam,Thailand,Taiwan,Singapore' -l 25 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # confirm before overwriting
 alias cp="cp -iv"

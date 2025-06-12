@@ -23,6 +23,6 @@ set selection-clipboard clipboard
 #zoom settings
 set zoom-min 10
 
-set font "CodeNewRoman Nerd Font 12"
-include themes/catppuccin-mocha
+set font "UbunutMono Nerd Font 10"
+include themes/gruvbox-dark-soft
 set recolor

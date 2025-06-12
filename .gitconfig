@@ -1,5 +1,5 @@
 [safe]
-  directory = /home/upal/code/repos
+  directory = /mnt/general-disk/code/repos/*
 
 [user]
   name = UpalBarua

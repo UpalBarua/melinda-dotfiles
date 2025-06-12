@@ -9,5 +9,4 @@ else
     notify-send "No previous wallpaper found"
 fi
 
-feh --recursive --bg-fill --randomize $HOME/pictures/wallpapers/
-
+random-bg.sh

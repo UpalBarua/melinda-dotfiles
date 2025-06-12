@@ -1,0 +1,21 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", "icomoon\\-feather";
+  font-size: 11px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #202326;
+  color: #fcfcfc;
+}
+
+#tags button.focused {
+  background: #fcfcfc;
+  color: #202326;
+}
+
+#clock {
+  padding: 0 10px 0 0;
+}

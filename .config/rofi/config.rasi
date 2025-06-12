@@ -1,10 +1,10 @@
 configuration {
-  display-drun: "󰭎 Find";
-  display-window: "󱂬 Windows";
-  display-emoji: " Emoji";
-  display-clipboard: " Clipboard";
+  display-drun: "Applications";
+  display-window: "Windows";
+  display-emoji: "Emojis";
+  display-clipboard: "Clipboard";
   drun-display-format: "{name}";
-  font: "UbuntuMono Nerd Font 14";
+  font: "JetBrainsMono Nerd Font 12";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -12,21 +12,21 @@ configuration {
   kb-accept-entry: "Control+m,Return,KP_Enter";
   terminal: "alacritty";
   kb-remove-to-eol: "Control+Shift+e";
-  /*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
-  kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+  kb-mode-next: "Shift+Right,Control+Tab";
+  kb-mode-previous: "Shift+Left,Control+Shift+Tab";
   kb-remove-char-back: "BackSpace";
 }
 
 @theme "/dev/null"
 
 * {
-  bg: #282828;
-  fg: #dfbf8e;
-  ac: #89b482;
-  bd: #928374;
+  bg: #1a1b26;
+  bg-light: #232432;
+  fg: #c0caf5;
+  ac: #7aa2f7;
+  bd: #292e42;
 
   background-color: @bg;
-
   border: 0;
   margin: 0;
   padding: 0;
@@ -34,20 +34,17 @@ configuration {
 }
 
 window {
-  width: 30%;
-  border: 1px;
-  border-color: @bd;
-  // border-color: @ac;
-  // border-radius: 8px;
+  width: 25em;
 }
 
 element {
-  padding: 10;
+  padding: 0.5em 0.875em;
   text-color: @fg;
 }
 
 element selected {
   text-color: @ac;
+  background-color: @bg-light;
 }
 
 element-text {
@@ -57,26 +54,29 @@ element-text {
 }
 
 element-icon {
-  size: 22;
-  padding: 0 8;
+  size: 24;
+  background-color: inherit;
+  padding: 0 0.5em 0 0;
 }
 
 entry {
-  background-color: @bg;
-  text-color: @fg;
-  padding: 10px 0px;
-  margin: 15px 0px 0px 15px;
+  background-color: @ac;
+  text-color: @bg;
+  vertical-align: 0.5;
 }
 
 inputbar {
+  background-color: @ac;
+  padding: 0.875em;
   children: [prompt, entry];
 }
 
 listview {
-  padding: 8 12;
   background-color: @bg;
   columns: 1;
   lines: 8;
+  border: 0 2px 2px 2px;
+  border-color: @bd;
 }
 
 mainbox {
@@ -84,10 +84,9 @@ mainbox {
 }
 
 prompt {
-  background-color: @ac;
-  text-color: @bg;
-  padding: 10px 20px;
-  margin: 15px 0px 0px 15px;
+  vertical-align: 0.5;
+  background-color: inherit;
+  padding: 0 0.5em 0 0;
 }
 
 /* vim: ft=sass

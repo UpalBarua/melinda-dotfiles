@@ -1,5 +1,8 @@
 #!/bin/sh
 
+PRIMARY=#9ece6a
+SECONDARY=#e0af68
+
 battery_print() {
     PATH_AC="/sys/class/power_supply/AC"
     PATH_BATTERY_0="/sys/class/power_supply/BAT0"
@@ -30,9 +33,9 @@ battery_print() {
     battery_percent=$((battery_percent > 100 ? 100 : battery_percent))
 
     if [ "$ac" -eq 1 ]; then
-        echo "^c#a9b665^ ^d^$battery_percent%"
+        echo "^c$SECONDARY^ ^d^$battery_percent%"
     else
-        echo "^c#d8a657^ ^d^$battery_percent%"
+        echo "^c$PRIMARY^ ^d^$battery_percent%"
     fi
 }
 

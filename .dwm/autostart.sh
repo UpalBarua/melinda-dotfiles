@@ -1,14 +1,23 @@
 #!/usr/bin/env bash
 
-# kill existing process
-killall -9 picom dunst clipmenud xidlehook
-xsetroot -cursor_name left_ptr &
+# Check if a process is running and kill it
+kill_process() {
+    if pgrep -x "$1" > /dev/null; then
+        killall "$1"
+    fi
+}
+
+# Kill existing processes if running
+kill_process picom
+kill_process dunst
+kill_process greenclip
+kill_process xidlehook
 
 # Start programs
-~/.fehbg &
+dwmblocks &
 picom -b &
 dunst &
-clipmenud &
-dwmblocks &
+greenclip daemon &
+xsetroot -cursor_name left_ptr &
+random-bg.sh & # ~/.fehbg &
 ~/.local/bin/power-manager &
-

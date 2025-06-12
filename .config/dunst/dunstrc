@@ -3,7 +3,7 @@
     monitor = 0
     follow = none
     width = 350
-    height = auto
+    height = (0, 200)
     origin = top-center
     offset = (0, 60)
     scale = 1
@@ -16,10 +16,10 @@
     horizontal_padding = 20
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#928374"
+    frame_color = "#7aa2f7"
     separator_color = auto
     sort = yes
-    gaps = true
+    # gaps = true
     gap_size = 10
 
     # Progress bar
@@ -30,7 +30,7 @@
     progress_bar_max_width = 350
 
     # Text
-    font = UbuntuMono Nerd Font 11 
+    font = JetBrainsMono Nerd Font 8
     line_height = 10 
     markup = full
     format = "<b>%s</b>\n%b"
@@ -77,19 +77,17 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#282828"
-    foreground = "#d4be98"
+    background = "#1a1b26"
+    foreground = "#c0caf5"
     timeout = 10
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#d4be98"
+    background = "#1a1b26"
+    foreground = "#c0caf5"
     timeout = 10
 
 [urgency_critical]
-    background = "#282828"
-    foreground = "#ea6962"
+    background = "#1a1b26"
+    foreground = "#f7768e"
     timeout = 10
-
-
 

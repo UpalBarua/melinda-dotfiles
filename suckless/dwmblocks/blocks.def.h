@@ -1,7 +1,5 @@
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
-
-    // {"", "dm-bluetooth --status", 0, 12},
     {" ", "sb-brightness", 0, 11},
     {"", "sb-volume", 0, 10},
     {"", "sb-netspeed", 5, 13},

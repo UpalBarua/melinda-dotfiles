@@ -1,11 +1,14 @@
 #!/bin/bash
 
+PRIMARY=#bb9af7#
+ERROR=#f7768e
+
 # Get network interfaces
 INTERFACE=$(ip -o -4 route show to default | awk '{print $5}')
 
 # Check if connected to any network interface (Wi-Fi or Ethernet)
 if [[ -z "$INTERFACE" || ! -d "/sys/class/net/$INTERFACE" ]]; then
-    echo "^c#ea6962^  no internet^d^"
+    echo "^c$ERROR^  No Internet^d^"
     exit 1
 fi
 
@@ -36,5 +39,5 @@ else
 fi
 
 # Display download speed
-echo "^c#7daea3^ ^d^$RX_HR"
+echo "^c$PRIMARY^ ^d^$RX_HR"
 
