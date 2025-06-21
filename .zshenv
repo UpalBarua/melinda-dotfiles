@@ -12,7 +12,7 @@ export TERM='alacritty'
 export TERMINAL="alacritty" 
 export EDITOR="nvim"
 export VISUAL='nvim'
-export BROWSER="brave-nightly" 
+export BROWSER="brave" 
 
 # exa/eza configuration
 export EXA_ICON_SPACING="2"
