@@ -98,8 +98,8 @@ return {
     })
 
     -- FOR JAVA
-    require("java").setup()
-    require("lspconfig").jdtls.setup({})
+    -- require("java").setup()
+    -- require("lspconfig").jdtls.setup({})
 
     local function organize_imports()
       local params = {

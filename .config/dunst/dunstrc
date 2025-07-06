@@ -1,37 +1,38 @@
 [global]
     # General
     monitor = 0
-    follow = none
-    width = 350
-    height = (0, 200)
+    follow = mouse
+    width = (0, 400)
+    height = (0, 300)
     origin = top-center
-    offset = (0, 60)
-    scale = 1
+    offset = (0, 50)
+    scale = 0
+
     notification_limit = 0
     highlight = "#7aa2f7"
     indicate_hidden = yes
     transparency = 1
     separator_height = 1
-    padding = 20
+    padding = 15
     horizontal_padding = 20
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#7aa2f7"
+    frame_color = "#44475a"
     separator_color = auto
     sort = yes
     # gaps = true
     gap_size = 10
 
     # Progress bar
-    progress_bar = false
+    progress_bar = true
     progress_bar_height = 2
     progress_bar_frame_width = 0
     progress_bar_min_width = 150
-    progress_bar_max_width = 350
+    progress_bar_max_width = 300
 
     # Text
-    font = JetBrainsMono Nerd Font 8
-    line_height = 10 
+    font = UbuntuMono Nerd Font 9
+    line_height = 0 
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -47,7 +48,7 @@
     icon_position = off
     min_icon_size = 48
     max_icon_size = 48
-    icon_path = /usr/share/icons/Papirus-Dark/48x48/apps:/usr/share/icons/Papirus-Dark/48x48/categories:/usr/share/icons/Papirus-Dark/48x48/devices:/usr/share/icons/Papirus-Dark/48x48/emblems:/usr/share/icons/Papirus-Dark/48x48/mimetypes:/usr/share/icons/Papirus-Dark/48x48/places:/usr/share/icons/Papirus-Dark/48x48/status
+    icon_path = /usr/share/icons/dracula-icons
 
     # History
     sticky_history = yes
@@ -55,7 +56,7 @@
 
     # Misc/Advanced
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = brave-beta
+    browser = brave
     always_run_script = true
     title = Dunst
     class = Dunst
@@ -77,17 +78,18 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
+    background = "#282a36"
+    foreground = "#f8f8f2"
     timeout = 10
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
+    background = "#282a36"
+    foreground = "#f8f8f2"
     timeout = 10
-
+    
 [urgency_critical]
-    background = "#1a1b26"
-    foreground = "#f7768e"
+    background = "#ff5555"
+    foreground = "#f8f8f2"
+    frame_color = "#ff5555"
     timeout = 10
-
+    

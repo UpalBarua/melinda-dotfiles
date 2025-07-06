@@ -12,6 +12,7 @@ kill_process picom
 kill_process dunst
 kill_process greenclip
 kill_process xidlehook
+kill_process dwmblocks 
 
 # Start programs
 dwmblocks &

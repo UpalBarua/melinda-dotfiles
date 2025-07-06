@@ -1,0 +1,41 @@
+#!/bin/bash
+
+PRIMARY=#bd93f9
+ERROR=#ff5555
+
+# Get CPU usage from /proc/stat
+read -r cpu user nice system idle iowait irq softirq steal guest guest_nice < /proc/stat
+
+# Calculate total CPU time (sum of all states)
+total=$((user + nice + system + idle + iowait + irq + softirq + steal + guest + guest_nice))
+idle_total=$((idle + iowait))
+
+# Read previous values from temp file
+TEMP_FILE="/tmp/cpu_usage"
+if [[ -f "$TEMP_FILE" ]]; then
+    read -r prev_total prev_idle < "$TEMP_FILE"
+else
+    prev_total=0
+    prev_idle=0
+fi
+
+# Save current values for next run
+echo "$total $idle_total" > "$TEMP_FILE"
+
+# Calculate CPU usage percentage
+if [[ $prev_total -gt 0 ]]; then
+    total_diff=$((total - prev_total))
+    idle_diff=$((idle_total - prev_idle))
+    usage=$((100 * (total_diff - idle_diff) / total_diff))
+else
+    usage=0
+fi
+
+# Display with appropriate color and icon
+if [[ $usage -ge 80 ]]; then
+    echo "^c$ERROR^ ^d^${usage}%"
+elif [[ $usage -ge 50 ]]; then
+    echo "^c$PRIMARY^ ^d^${usage}%"
+else
+    echo "^c$PRIMARY^ ^d^${usage}%"
+fi

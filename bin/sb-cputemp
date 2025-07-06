@@ -1,0 +1,34 @@
+#!/bin/bash
+
+PRIMARY=#f1fa8c
+ERROR=#ff5555
+
+# Try to find CPU temperature file
+TEMP_FILE=""
+for path in "/sys/class/thermal/thermal_zone0/temp" \
+             "/sys/class/hwmon/hwmon*/temp1_input" \
+             "/sys/class/hwmon/hwmon*/device/temp1_input"; do
+    if [ -f $path ]; then
+        TEMP_FILE=$path
+        break
+    fi
+done
+
+# Check if we found a temperature file
+if [[ -z "$TEMP_FILE" ]]; then
+    echo "^c$ERROR^  No Sensor^d^"
+    exit 1
+fi
+
+# Read temperature (value is typically in millidegrees Celsius)
+TEMP_RAW=$(cat "$TEMP_FILE")
+TEMP_C=$((TEMP_RAW / 1000))
+
+# Display temperature with appropriate icon and color
+if [[ $TEMP_C -ge 80 ]]; then
+    echo "^c$ERROR^ $^d^{TEMP_C}°C"
+elif [[ $TEMP_C -ge 60 ]]; then
+    echo "^c$PRIMARY^ ^d^${TEMP_C}°C"
+else
+    echo "^c$PRIMARY^ ^d^${TEMP_C}°C"
+fi

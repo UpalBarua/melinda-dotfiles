@@ -4,7 +4,7 @@ configuration {
   display-emoji: "Emojis";
   display-clipboard: "Clipboard";
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font 12";
+  font: "UbuntuMono Nerd Font 12";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -20,11 +20,11 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1a1b26;
-  bg-light: #232432;
-  fg: #c0caf5;
-  ac: #7aa2f7;
-  bd: #292e42;
+  bg: #282a36;
+  bg-light: #44475a;
+  fg: #f8f8f2;
+  ac: #bd93f9;
+  bd: #44475a;
 
   background-color: @bg;
   border: 0;
@@ -43,7 +43,6 @@ element {
 }
 
 element selected {
-  text-color: @ac;
   background-color: @bg-light;
 }
 

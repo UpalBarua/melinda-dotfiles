@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PRIMARY=#bb9af7#
-ERROR=#f7768e
+PRIMARY=#ff79c6
+ERROR=#ff5555
 
 # Get network interfaces
 INTERFACE=$(ip -o -4 route show to default | awk '{print $5}')

@@ -5,20 +5,20 @@ static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const int horizpadbar = 0;       /* horizontal padding for statusbar */
-static const int vertpadbar = 14;       /* vertical padding for statusbar */
+static const int vertpadbar = 16;       /* vertical padding for statusbar */
 
 /* fonts */
 static const char *fonts[] = {
-    "JetBrainsMonoNerdFont:size=10",
+    "UbuntuMonoNerdFont:size=11",
     "icomoon\\-feather:size=11",
     "JoyPixels:size=14",
 };
 
 /* colorscheme (tokyonight) */
-static const char background[] = "#1a1b26";
-static const char foreground[] = "#e0def4";
-static const char primary[] = "#7aa2f7";
-static const char muted[] = "#292e42";
+static const char background[] = "#282a36";
+static const char foreground[] = "#f8f8f2";
+static const char primary[] = "#bd93f9";
+static const char muted[] = "#44475a";
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
@@ -27,7 +27,7 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {"1", "2", "3", "4", "5", "6"};
+static const char *tags[] = {"一", "に", "三", "四", "五", "六", "七", "八"};
 
 /* window rules */
 static const Rule rules[] = {
@@ -87,7 +87,7 @@ static const Key keys[] = {
     {MODKEY, XK_r, spawn, SHCMD("rofi -show run")},
     {MODKEY, XK_Return, spawn, SHCMD("$TERMINAL")},
     {MODKEY, XK_BackSpace, spawn,
-     SHCMD("tdrop -a -w 1000 -h 60% -x -0 -y -0 $TERMINAL "
+     SHCMD("tdrop -a -w 1400 -h 80% -x -0 -y -0 $TERMINAL "
            "--class=Scratchpad")},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},

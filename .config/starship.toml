@@ -2,7 +2,7 @@ format = """$directory$git_branch$git_status$character"""
 right_format = """$all"""
 
 add_newline = false
-palette = "tokyonight"
+palette = "dracula"
 
 [directory]
 style = 'bold fg:yellow'
@@ -27,18 +27,20 @@ format = '[on](white) [$symbol$branch ]($style)'
 style = 'fg:green'
 format = '([$all_status$ahead_behind]($style) )'
 
-[character] 
-success_symbol = '[](bold #7aa2f7)' 
+[character]
+error_symbol = "[λ](bold red)"
+success_symbol = "[λ](bold green)"
 
-[palettes.tokyonight]
-color_fg0 = '#c0caf5'
-color_bg0 = '#1a1b26'
-color_bg1 = '#414868'
-color_black = '#15161e'
-color_red = '#f7768e'
-color_green = '#9ece6a'
-color_yellow = '#e0af68'
-color_blue = '#7aa2f7'
-color_magenta = '#bb9af7'
-color_cyan = '#7dcfff'
-color_white = '#a9b1d6'
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+

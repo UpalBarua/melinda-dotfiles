@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PRIMARY=#7aa2f7
+PRIMARY=#50fa7b
 
 date_time=$(date '+%a %b %d / %I:%M %p')
 echo "^c$PRIMARY^ ^d^"${date_time}" "

@@ -1,5 +1,6 @@
 [safe]
   directory = /mnt/general-disk/code/repos/*
+	directory = /mnt/general-disk/code/yugenx/yugenx.org
 
 [user]
   name = UpalBarua

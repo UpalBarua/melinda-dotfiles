@@ -34,8 +34,4 @@ export CM_HISTLENGTH=20
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # fzf colors configuration
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
-	--color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
-	--color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
-	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
-	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
