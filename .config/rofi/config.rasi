@@ -4,7 +4,7 @@ configuration {
   display-emoji: "Emojis";
   display-clipboard: "Clipboard";
   drun-display-format: "{name}";
-  font: "UbuntuMono Nerd Font 12";
+  font: "GeistMono Nerd Font 10";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -20,11 +20,11 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #282a36;
-  bg-light: #44475a;
-  fg: #f8f8f2;
-  ac: #bd93f9;
-  bd: #44475a;
+  bg: #282828;
+  bg-light: #3C3836;
+  fg: #ebdbb2;
+  ac: #d79921;
+  bd: #3C3836;
 
   background-color: @bg;
   border: 0;

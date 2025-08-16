@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local custom_theme = require("lualine.themes.dracula")
+    local custom_theme = require("lualine.themes.gruvbox")
     local lualine_modes = { "insert", "normal", "visual", "command", "replace", "inactive", "terminal" }
     for _, field in ipairs(lualine_modes) do
       if custom_theme[field] and custom_theme[field].c then

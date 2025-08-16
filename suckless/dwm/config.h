@@ -9,16 +9,16 @@ static const int vertpadbar = 16;       /* vertical padding for statusbar */
 
 /* fonts */
 static const char *fonts[] = {
-    "UbuntuMonoNerdFont:size=11",
-    "icomoon\\-feather:size=11",
+    "GeistMonoNerdFontPropo:size=10",
+    "icomoon\\-feather:size=10",
     "JoyPixels:size=14",
 };
 
 /* colorscheme (tokyonight) */
-static const char background[] = "#282a36";
-static const char foreground[] = "#f8f8f2";
-static const char primary[] = "#bd93f9";
-static const char muted[] = "#44475a";
+static const char background[] = "#282828";
+static const char foreground[] = "#ebdbb2";
+static const char primary[] = "#d79921";
+static const char muted[] = "#3C3836";
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
@@ -131,6 +131,7 @@ static const Key keys[] = {
      SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard "
            "-run-command '{cmd}'")},
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("rofi-quick-toggles.sh")},
+    {MODKEY | ShiftMask, XK_r, spawn, SHCMD("rofi-beats.sh")},
 
     // System controls
     {Mod1Mask, XK_F1, spawn, SHCMD("volume.sh -m")},

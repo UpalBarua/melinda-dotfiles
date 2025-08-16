@@ -1,18 +1,18 @@
 /* user and group to drop privileges to */
-static const char *user  = "upal";
+static const char *user = "upal";
 static const char *group = "upal";
 
 /*Font settings for the time text*/
-static const float textsize=64.0;
-static const char* textfamily="serif";
-static const double textcolorred=255;
-static const double textcolorgreen=255;
-static const double textcolorblue=255;
+static const float textsize = 64.0;
+static const char *textfamily = "GeistMono Nerd Font";
+static const double textcolorred = 235;
+static const double textcolorgreen = 219;
+static const double textcolorblue = 178;
 
 static const char *colorname[NUMCOLS] = {
-	[INIT] =   "black",     /* after initialization */
-	[INPUT] =  "#005577",   /* during input */
-	[FAILED] = "#CC3333",   /* wrong password */
+    [INIT] = "#282828",   /* after initialization */
+    [INPUT] = "#3C3836",  /* during input */
+    [FAILED] = "#cc241d", /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */

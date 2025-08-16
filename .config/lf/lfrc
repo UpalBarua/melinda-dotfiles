@@ -27,9 +27,9 @@ cmd mkfile %{{
   touch $ans
 }}
 
-# trash 
-cmd trash %trash-put $fx
-cmd trash-clear & rm -rf ~/.trash/*
+# trash-cli
+cmd trash %trash-put -- $fx
+cmd trash-clear %trash-empty
 
 # delete
 cmd delete %{{
@@ -55,6 +55,7 @@ cmd on-cd &{{
     zoxide add "$PWD"
 }}
 
+# starship
 cmd on-cd &{{
     fmt="$(STARSHIP_SHELL= starship prompt | sed 's/\\/\\\\/g;s/"/\\"/g')"
     lf -remote "send $id set promptfmt \"$fmt\""
@@ -62,7 +63,7 @@ cmd on-cd &{{
 
 # eza integration
 cmd on-select &{{
-  lf -remote "send $id set statfmt \"$(eza -ld --no-user --color=always "$f")\""
+   lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
 }}
 
 # find files
@@ -93,8 +94,8 @@ cmd fzf_search ${{
 
 # extract archive
 cmd extract ${{
-  set -f
-  atool -x $f
+   set -f
+   ouch decompress $fx
 }}
 
 # compress files 
@@ -179,8 +180,8 @@ map gh cd ~/
 map gC cd ~/.config
 map gT cd ~/.local/share/Trash
 map ge. cd /mnt/disk/
-map gd cd ~/Downloads
+map gd cd ~/downloads
 map gc cd ~/code
 
-map gpw cd "~/Pictures/wallpapers"
-map gps cd ~/Pictures/screenshots
+map gpw cd "~/pictures/wallpapers"
+map gps cd ~/pictures/screenshots

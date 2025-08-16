@@ -1,7 +1,9 @@
 #!/bin/bash
 
-PRIMARY=#bd93f9
-ERROR=#ff5555
+# Color definitions
+PRIMARY_CPU=#ebdbb2
+PRIMARY_TEMP=#ebdbb2
+ERROR=#ebdbb2
 
 # Get CPU usage from /proc/stat
 read -r cpu user nice system idle iowait irq softirq steal guest guest_nice < /proc/stat
@@ -11,16 +13,16 @@ total=$((user + nice + system + idle + iowait + irq + softirq + steal + guest + 
 idle_total=$((idle + iowait))
 
 # Read previous values from temp file
-TEMP_FILE="/tmp/cpu_usage"
-if [[ -f "$TEMP_FILE" ]]; then
-    read -r prev_total prev_idle < "$TEMP_FILE"
+CPU_USAGE_TEMP_FILE="/tmp/cpu_usage"
+if [[ -f "$CPU_USAGE_TEMP_FILE" ]]; then
+    read -r prev_total prev_idle < "$CPU_USAGE_TEMP_FILE"
 else
     prev_total=0
     prev_idle=0
 fi
 
 # Save current values for next run
-echo "$total $idle_total" > "$TEMP_FILE"
+echo "$total $idle_total" > "$CPU_USAGE_TEMP_FILE"
 
 # Calculate CPU usage percentage
 if [[ $prev_total -gt 0 ]]; then
@@ -31,11 +33,39 @@ else
     usage=0
 fi
 
-# Display with appropriate color and icon
+# Determine CPU usage color
 if [[ $usage -ge 80 ]]; then
-    echo "^c$ERROR^ ^d^${usage}%"
-elif [[ $usage -ge 50 ]]; then
-    echo "^c$PRIMARY^ ^d^${usage}%"
+    CPU_COLOR=$ERROR
 else
-    echo "^c$PRIMARY^ ^d^${usage}%"
+    CPU_COLOR=$PRIMARY_CPU
 fi
+
+# Try to find CPU temperature file
+TEMP_PATH=""
+for path in "/sys/class/thermal/thermal_zone0/temp" \
+             "/sys/class/hwmon/hwmon*/temp1_input" \
+             "/sys/class/hwmon/hwmon*/device/temp1_input"; do
+    if [ -f $path ]; then
+        TEMP_PATH=$path
+        break
+    fi
+done
+
+# Get temperature if sensor exists
+if [[ -n "$TEMP_PATH" ]]; then
+    TEMP_RAW=$(cat "$TEMP_PATH")
+    TEMP_C=$((TEMP_RAW / 1000))
+    
+    # Determine temperature color
+    if [[ $TEMP_C -ge 80 ]]; then
+        TEMP_COLOR=$ERROR
+    else
+        TEMP_COLOR=$PRIMARY_TEMP
+    fi
+    TEMP_STR="^c$TEMP_COLOR^${TEMP_C}°C^d^"
+else
+    TEMP_STR="^c$ERROR^No Sensor^d^"
+fi
+
+# Output the combined string
+echo "^c$CPU_COLOR^ ^d^${usage}% / ${TEMP_STR}"

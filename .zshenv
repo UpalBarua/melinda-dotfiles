@@ -34,4 +34,35 @@ export CM_HISTLENGTH=20
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # fzf colors configuration
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+# Scheme name: Gruvbox dark
+# Scheme system: base16
+# Scheme author: Tinted Theming (https://github.com/tinted-theming), morhetz (https://github.com/morhetz/gruvbox)
+# Template author: Tinted Theming (https://github.com/tinted-theming)
+
+_gen_fzf_default_opts() {
+
+local color00='#282828'
+local color01='#3c3836'
+local color02='#504945'
+local color03='#665c54'
+local color04='#928374'
+local color05='#ebdbb2'
+local color06='#fbf1c7'
+local color07='#f9f5d7'
+local color08='#cc241d'
+local color09='#d65d0e'
+local color0A='#d79921'
+local color0B='#98971a'
+local color0C='#689d6a'
+local color0D='#458588'
+local color0E='#b16286'
+local color0F='#9d0006'
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D"\
+" --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C"\
+" --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
+
+}
+
+_gen_fzf_default_opts

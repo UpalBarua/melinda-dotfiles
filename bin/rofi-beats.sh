@@ -10,8 +10,7 @@ RADIO_STATIONS=(
   "2. Chillhop ☕️🎶;http://stream.zeno.fm/fyn8eh3h5f8uv"
   "3. Box Lofi ☕️🎶;http://stream.zeno.fm/f3wvbbqmdg8uv"
   "4. The Bootleg Boy ☕️🎶;http://stream.zeno.fm/0r0xa792kwzuv"
-  "5. Radio Spinner ☕️🎶;https://live.radiospinner.com/lofi-hip-hop-64"
-  "6. SmoothChill ☕️🎶;https://media-ssl.musicradio.com/SmoothChill"
+  "5. White Noise;https://streaming.positivity.radio/pr/whitenoise/icecast.audio"
 )
 
 # Send notification with station name

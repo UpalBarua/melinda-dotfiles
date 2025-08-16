@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PRIMARY=#ffb86c
-ERROR=#ff5555
+PRIMARY=#ebdbb2
+ERROR=#ebdbb2
 
 # Read memory values (all in kB)
 read -r _ mem_total _ <<< "$(grep MemTotal /proc/meminfo)"

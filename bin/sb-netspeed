@@ -1,14 +1,14 @@
 #!/bin/bash
 
-PRIMARY=#ff79c6
-ERROR=#ff5555
+PRIMARY=#ebdbb2
+ERROR=#ebdbb2
 
 # Get network interfaces
 INTERFACE=$(ip -o -4 route show to default | awk '{print $5}')
 
 # Check if connected to any network interface (Wi-Fi or Ethernet)
 if [[ -z "$INTERFACE" || ! -d "/sys/class/net/$INTERFACE" ]]; then
-    echo "^c$ERROR^  No Internet^d^"
+    echo "^c$ERROR^ No Internet^d^"
     exit 1
 fi
 
