@@ -14,11 +14,14 @@ kill_process greenclip
 kill_process xidlehook
 kill_process dwmblocks 
 
+# Display
+~/.local/bin/monitors-setup.sh &
+~/.fehbg &
+xsetroot -cursor_name left_ptr &
+
 # Start programs
 dwmblocks &
 picom -b &
 dunst &
 greenclip daemon &
-xsetroot -cursor_name left_ptr &
-random-bg.sh & # ~/.fehbg &
 ~/.local/bin/power-manager &
