@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PRIMARY=#ebdbb2
+PRIMARY=#cdd6f4
 
 curr_brightness=$(cat /sys/class/backlight/*/brightness)
 max_brightness=$(cat /sys/class/backlight/*/max_brightness)

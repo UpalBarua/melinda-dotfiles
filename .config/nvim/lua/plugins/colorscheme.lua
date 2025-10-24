@@ -1,8 +1,11 @@
 return {
-	"ellisonleao/gruvbox.nvim",
+	"catppuccin/nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("gruvbox")
+		require("catppuccin").setup({
+			auto_integrations = true,
+		})
+		vim.cmd("colorscheme catppuccin-mocha")
 	end,
 }

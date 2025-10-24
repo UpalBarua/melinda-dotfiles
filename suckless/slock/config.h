@@ -10,9 +10,9 @@ static const double textcolorgreen = 219;
 static const double textcolorblue = 178;
 
 static const char *colorname[NUMCOLS] = {
-    [INIT] = "#282828",   /* after initialization */
-    [INPUT] = "#3C3836",  /* during input */
-    [FAILED] = "#cc241d", /* wrong password */
+    [INIT] = "#1e1e2e",   /* after initialization */
+    [INPUT] = "#313244",  /* during input */
+    [FAILED] = "#c5c9c5", /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */

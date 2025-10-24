@@ -9,7 +9,7 @@
     scale = 0
 
     notification_limit = 0
-    highlight = "#7aa2f7"
+    highlight = "#313244"
     indicate_hidden = yes
     transparency = 1
     separator_height = 1
@@ -17,10 +17,10 @@
     horizontal_padding = 20
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#3C3836"
+    frame_color = "#313244"
     separator_color = auto
     sort = yes
-    # gaps = true
+    gaps = true
     gap_size = 10
 
     # Progress bar
@@ -31,7 +31,7 @@
     progress_bar_max_width = 300
 
     # Text
-    font = GeistMono Nerd Font Propo 8
+    font = JetBrainsMono Nerd Font Propo 8
     line_height = 0 
     markup = full
     format = "<b>%s</b>\n%b"
@@ -78,18 +78,16 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#282828"
-    foreground = "#ebdbb2"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#ebdbb2"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
     
 [urgency_critical]
-    background = "#cc241d"
-    foreground = "#ebdbb2"
-    frame_color = "#cc241d"
+    background = "#1e1e2e"
+    foreground = "#f38ba8"
     timeout = 10
-    

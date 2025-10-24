@@ -14,14 +14,14 @@ kill_process greenclip
 kill_process xidlehook
 kill_process dwmblocks 
 
-# display configuration
+# monitor configuration
 ~/.local/bin/monitors-setup.sh 
-xsetroot -cursor_name left_ptr &
-~/.fehbg &
 
 # start services
+~/.fehbg &
 dwmblocks &
 picom -b &
 dunst &
 greenclip daemon &
+xsetroot -cursor_name left_ptr &
 ~/.local/bin/power-manager &

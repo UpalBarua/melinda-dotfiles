@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PRIMARY=#ebdbb2
-SECONDARY=#ebdbb2
+PRIMARY=#cdd6f4
+SECONDARY=#cdd6f4
 
 battery_print() {
     PATH_AC="/sys/class/power_supply/AC"

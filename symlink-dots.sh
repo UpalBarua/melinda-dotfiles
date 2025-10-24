@@ -1,7 +1,6 @@
 #!/bin/sh
 
 ln -sf ~/dotfiles/.gitconfig ~/
-ln -sf ~/dotfiles/.zsh ~/
 ln -sf ~/dotfiles/.zshenv ~/
 ln -sf ~/dotfiles/.zshrc ~/
 ln -sf ~/dotfiles/.xinitrc ~/

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Color definitions
-PRIMARY_CPU=#ebdbb2
-PRIMARY_TEMP=#ebdbb2
-ERROR=#ebdbb2
+PRIMARY_CPU=#cdd6f4
+PRIMARY_TEMP=#cdd6f4
+ERROR=#cdd6f4
 
 # Get CPU usage from /proc/stat
 read -r cpu user nice system idle iowait irq softirq steal guest guest_nice < /proc/stat

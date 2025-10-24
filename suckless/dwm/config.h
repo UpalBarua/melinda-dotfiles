@@ -9,16 +9,16 @@ static const int vertpadbar = 16;       /* vertical padding for statusbar */
 
 /* fonts */
 static const char *fonts[] = {
-    "GeistMonoNerdFontPropo:size=10",
+    "JetBrainsMonoNerdFontPropo:size=10",
     "icomoon\\-feather:size=10",
     "JoyPixels:size=14",
 };
 
 /* colorscheme (tokyonight) */
-static const char background[] = "#282828";
-static const char foreground[] = "#ebdbb2";
-static const char primary[] = "#d79921";
-static const char muted[] = "#3C3836";
+static const char background[] = "#1e1e2e";
+static const char foreground[] = "#cdd6f4";
+static const char primary[] = "#89b4fa";
+static const char muted[] = "#313244";
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */

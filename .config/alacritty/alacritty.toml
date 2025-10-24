@@ -4,7 +4,7 @@ TERM = "xterm-256color"
 [general]
 live_config_reload = true
 working_directory = "None"
-import = ["/home/upal/.config/alacritty/themes/gruvbox_dark.toml"]
+import = ["/home/upal/.config/alacritty/themes/catppuccin_mocha.toml"]
 
 [window]
 dynamic_padding = false
@@ -58,19 +58,19 @@ render_timer = false
 size = 10.0
 
 [font.normal]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [font.italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.bold]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
 [font.glyph_offset]

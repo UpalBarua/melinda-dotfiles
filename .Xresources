@@ -11,67 +11,40 @@ Xft.lcdfilter: lcddefault
 Nsxiv.*.background: #1d2021
 Nsxiv.*.foreground: #d4be98
 
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 6 Sep 2014
-! -----------------------------------------------------------------------------
+! Catppuccin
 
-! hard contrast: *background: #1d2021
-#define _background #282828
+*background: #1e1e2e
+*foreground: #cdd6f4
+*cursorColor: #f5e0dc
 
-! soft contrast: *background: #32302f
-#define _foreground #ebdbb2
+! black
+*color0: #45475a
+*color8: #585b70
 
-! Black + DarkGrey
-#define _color0 #282828
-#define _color8 #928374
+! red
+*color1: #f38ba8
+*color9: #f38ba8
 
-! DarkRed + Red
-#define _color1 #cc241d
-#define _color9 #fb4934
+! green
+*color2: #a6e3a1
+*color10: #a6e3a1
 
-! DarkGreen + Green
-#define _color2 #98971a
-#define _color10 #b8bb26
+! yellow
+*color3: #f9e2af
+*color11: #f9e2af
 
-! DarkYellow + Yellow
-#define _color3 #d79921
-#define _color11 #fabd2f
+! blue
+*color4: #89b4fa
+*color12: #89b4fa
 
-! DarkBlue + Blue
-#define _color4 #458588
-#define _color12 #83a598
+! magenta
+*color5: #f5c2e7
+*color13: #f5c2e7
 
-! DarkMagenta + Magenta
-#define _color5 #b16286
-#define _color13 #d3869b
+! cyan
+*color6: #94e2d5
+*color14: #94e2d5
 
-! DarkCyan + Cyan
-#define _color6 #689d6a
-#define _color14 #8ec07c
-
-! LightGrey + White
-#define _color7 #a89984
-#define _color15 #ebdbb2
-
-*background: _background
-*foreground: _foreground
-*color0: _color0
-*color8: _color8
-*color1: _color1
-*color9: _color9
-*color2: _color2
-*color10: _color10
-*color3: _color3
-*color11: _color11
-*color4: _color4
-*color12: _color12
-*color5: _color5
-*color13: _color13
-*color6: _color6
-*color14: _color14
-*color7: _color7
-*color15: _color15
+! white
+*color7: #bac2de
+*color15: #a6adc8
