@@ -1,5 +1,5 @@
-/* APPEARANCE */
-static const unsigned int borderpx = 2; /* border pixel of windows */
+/* Appearance */
+static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int gappx = 5;    /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
@@ -9,25 +9,27 @@ static const int vertpadbar = 16;       /* vertical padding for statusbar */
 
 /* fonts */
 static const char *fonts[] = {
-    "JetBrainsMonoNerdFontPropo:size=10",
+    "JetBrainsMonoNerdFontPropo:size=10.5",
     "icomoon\\-feather:size=10",
     "JoyPixels:size=14",
 };
 
 /* colorscheme (tokyonight) */
-static const char background[] = "#1e1e2e";
-static const char foreground[] = "#cdd6f4";
-static const char primary[] = "#89b4fa";
-static const char muted[] = "#313244";
+static const char background[] = "#1a1b26";
+static const char foreground[] = "#c0caf5";
+static const char primary[] = "#7aa2f7";
+static const char muted[] = "#292E42";
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {foreground, background, muted},
-    [SchemeSel] = {background, primary, primary},
+    [SchemeSel] = {primary, muted, foreground},
 };
 
 /* tagging */
-static const char *tags[] = {"一", "に", "三", "四", "五", "六", "七", "八"};
+static const char *tags[] = {
+    "1", "2", "3", "4",
+    "5", "6", "7", "8"}; // {"一", "に", "三", "四", "五", "六", "七", "八"};
 
 /* window rules */
 static const Rule rules[] = {
@@ -36,13 +38,16 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"Brave-browser", NULL, NULL, 2, 0, -1},
+    {"Brave-browser", "brave-browser", NULL, 1 << 1, 0, -1},
     {"VSCodium", NULL, NULL, 1, 0, -1},
-    {"obsidian", NULL, NULL, 4, 0, -1},
+    {"obsidian", NULL, NULL, 1 << 3, 0, -1},
     {"Galculator", NULL, NULL, 0, 1, -1},
     {"Gpick", NULL, NULL, 0, 1, -1},
     {"Tk", NULL, NULL, 0, 1, -1},
     {"Scratchpad", NULL, NULL, 0, 1, -1},
+    {"Btop", NULL, NULL, 0, 1, -1},
+    {"Brave-browser", "web.whatsapp.com", NULL, 1 << 7, 0, -1},
+    {"Brave-browser", "gemini.google.com", NULL, 1 << 4, 0, -1},
 };
 
 /* layout(s) */
@@ -75,19 +80,18 @@ static const Layout layouts[] = {
   }
 
 /* commands */
-static char dmenumon[2] = "0";
-static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
-static const char *termcmd[] = {"alacritty", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 
 #include "movestack.c"
 static const Key keys[] = {
     /* modifier                     key        function        argument */
+
     // DWM controls
-    {MODKEY, XK_p, spawn, SHCMD("rofi -show drun -show-icons")},
+    {MODKEY, XK_p, spawn, SHCMD("rofi -show drun")},
     {MODKEY, XK_r, spawn, SHCMD("rofi -show run")},
     {MODKEY, XK_Return, spawn, SHCMD("$TERMINAL")},
-    {MODKEY, XK_BackSpace, spawn,
-     SHCMD("tdrop -a -w 1400 -h 80% -x -0 -y -0 $TERMINAL "
+    {MODKEY, XK_grave, spawn,
+     SHCMD("tdrop -a -w 1600 -h 90% -x -0 -y -0 $TERMINAL "
            "--class=Scratchpad")},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
@@ -112,18 +116,25 @@ static const Key keys[] = {
     {MODKEY, XK_period, focusmon, {.i = +1}},
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
     {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
-    {MODKEY, XK_minus, setgaps, {.i = -1}},
-    {MODKEY, XK_equal, setgaps, {.i = +1}},
-    {MODKEY | ShiftMask, XK_equal, setgaps, {.i = 0}},
 
-    // GUI applications
-    {MODKEY | Mod1Mask, XK_b, spawn, SHCMD("$BROWSER")},
-    {MODKEY | Mod1Mask, XK_v, spawn, SHCMD("vscodium")},
-    {MODKEY | Mod1Mask, XK_t, spawn, SHCMD("thunar")},
-    {MODKEY | Mod1Mask, XK_o, spawn, SHCMD("obsidian")},
-    {MODKEY | Mod1Mask, XK_f, spawn, SHCMD("$TERMINAL -e lfub")},
+    // applications
+    {MODKEY | ControlMask, XK_b, spawn, SHCMD("$BROWSER")},
+    {MODKEY | ControlMask, XK_v, spawn, SHCMD("vscodium")},
+    {MODKEY | ControlMask, XK_f, spawn, SHCMD("$TERMINAL -e lfub")},
+    {MODKEY | ControlMask | ShiftMask, XK_f, spawn, SHCMD("thunar")},
+    {MODKEY | ControlMask, XK_o, spawn, SHCMD("obsidian")},
+    {MODKEY | ControlMask, XK_a, spawn, SHCMD("anki")},
+    {MODKEY | ControlMask, XK_t, spawn,
+     SHCMD("$TERMINAL --class=Btop -e btop")},
+    {MODKEY | ControlMask, XK_v, spawn, SHCMD("pavucontrol")},
+    {MODKEY | ControlMask, XK_w, spawn,
+     SHCMD("$BROWSER --app=https://web.whatsapp.com/")},
+    {MODKEY | ControlMask, XK_g, spawn,
+     SHCMD("$BROWSER --app=https://gemini.google.com/")},
+    {MODKEY | ControlMask, XK_c, spawn,
+     SHCMD("$BROWSER --app=https://calendar.google.com/calendar/u/0/r")},
 
-    // Rofi
+    // rofi
     {MODKEY, XK_e, spawn, SHCMD("rofi -show emoji -modi emoji")},
     {MODKEY, XK_c, spawn,
      SHCMD("rofi -show calc -modi calc -no-show-match -no-sort")},
@@ -131,24 +142,26 @@ static const Key keys[] = {
      SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard "
            "-run-command '{cmd}'")},
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("rofi-quick-toggles.sh")},
-    {MODKEY | ShiftMask, XK_r, spawn, SHCMD("rofi-beats.sh")},
 
-    // System controls
-    {Mod1Mask, XK_F1, spawn, SHCMD("volume.sh -m")},
-    {Mod1Mask, XK_F2, spawn, SHCMD("volume.sh -d")},
-    {Mod1Mask, XK_F3, spawn, SHCMD("volume.sh -i")},
-    {Mod1Mask, XK_F11, spawn, SHCMD("brightness.sh -d")},
-    {Mod1Mask, XK_F12, spawn, SHCMD("brightness.sh -i")},
+    // system controls
+    {MODKEY, XK_bracketright, spawn, SHCMD("volume.sh -i")},
+    {MODKEY, XK_bracketleft, spawn, SHCMD("volume.sh -d")},
+    {MODKEY, XK_backslash, spawn, SHCMD("volume.sh -m")},
+    {MODKEY | ShiftMask, XK_bracketright, spawn, SHCMD("brightness.sh -i")},
+    {MODKEY | ShiftMask, XK_bracketleft, spawn, SHCMD("brightness.sh -d")},
+
     {MODKEY, XK_Escape, spawn, SHCMD("rofi-session.sh")},
 
-    // Utilities
-    {Mod1Mask, XK_F5, spawn, SHCMD("random-bg.sh")},
+    // utilities
+    {MODKEY | ControlMask, XK_space, spawn, SHCMD("random-bg.sh")},
     {0, XK_Print, spawn,
      SHCMD("flameshot & flameshot screen -p ~/pictures/screenshots/ "
            "--clipboard")},
     {ShiftMask, XK_Print, spawn,
      SHCMD("flameshot & flameshot gui -p ~/pictures/screenshots/ "
            "--clipboard")},
+    {MODKEY, XK_Print, spawn, SHCMD("gpick -p")},
+    {MODKEY, XK_comma, spawn, SHCMD("dunstctl close-all")},
 
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)

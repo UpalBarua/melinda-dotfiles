@@ -52,8 +52,8 @@ lazyload nvm -- 'source ~/.nvm/nvm.sh'
 
 # Aliases
 # Navigation
-alias l="eza -l --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes --no-time --no-filesize"
-alias ll="eza -la --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes --no-time --no-filesize"
+alias l="eza -l --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes"
+alias ll="eza -la --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes"
 alias q="exit"
 alias c="clear"
 alias k="killall -9"
@@ -88,3 +88,20 @@ alias rm='trash-put'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+function sesh-sessions() {
+  {
+    exec </dev/tty
+    exec <&1
+    local session
+    session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+    zle reset-prompt > /dev/null 2>&1 || true
+    [[ -z "$session" ]] && return
+    sesh connect $session
+  }
+}
+
+zle     -N             sesh-sessions
+bindkey -M emacs '\es' sesh-sessions
+bindkey -M vicmd '\es' sesh-sessions
+bindkey -M viins '\es' sesh-sessions

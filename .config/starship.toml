@@ -2,7 +2,7 @@ format = """$directory$git_branch$git_status$character"""
 right_format = """$all"""
 
 add_newline = false
-palette = "catppuccin_mocha"
+palette = "tokyonight"
 
 [directory]
 style = 'bold fg:blue'
@@ -28,33 +28,25 @@ style = 'fg:green'
 format = '([$all_status$ahead_behind]($style) )'
 
 [character]
-error_symbol = "[ ](bold red)"
-success_symbol = "[ ](bold green)"
+error_symbol = "[ ](bold red)"
+success_symbol = "[](bold blue)"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.tokyonight]
+mono0 = '#c0caf5'         # Brightest Foreground
+mono1 = '#a9b1d6'         # Main Foreground
+mono2 = '#9aa5ce'         # Dim Foreground
+mono3 = '#565f89'         # Comments/Non-active
+mono4 = '#414868'         # Darker Gray/Selection
+color_red0 = '#f7768e'    # Light Red
+color_red1 = '#db4b4b'    # Dark Red
+color_green = '#9ece6a'   # Green
+color_yellow = '#e0af68'  # Yellow
+color_blue = '#7aa2f7'    # Blue
+color_purple = '#bb9af7'  # Purple
+color_cyan = '#7dcfff'    # Cyan
+color_orange = '#ff9e64'  # Orange
+syntax_fg = '#c0caf5'     # Default Text
+syntax_bg = '#1a1b26'     # Main Background
+color_bg2 = '#24283b'     # Secondary Background
+syntax_gutter = '#3b4261' # Gutter/Sidebar
+syntax_accent = '#7aa2f7' # Primary Accent (Blue)

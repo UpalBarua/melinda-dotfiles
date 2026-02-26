@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PRIMARY=#cdd6f4
-
-date_time=$(date '+%a %b %d / %I:%M %p')
-echo "^c$PRIMARY^ ^d^"${date_time}" "
+# Output matches your exact style:  Mon Jan 01 / 12:00 PM
+# We use printf for a clean, consistent output.
+# %a: Short weekday, %b: Short month, %d: Day, %I: 12-hour clock, %p: AM/PM
+printf " %s\n" "$(date '+%a %b %d / %I:%M %p') "

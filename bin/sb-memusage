@@ -1,33 +1,23 @@
 #!/bin/bash
 
-PRIMARY=#cdd6f4
-ERROR=#cdd6f4
-
-# Read memory values (all in kB)
-read -r _ mem_total _ <<< "$(grep MemTotal /proc/meminfo)"
-read -r _ mem_free _ <<< "$(grep MemFree /proc/meminfo)"
-read -r _ buffers _ <<< "$(grep Buffers /proc/meminfo)"
-read -r _ cached _ <<< "$(grep ^Cached /proc/meminfo)"
+# Read all necessary memory values in a single pass for efficiency
+while read -r line; do
+    case "$line" in
+        MemTotal:*) total=$(echo "$line" | awk '{print $2}') ;;
+        MemFree:*)  free=$(echo "$line" | awk '{print $2}') ;;
+        Buffers:*)  buffers=$(echo "$line" | awk '{print $2}') ;;
+        Cached:*)   cached=$(echo "$line" | awk '{print $2}') ;;
+    esac
+done < /proc/meminfo
 
 # Calculate used memory (kB)
-used_kb=$((mem_total - mem_free - buffers - cached))
+# Used = Total - Free - Buffers - Cached
+used_kb=$((total - free - buffers - cached))
 
 # Convert to GB with 1 decimal using integer arithmetic
-gb=$((used_kb / 1048576))       # Whole GB
-remainder=$((used_kb % 1048576)) # Remainder in kB
+gb=$((used_kb / 1048576))             # Whole GB
+remainder=$((used_kb % 1048576))      # Remainder in kB
 decimal=$((remainder * 10 / 1048576)) # 1st decimal digit
 
-# Format output (e.g., "3.2GB")
-mem_used="${gb}.${decimal} GB"
-
-# Simple memory percentage estimation (integer only)
-percent=$((used_kb * 100 / mem_total))
-
-# Color coding
-if (( percent > 90 )); then
-    echo "^c$ERROR^ ^d^$mem_used"
-elif (( percent > 70 )); then
-    echo "^c$PRIMARY^ ^d^$mem_used^d^"
-else
-    echo "^c$PRIMARY^ ^d^$mem_used^d^"
-fi
+# Output matches your exact style:  X.X GB
+printf " %d.%d GB\n" "$gb" "$decimal"

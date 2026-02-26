@@ -1,41 +1,25 @@
 #!/bin/sh
 
-PRIMARY=#cdd6f4
-ERROR=#cdd6f4
-
-# Get the volume status
-vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null)"
+# Get volume status from pipewire/wireplumber
+vol_data=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null)
 
 # Check if wpctl command succeeded
 if [ $? -ne 0 ]; then
-    echo "Error: Failed to get volume status!"
+    echo " Err"
     exit 1
 fi
 
-# If muted, print 🔇 and exit.
-if echo "$vol" | grep -q "MUTED"; then
-    echo "^c$ERROR^ Muted^d^"
-    exit 0
-fi
+# Handle Muted state
+case "$vol_data" in
+    *MUTED*)
+        echo " muted"
+        exit 0
+        ;;
+esac
 
-# Extract the volume level
-vol="${vol#Volume: }"
-
-# Check if the volume level is valid
-if ! echo "$vol" | grep -qE '^[0-9.]+$'; then
-    echo "Error: Invalid volume level!"
-    exit 1
-fi
-
-# Function to split the volume level and remove the decimal point
-split() {
-    IFS=$2
-    set -- $1
-    printf '%s' "$@"
-}
-
-# Remove the decimal point and convert to integer
-vol="$(printf "%.0f" "$(split "$vol" ".")")"
+# Extract volume and convert to integer (0.50 -> 50)
+# This replaces the complex 'split' function and grep calls
+vol=$(echo "$vol_data" | awk '{print int($2 * 100)}')
 
 # Determine the icon based on the volume level
 if [ "$vol" -ge 60 ]; then
@@ -48,5 +32,5 @@ else
     icon=""
 fi
 
-# Print the volume icon and percentage
-echo "^c$PRIMARY^$icon^d^ $vol%"
+# Output matches your exact style: [Icon] [Vol]%
+printf "%s %d%%\n" "$icon" "$vol"

@@ -1,0 +1,41 @@
+2026/02/17 10:23:16 *************** starting client, PID: 20073 ***************
+2026/02/17 10:23:16 reading file: /home/upal/.config/lf/colors
+2026/02/17 10:23:16 reading file: /home/upal/.config/lf/icons
+2026/02/17 10:23:16 loading clipboard: []
+2026/02/17 10:23:16 reading file: /home/upal/.config/lf/lfrc
+2026/02/17 10:23:16 loading clipboard: []
+2026/02/17 10:23:16 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:16 recv: set statfmt "[1;34md[33mr[31mw[32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;90m-[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[1;34mscripts[0m"
+2026/02/17 10:23:18 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:18 recv: set statfmt ".[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m3.4k[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[0mcolors"
+2026/02/17 10:23:18 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:18 recv: set statfmt ".[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m7.3k[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[0micons"
+2026/02/17 10:23:18 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:18 recv: set statfmt ".[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m3.6k[0m [1;33mupal[0m [34m16 Aug  2025[0m [36m/home/upal/.config/lf/[1;32mlfrc[0m"
+2026/02/17 10:23:19 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:19 recv: set statfmt ".[1;33mr[31mw[90m-------[0m [1;32m1.9k[0m [1;33mupal[0m [34m17 Feb 10:23[0m [36m/home/upal/.config/lf/[0mpath"
+2026/02/17 10:23:19 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:19 recv: set statfmt ".[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m3.6k[0m [1;33mupal[0m [34m16 Aug  2025[0m [36m/home/upal/.config/lf/[1;32mlfrc[0m"
+2026/02/17 10:23:19 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:20 recv: set statfmt ".[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m7.3k[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[0micons"
+2026/02/17 10:23:20 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:20 recv: set statfmt ".[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m3.6k[0m [1;33mupal[0m [34m16 Aug  2025[0m [36m/home/upal/.config/lf/[1;32mlfrc[0m"
+2026/02/17 10:23:20 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:20 recv: set statfmt ".[1;33mr[31mw[90m-------[0m [1;32m3.3k[0m [1;33mupal[0m [34m17 Feb 10:23[0m [36m/home/upal/.config/lf/[0mpath"
+2026/02/17 10:23:20 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:20 recv: set statfmt ".[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m3.6k[0m [1;33mupal[0m [34m16 Aug  2025[0m [36m/home/upal/.config/lf/[1;32mlfrc[0m"
+2026/02/17 10:23:21 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:21 recv: set statfmt ".[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m7.3k[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[0micons"
+2026/02/17 10:23:21 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:21 recv: set statfmt ".[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m3.6k[0m [1;33mupal[0m [34m16 Aug  2025[0m [36m/home/upal/.config/lf/[1;32mlfrc[0m"
+2026/02/17 10:23:21 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:21 recv: set statfmt ".[1;33mr[31mw[90m-------[0m [1;32m4.7k[0m [1;33mupal[0m [34m17 Feb 10:23[0m [36m/home/upal/.config/lf/[0mpath"
+2026/02/17 10:23:22 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:22 recv: set statfmt ".[1;33mr[31mw[4;32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;32m3.6k[0m [1;33mupal[0m [34m16 Aug  2025[0m [36m/home/upal/.config/lf/[1;32mlfrc[0m"
+2026/02/17 10:23:22 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:22 recv: set statfmt ".[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m7.3k[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[0micons"
+2026/02/17 10:23:22 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:23 recv: set statfmt ".[1;33mr[31mw[90m-[0m[33mr[1;90m--[0m[33mr[1;90m--[0m [1;32m3.4k[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[0mcolors"
+2026/02/17 10:23:23 shell-async: &{{ lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\"" ... }} -- []
+2026/02/17 10:23:23 recv: set statfmt "[1;34md[33mr[31mw[32mx[0m[33mr[1;90m-[0m[32mx[33mr[1;90m-[0m[32mx[0m [1;90m-[0m [1;33mupal[0m [34m23 Jun  2025[0m [36m/home/upal/.config/lf/[1;34mscripts[0m"
+2026/02/17 10:23:24 *************** closing client, PID: 20073 ***************

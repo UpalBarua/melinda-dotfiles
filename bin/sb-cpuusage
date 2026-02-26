@@ -1,19 +1,16 @@
 #!/bin/bash
 
-# Color definitions
-PRIMARY_CPU=#cdd6f4
-PRIMARY_TEMP=#cdd6f4
-ERROR=#cdd6f4
-
 # Get CPU usage from /proc/stat
-read -r cpu user nice system idle iowait irq softirq steal guest guest_nice < /proc/stat
+# Using -r to prevent backslash escapes and targeting the first line
+read -r _ user nice system idle iowait irq softirq steal guest guest_nice < /proc/stat
 
-# Calculate total CPU time (sum of all states)
+# Calculate total and idle CPU time
 total=$((user + nice + system + idle + iowait + irq + softirq + steal + guest + guest_nice))
 idle_total=$((idle + iowait))
 
-# Read previous values from temp file
 CPU_USAGE_TEMP_FILE="/tmp/cpu_usage"
+
+# Logic improvement: handle empty or corrupt temp file gracefully
 if [[ -f "$CPU_USAGE_TEMP_FILE" ]]; then
     read -r prev_total prev_idle < "$CPU_USAGE_TEMP_FILE"
 else
@@ -21,51 +18,31 @@ else
     prev_idle=0
 fi
 
-# Save current values for next run
 echo "$total $idle_total" > "$CPU_USAGE_TEMP_FILE"
 
-# Calculate CPU usage percentage
+# Calculate usage percentage with a check to prevent division by zero
+usage=0
 if [[ $prev_total -gt 0 ]]; then
     total_diff=$((total - prev_total))
     idle_diff=$((idle_total - prev_idle))
-    usage=$((100 * (total_diff - idle_diff) / total_diff))
-else
-    usage=0
+    if [[ $total_diff -gt 0 ]]; then
+        usage=$((100 * (total_diff - idle_diff) / total_diff))
+    fi
 fi
 
-# Determine CPU usage color
-if [[ $usage -ge 80 ]]; then
-    CPU_COLOR=$ERROR
-else
-    CPU_COLOR=$PRIMARY_CPU
-fi
-
-# Try to find CPU temperature file
-TEMP_PATH=""
-for path in "/sys/class/thermal/thermal_zone0/temp" \
-             "/sys/class/hwmon/hwmon*/temp1_input" \
-             "/sys/class/hwmon/hwmon*/device/temp1_input"; do
-    if [ -f $path ]; then
-        TEMP_PATH=$path
+# Optimized Temperature Search
+TEMP_STR="No Sensor"
+# We check the most likely paths first using wildcards to handle multiple hwmon inputs
+for path in /sys/class/thermal/thermal_zone[0-9]/temp \
+             /sys/class/hwmon/hwmon*/temp[0-9]_input \
+             /sys/class/hwmon/hwmon*/device/temp[0-9]_input; do
+    if [[ -f "$path" ]]; then
+        # Read the first match and break
+        TEMP_RAW=$(< "$path")
+        TEMP_STR="$((TEMP_RAW / 1000))°C"
         break
     fi
 done
 
-# Get temperature if sensor exists
-if [[ -n "$TEMP_PATH" ]]; then
-    TEMP_RAW=$(cat "$TEMP_PATH")
-    TEMP_C=$((TEMP_RAW / 1000))
-    
-    # Determine temperature color
-    if [[ $TEMP_C -ge 80 ]]; then
-        TEMP_COLOR=$ERROR
-    else
-        TEMP_COLOR=$PRIMARY_TEMP
-    fi
-    TEMP_STR="^c$TEMP_COLOR^${TEMP_C}°C^d^"
-else
-    TEMP_STR="^c$ERROR^No Sensor^d^"
-fi
-
-# Output the combined string
-echo "^c$CPU_COLOR^ ^d^${usage}% / ${TEMP_STR}"
+# Output matches your exact style:  usage% / temp
+printf " %s%% / %s\n" "$usage" "$TEMP_STR"

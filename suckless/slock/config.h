@@ -2,18 +2,20 @@
 static const char *user = "upal";
 static const char *group = "upal";
 
-/*Font settings for the time text*/
-static const float textsize = 64.0;
-static const char *textfamily = "GeistMono Nerd Font";
-static const double textcolorred = 235;
-static const double textcolorgreen = 219;
-static const double textcolorblue = 178;
-
 static const char *colorname[NUMCOLS] = {
-    [INIT] = "#1e1e2e",   /* after initialization */
-    [INPUT] = "#313244",  /* during input */
-    [FAILED] = "#c5c9c5", /* wrong password */
+    [INIT] = "black",     /* after initialization */
+    [INPUT] = "#005577",  /* during input */
+    [FAILED] = "#CC3333", /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
+
+/*Enable blur*/
+#define BLUR
+/*Set blur radius*/
+static const int blurRadius=5;
+/*Enable Pixelation*/
+//#define PIXELATION
+/*Set pixelation radius*/
+static const int pixelSize=0;

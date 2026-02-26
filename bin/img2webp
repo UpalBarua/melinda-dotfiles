@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# img2webp.sh: Converts an image to a compressed WebP format using ImageMagick's 'convert'.
+
+# --- Configuration ---
+# Set the quality level (0-100). 
+# 80-85 is often a good balance between size and quality.
+QUALITY=82 
+
+# --- Functions ---
+
+# Function to check for required dependencies
+check_dependencies() {
+    if ! command -v convert &> /dev/null
+    then
+        echo "Error: ImageMagick 'convert' command not found."
+        echo "Please install ImageMagick (e.g., 'sudo apt install imagemagick' or 'brew install imagemagick')."
+        exit 1
+    fi
+}
+
+# Function to display usage information
+usage() {
+    echo "Usage: $0 <input_image_file>"
+    echo "  Example: $0 images/photo.jpg"
+    echo "  Output will be created in the same directory: images/photo.webp"
+}
+
+# --- Main Script ---
+
+# 1. Check for dependencies
+check_dependencies
+
+# 2. Check for input file argument
+if [ -z "$1" ]; then
+    usage
+    exit 1
+fi
+
+INPUT_FILE="$1"
+
+# 3. Check if input file exists
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: Input file '$INPUT_FILE' not found."
+    exit 1
+fi
+
+# 4. Generate the output filename
+# Removes the extension and appends '.webp'
+FILENAME_BASE=$(basename "$INPUT_FILE" | sed 's/\(.*\)\..*/\1/')
+OUTPUT_DIR=$(dirname "$INPUT_FILE")
+OUTPUT_FILE="${OUTPUT_DIR}/${FILENAME_BASE}.webp"
+
+# 5. Conversion using ImageMagick
+echo "Converting '$INPUT_FILE' to '$OUTPUT_FILE'..."
+
+# The 'convert' command handles the conversion.
+# -strip: Removes all metadata (EXIF, comments) to reduce file size.
+# -quality: Sets the compression level (82 in this case).
+# -define webp:lossless=true: Optional. Use this instead of -quality for lossless compression.
+#              Remove this line for standard (lossy) compression.
+
+magick "$INPUT_FILE" \
+        -strip \
+        -quality "$QUALITY" \
+        "$OUTPUT_FILE"
+
+# 6. Output Summary
+if [ -f "$OUTPUT_FILE" ]; then
+    ORIGINAL_SIZE=$(du -h "$INPUT_FILE" | awk '{print $1}')
+    NEW_SIZE=$(du -h "$OUTPUT_FILE" | awk '{print $1}')
+    
+    echo "✅ Success! File compressed."
+    echo "   Original size: $ORIGINAL_SIZE"
+    echo "   New size:      $NEW_SIZE"
+else
+    echo "❌ Conversion failed."
+fi

@@ -1,43 +1,39 @@
 #!/bin/sh
 
-PRIMARY=#cdd6f4
-SECONDARY=#cdd6f4
+# Get AC status (handles AC, ACAD, or ADP1 naming conventions)
+ac=$(cat /sys/class/power_supply/AC*/online 2>/dev/null | head -n 1)
+[ -z "$ac" ] && ac=0
 
-battery_print() {
-    PATH_AC="/sys/class/power_supply/AC"
-    PATH_BATTERY_0="/sys/class/power_supply/BAT0"
-    PATH_BATTERY_1="/sys/class/power_supply/BAT1"
+# Initialize totals
+total_now=0
+total_full=0
 
-    ac=0
-    battery_level_0=0
-    battery_level_1=0
-    battery_max_0=0
-    battery_max_1=0
-
-    # Function to read a value from a file
-    read_value() {
-        [ -f "$1" ] && read -r "$2" < "$1"
-    }
-
-    read_value "$PATH_AC/online" ac
-    read_value "$PATH_BATTERY_0/energy_now" battery_level_0
-    read_value "$PATH_BATTERY_0/energy_full" battery_max_0
-    read_value "$PATH_BATTERY_1/energy_now" battery_level_1
-    read_value "$PATH_BATTERY_1/energy_full" battery_max_1
-
-    battery_level=$((battery_level_0 + battery_level_1))
-    battery_max=$((battery_max_0 + battery_max_1))
-
-    # Ensure the battery percentage does not exceed 100%
-    battery_percent=$((battery_level * 100 / battery_max))
-    battery_percent=$((battery_percent > 100 ? 100 : battery_percent))
-
-    if [ "$ac" -eq 1 ]; then
-        echo "^c$SECONDARY^ ^d^$battery_percent%"
-    else
-        echo "^c$PRIMARY^ ^d^$battery_percent%"
+# Loop through all available batteries (BAT0, BAT1, etc.)
+for bat in /sys/class/power_supply/BAT*; do
+    if [ -d "$bat" ]; then
+        # Some systems use energy_now (mWh), others use charge_now (mAh)
+        now=$(cat "$bat/energy_now" 2>/dev/null || cat "$bat/charge_now" 2>/dev/null || echo 0)
+        full=$(cat "$bat/energy_full" 2>/dev/null || cat "$bat/charge_full" 2>/dev/null || echo 0)
+        
+        total_now=$((total_now + now))
+        total_full=$((total_full + full))
     fi
-}
+done
 
-battery_print
+# Calculate percentage and safeguard against division by zero
+if [ "$total_full" -gt 0 ]; then
+    perc=$((total_now * 100 / total_full))
+    [ "$perc" -gt 100 ] && perc=100
+else
+    perc=0
+fi
 
+# Set icon based on AC status
+if [ "$ac" -eq 1 ]; then
+    icon="" # Charging icon
+else
+    icon="" # Battery icon
+fi
+
+# Final Output: [Icon] [Percentage]%
+printf "%s %d%%\n" "$icon" "$perc"

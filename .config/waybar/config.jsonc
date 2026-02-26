@@ -3,7 +3,7 @@
   "position": "top",
   "height": 24,
   "spacing": 20,
-  "modules-left": ["river/tags"],
+  "modules-left": ["niri/workspaces"],
   "modules-center": [],
   "modules-right": [
     "pulseaudio",
@@ -52,7 +52,18 @@
     "spacing": 10,
     "tooltip": false,
   },
-  "river/tags": {
-    "num-tags": 6,
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      // Named workspaces
+      // (you need to configure them in niri)
+      "browser": "",
+      "discord": "",
+      "chat": "<b></b>",
+
+      // Icons by state
+      "active": "",
+      "default": "",
+    },
   },
 }

@@ -1,10 +1,10 @@
 [env]
-TERM = "xterm-256color"
+TERM = "tmux-256color"
 
 [general]
 live_config_reload = true
 working_directory = "None"
-import = ["/home/upal/.config/alacritty/themes/catppuccin_mocha.toml"]
+import = ["/home/upal/.config/alacritty/themes/tokyonight_night.toml"]
 
 [window]
 dynamic_padding = false
@@ -22,7 +22,7 @@ lines = 0
 
 [window.padding]
 x = 8
-y = 6 
+y = 8 
 
 [window.position]
 x = 0
