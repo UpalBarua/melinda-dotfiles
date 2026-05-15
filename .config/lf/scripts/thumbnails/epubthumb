@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+if ! [ -f "$1" ]; then
+    exit 1
+fi
+
+cache="$HOME/.cache/epubthumb"
+index="$cache/index.json"
+epub_file="$(realpath "$1")"
+
+mkdir -p "$cache"
+
+# 1. Check Cache Index
+if [ -f "$index" ]; then
+    thumbnail=$(jq -r ". \"$epub_file\"" < "$index")
+    if [[ "$thumbnail" != "null" && -f "$cache/$thumbnail" ]]; then
+        echo "$cache/$thumbnail"
+        exit 0
+    fi
+fi
+
+# 2. Extract the Cover
+# We look for a file inside the zip that contains "cover" and ends in an image extension
+internal_path=$(unzip -l "$epub_file" | awk '/[Cc]over.*\.(jpg|jpeg|png)/ {print $4}' | head -n 1)
+
+if [ -z "$internal_path" ]; then
+    # Fallback: just take the first JPG/PNG found if no "cover" named file exists
+    internal_path=$(unzip -l "$epub_file" | awk '/\.(jpg|jpeg|png)/ {print $4}' | head -n 1)
+fi
+
+if [ -z "$internal_path" ]; then
+    exit 1 # No image found in the EPUB
+fi
+
+thumbnail="$(uuidgen).jpg"
+
+# Extract only that one file and pipe it to the cache
+unzip -p "$epub_file" "$internal_path" > "$cache/$thumbnail"
+
+# 3. Update Index
+[[ ! -f "$index" ]] && echo "{}" > "$index"
+updated_json=$(jq --arg key "$epub_file" --arg val "$thumbnail" '. + {($key): $val}' < "$index")
+echo "$updated_json" > "$index"
+
+# 4. Output path
+echo "$cache/$thumbnail"

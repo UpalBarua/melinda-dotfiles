@@ -1,0 +1,65 @@
+{
+  "hyprland/workspaces": {},
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "󰋋",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+  },
+  "network": {
+    "format-wifi": "󰖩 {bandwidthDownBytes}",
+    "format-disconnected": "󰖪  No Internet",
+    "interval": 5,
+    "tooltip": false,
+  },
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "tooltip": false,
+  },
+  "backlight": {
+    "interval": "once",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+    "tooltip": false,
+  },
+  "clock": {
+    "format": "{:%a %b %d / %I:%M %p}",
+    "tooltip": false,
+  },
+  "memory": {
+    "interval": 10,
+    "format": "󰍛 {used:0.1f}G",
+    "tooltip": false,
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "󰓅 {usage}%",
+    "tooltip": false,
+  },
+  "custom/battery": {
+    "exec": "~/.config/waybar/scripts/dual-battery.sh",
+    "return-type": "json",
+    "interval": 60,
+    "format": "{icon} {text}",
+    "format-icons": {
+      "discharging": ["", "", "", "", ""],
+      "charging": "󱊦",
+    },
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {num_connections} connected",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+    "tooltip": false,
+  },
+}

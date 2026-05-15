@@ -66,10 +66,10 @@ return {
       "ts_ls",
       "tailwindcss",
       "html",
-      "cssls",
       "emmet_language_server",
       "clangd",
       "pyright",
+      "basedpyright",
     }
 
     for _, server in pairs(servers) do

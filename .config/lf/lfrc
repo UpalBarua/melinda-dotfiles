@@ -8,7 +8,7 @@ set ifs "\n"
 set scrolloff 10
 set preview true
 set cleaner '~/.config/lf/scripts/cleaner'
-set previewer '~/.config/lf/scripts/scope'
+set previewer '~/.config/lf/scripts/previewer'
 set cursorpreviewfmt ""
 
 # custom functions
@@ -114,12 +114,12 @@ cmd open &{{
     text/*|application/json)
       lf -remote "send $id \$$EDITOR \$fx" ;;
     image/*)
-      rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
-        setsid -f nsxiv -aio 2>/dev/null | while read -r file; do
-          [ -z "$file" ] && continue
-          lf -remote "send select \"$file\""
-          lf -remote "send toggle"
-        done &
+      swayimg $(~/.config/lf/scripts/rotimgdir "$f" | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$") 2>/dev/null | 
+          while read -r file; do
+            [ -z "$file" ] && continue
+            # Move lf selection to match the viewer
+            lf -remote "send select \"$file\""
+          done &
         ;;
     audio/*)
       mpv --no-terminal "$fx"

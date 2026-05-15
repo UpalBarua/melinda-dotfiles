@@ -4,10 +4,13 @@ application/epub+zip=org.pwmt.zathura.desktop
 x-scheme-handler/notion=notion-app.desktop
 application/octet-stream=libreoffice.desktop
 application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
-image/png=eom.desktop
-image/jpeg=eom.desktop
+image/png=swayimg.desktop
+image/jpeg=swayimg.desktop
 x-scheme-handler/pttp=CiscoPacketTracerPtsa-9.0.0.desktop
 application/x-pka=CiscoPacketTracer-9.0.0.desktop
 application/x-pkt=CiscoPacketTracer-9.0.0.desktop
 application/x-pkz=CiscoPacketTracer-9.0.0.desktop
 application/x-pksz=CiscoPacketTracer-9.0.0.desktop
+
+[Added Associations]
+image/png=swayimg.desktop;

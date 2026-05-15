@@ -23,6 +23,6 @@ set selection-clipboard clipboard
 #zoom settings
 set zoom-min 10
 
-set font "JetBrainsMono Nerd Font 10"
-include themes/one-dark
+set font "Iosevka Nerd Font 10"
+include themes/rose-pine
 set recolor

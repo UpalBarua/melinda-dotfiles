@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Target the active default interface
+INTERFACE=$(ip -o -4 route show to default | awk '{print $5}')
+
+# Check if connected
+if [[ -z "$INTERFACE" ]]; then
+    echo " No Internet"
+    exit 1
+fi
+
+# Read current RX bytes (bash-native reading is faster than 'cat')
+RX_BYTES=$(< "/sys/class/net/$INTERFACE/statistics/rx_bytes")
+
+TEMP_FILE="/tmp/network_rx_bytes"
+
+# Read last RX bytes; default to current if file doesn't exist to prevent speed spikes
+if [[ -f "$TEMP_FILE" ]]; then
+    LAST_RX_BYTES=$(< "$TEMP_FILE")
+else
+    LAST_RX_BYTES="$RX_BYTES"
+fi
+
+# Save current bytes for next run
+echo "$RX_BYTES" > "$TEMP_FILE"
+
+# Calculate speed
+RX_SPEED=$((RX_BYTES - LAST_RX_BYTES))
+
+# Convert to human-readable format
+if [[ $RX_SPEED -ge 1048576 ]]; then
+    # MB/s
+    RX_HR=$(awk "BEGIN {printf \"%.2f MB/s\", $RX_SPEED/1048576}")
+elif [[ $RX_SPEED -ge 1024 ]]; then
+    # KB/s
+    RX_HR=$(awk "BEGIN {printf \"%.2f KB/s\", $RX_SPEED/1024}")
+else
+    # B/s
+    RX_HR="${RX_SPEED} B/s"
+fi
+
+# Output matches your style:  speed
+printf " %s\n" "$RX_HR"

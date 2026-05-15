@@ -28,8 +28,10 @@ static const char *colors[][3] = {
 
 /* tagging */
 static const char *tags[] = {
-    "1", "2", "3", "4",
-    "5", "6", "7", "8"}; // {"一", "に", "三", "四", "五", "六", "七", "八"};
+    "1", "2", "3", "4", "5",
+};
+
+// {"一", "に", "三", "四", "五", "六", "七", "八"};
 
 /* window rules */
 static const Rule rules[] = {
@@ -142,6 +144,7 @@ static const Key keys[] = {
      SHCMD("rofi -modi 'clipboard:greenclip print' -show clipboard "
            "-run-command '{cmd}'")},
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("rofi-quick-toggles.sh")},
+    {MODKEY | ShiftMask, XK_m, spawn, SHCMD("rofi-music.sh")},
 
     // system controls
     {MODKEY, XK_bracketright, spawn, SHCMD("volume.sh -i")},

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Find the primary backlight directory (usually intel_backlight on T460s)
+backlight=$(ls -d /sys/class/backlight/* | head -n 1)
+
+if [ -d "$backlight" ]; then
+    # Read current and max values
+    curr=$(cat "$backlight/brightness")
+    max=$(cat "$backlight/max_brightness")
+    
+    # Calculate percentage
+    brightness_per=$((100 * curr / max))
+else
+    brightness_per=0
+fi
+
+# Determine icon based on level
+if [ "$brightness_per" -lt 50 ]; then
+    icon=""
+else
+    icon=""
+fi
+
+# Final Output: [Icon] [Percentage]%
+printf "%s %d%%\n" "$icon" "$brightness_per"

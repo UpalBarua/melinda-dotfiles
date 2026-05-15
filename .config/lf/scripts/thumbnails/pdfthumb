@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+if ! [ -f "$1" ]; then
+    exit 1
+fi
+
+# Updated cache paths for PDFs
+cache="$HOME/.cache/pdfthumb"
+index="$cache/index.json"
+pdf_file="$(realpath "$1")"
+
+mkdir -p "$cache"
+
+# 1. Check Cache Index
+if [ -f "$index" ]; then
+    thumbnail=$(jq -r ". \"$pdf_file\"" < "$index")
+    if [[ "$thumbnail" != "null" && -f "$cache/$thumbnail" ]]; then
+        echo "$cache/$thumbnail"
+        exit 0
+    fi
+fi
+
+# 2. Generate New Thumbnail
+thumbnail="$(uuidgen).jpg"
+
+# Option A: Using pdftoppm (Your current preference)
+# -jpeg: format, -f 1: first page, -singlefile: don't add numbers to filename
+if ! pdftoppm -jpeg -f 1 -singlefile "$pdf_file" "$cache/${thumbnail%.jpg}" 2>/dev/null; then
+    # Option B: Using mutool (Faster alternative if pdftoppm fails or isn't installed)
+    # mutool draw -o "$cache/$thumbnail" -w 600 "$pdf_file" 1 2>/dev/null || exit 1
+    exit 1
+fi
+
+# 3. Update Index
+if [[ ! -f "$index" ]]; then
+    echo "{}" > "$index"
+fi
+
+# Use sponge (from moreutils) if you have it to avoid temp files, 
+# otherwise this standard jq redirection works:
+updated_json=$(jq --arg key "$pdf_file" --arg val "$thumbnail" '. + {($key): $val}' < "$index")
+echo "$updated_json" > "$index"
+
+# 4. Output the path for your file manager (lf/nnn)
+echo "$cache/$thumbnail"

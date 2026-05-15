@@ -1,69 +1,15 @@
 {
+  "include": ["~/.config/waybar/modules.jsonc"],
   "layer": "top",
   "position": "top",
-  "height": 24,
   "spacing": 20,
-  "modules-left": ["niri/workspaces"],
-  "modules-center": [],
+  "modules-left": ["hyprland/workspaces", "temperature", "cpu", "memory"],
+  "modules-center": ["clock"],
   "modules-right": [
+    "backlight",
     "pulseaudio",
     "network",
-    "backlight",
-    "battery",
-    "clock",
+    "custom/battery",
     "tray",
   ],
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": " Muted",
-    "format-icons": {
-      "headphone": "",
-      "default": ["", "", ""],
-    },
-    "tooltip": false,
-  },
-  "network": {
-    "format-wifi": " {bandwidthDownBytes}",
-    "format-ethernet": " {bandwidthDownBytes}",
-    "format-disconnected": "  No Internet",
-    "interval": 5,
-    "tooltip": false,
-  },
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["", ""],
-    "tooltip": false,
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15,
-    },
-    "format": " {capacity}%",
-    "format-charging": " {capacity}%",
-    "tooltip": false,
-  },
-  "clock": {
-    "format": " {:%a %b %d  %I:%M %p}",
-    "tooltip": false,
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10,
-    "tooltip": false,
-  },
-  "niri/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      // Named workspaces
-      // (you need to configure them in niri)
-      "browser": "",
-      "discord": "",
-      "chat": "<b></b>",
-
-      // Icons by state
-      "active": "",
-      "default": "",
-    },
-  },
 }

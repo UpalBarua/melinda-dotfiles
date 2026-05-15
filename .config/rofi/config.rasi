@@ -1,10 +1,10 @@
 configuration {
-  display-drun: "Apps";
+  display-drun: ">";
   display-window: "Windows";
   display-emoji: "Emojis";
   display-clipboard: "Clipboard";
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font 11.7";
+  font: "Iosevka Nerd Font Propo 11";
   modi: "window,run,drun";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
@@ -20,58 +20,60 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1a1b26;
-  bg-light: #292E42;
-  fg: #c0caf5;
-  ac: #7aa2f7;
-  bd: #292E42;
+  bg: #191724e6;
+  fg: #e0def4;
+  ac: #f6c177;
+  bd: #26233a;
 
-  background-color: @bg;
   border: 0;
   margin: 0;
   padding: 0;
   spacing: 0;
+  border-radius: 0.5em;
+
+  text-color: @fg;
+  background-color: transparent;
 }
 
 window {
-  width: 24em;
+  width: 25em;
   border: 2px 2px 2px 2px;
+  padding: 0.75em;
   border-color: @bd;
+  background-color: @bg;
 }
 
 element {
-  padding: 0.5em 0.875em;
-  text-color: @fg;
+  padding: 0.5em 0.75em;
 }
 
 element selected {
-  text-color: white;
+  background-color: @bd;
 }
 
 element-text {
-  background-color: inherit;
-  text-color: inherit;
   vertical-align: 0.5;
 }
 
 element-icon {
   size: 24;
-  background-color: inherit;
   padding: 0 0.5em 0 0;
 }
 
 entry {
-  text-color: @fg;
   vertical-align: 0.5;
 }
 
 inputbar {
-  padding: 0.875em;
+  padding: 0.5em 0.75em 1em;
   children: [prompt, entry];
 }
 
+entry {
+  border-radius: 0;
+}
+
 listview {
-  background-color: @bg;
   columns: 1;
   lines: 8;
 }
@@ -82,9 +84,8 @@ mainbox {
 
 prompt {
   vertical-align: 0.5;
-  background-color: inherit;
-  padding: 0 0.5em 0 0;
   text-color: @ac;
+  padding: 0 0.5em 0 0;
 }
 
 /* vim: ft=sass

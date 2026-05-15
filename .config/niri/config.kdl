@@ -1,0 +1,17 @@
+include "modules/input.kdl"
+include "modules/output.kdl"
+include "modules/layout.kdl"
+include "modules/window-rules.kdl"
+include "modules/binds.kdl"
+include "modules/gestures.kdl"
+include "modules/layer-rule.kdl"
+include "modules/overview.kdl"
+include "modules/animations.kdl"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+spawn-sh-at-startup "~/.config/niri/scripts/autostart.sh"
+screenshot-path "~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png"
