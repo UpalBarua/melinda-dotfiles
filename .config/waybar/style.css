@@ -22,7 +22,7 @@ window#waybar > box {
 #workspaces button {
   padding: 0.2em 0.5em;
   margin: 0 0.25em;
-  border-radius: 0.125em;
+  border-radius: 0em;
   background-color: @secondary;
 }
 

@@ -20,7 +20,7 @@ hl.config({
 		layout = "master",
 	},
 	decoration = {
-		rounding = 10,
+		rounding = 0,
 		rounding_power = 2,
 
 		active_opacity = 1.0,
@@ -34,7 +34,7 @@ hl.config({
 		},
 
 		blur = {
-			enabled = true,
+			enabled = false,
 			size = 3,
 			passes = 2,
 			vibrancy = 0.1696,

@@ -20,7 +20,7 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #191724e6;
+  bg: #191724;
   fg: #e0def4;
   ac: #f6c177;
   bd: #26233a;
@@ -29,7 +29,6 @@ configuration {
   margin: 0;
   padding: 0;
   spacing: 0;
-  border-radius: 0.5em;
 
   text-color: @fg;
   background-color: transparent;

@@ -2,5 +2,9 @@
     "diagnostics.globals": [
         "vim",
         "actions"
+    ],
+    "diagnostics.disable": [
+        "redundant-parameter",
+        "undefined-field"
     ]
 }

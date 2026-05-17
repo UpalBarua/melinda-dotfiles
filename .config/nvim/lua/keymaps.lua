@@ -7,10 +7,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Save or Quit
-keymap("n", "<leader>w", "<cmd>:update<cr>", opts)
-keymap("n", "<leader>q", "<cmd>:q!<cr>", opts)
-keymap("n", "<C-s>", "<cmd>:update<cr>", opts)
-keymap("n", "<C-q>", "<cmd>:q!<cr>", opts)
+keymap("n", "<leader>w", "<cmd>update<cr>", opts)
+keymap("n", "<leader>q", "<cmd>q!<cr>", opts)
 
 -- Move Lines
 keymap("n", "<A-j>", "<cmd>m .+1<cr>==", opts)
@@ -55,9 +53,9 @@ keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)
 keymap("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
 keymap("n", "<leader>bD", "<cmd>:%bd|e#|bd#<cr>", opts)
 
--- tailwindcss
-keymap({ "n", "x" }, "j", "gj", opts)
-keymap({ "n", "x" }, "k", "gk", opts)
+-- Tailwindcss
+-- keymap({ "n", "x" }, "j", "gj", opts)
+-- keymap({ "n", "x" }, "k", "gk", opts)
 
 -- Clear search with <esc>
 keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", opts)
@@ -66,7 +64,5 @@ keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", opts)
 keymap("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
 
 -- Misc
-keymap("n", "<leader>L", "<cmd>:Lazy<cr>", opts)
-keymap("n", "<leader>M", "<cmd>:Mason<cr>", opts)
-
--- keymap("n", "<C-i>", "<C-i>", opts)
+keymap("n", "<leader>L", "<cmd>Lazy<cr>", opts)
+keymap("n", "<leader>M", "<cmd>Mason<cr>", opts)

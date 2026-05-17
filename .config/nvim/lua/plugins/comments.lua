@@ -7,13 +7,8 @@ return {
 		},
 	},
 	config = function()
-		local keymap = vim.keymap.set
-		local opts = { noremap = true, silent = true }
+		-- vim.g.skip_ts_context_commentstring_module = true  NOTE: Note sure what this line does, but it's been in my config for a long time.
 
-		keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)<CR>", opts)
-		keymap("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)<CR>", opts)
-
-		vim.g.skip_ts_context_commentstring_module = true
 		require("ts_context_commentstring").setup({
 			enable_autocmd = false,
 		})
@@ -22,5 +17,18 @@ return {
 			ignore = "^$",
 			pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 		})
+
+		vim.keymap.set(
+			"n",
+			"<leader>/",
+			"<Plug>(comment_toggle_linewise_current)<CR>",
+			{ noremap = true, silent = true }
+		)
+		vim.keymap.set(
+			"v",
+			"<leader>/",
+			"<Plug>(comment_toggle_linewise_visual)<CR>",
+			{ noremap = true, silent = true }
+		)
 	end,
 }

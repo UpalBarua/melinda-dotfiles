@@ -1,5 +1,4 @@
 vim.g.netrw_banner = 0
-vim.g.netrw_mouse = 2
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
@@ -18,9 +17,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
-vim.opt.timeoutlen = 1000
+vim.opt.timeoutlen = 500
 vim.opt.undofile = true
-vim.opt.updatetime = 100
+vim.opt.updatetime = 500
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.expandtab = true
@@ -41,7 +40,7 @@ vim.opt.title = false
 -- vim.opt.colorcolumn = "80"
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.wrapmargin = 0
 vim.o.whichwrap = "bs<>[]hl"
 vim.opt.linebreak = true
@@ -50,5 +49,5 @@ vim.o.backspace = "indent,eol,start"
 vim.opt.formatoptions:remove({ "c", "r", "o" })
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
 vim.opt.fillchars:append({
-	stl = " ",
+  stl = " ",
 })

@@ -32,8 +32,12 @@ hl.bind(mainMod .. " + D", hl.dsp.layout("removemaster"))
 
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.pin())
 
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprctl keyword general:layout monocle"))
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("hyprctl keyword general:layout master"))
+hl.bind(mainMod .. " + M", function()
+	hl.config({ general = { layout = "monocle" } })
+end)
+hl.bind(mainMod .. " + T", function()
+	hl.config({ general = { layout = "master" } })
+end)
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
