@@ -40,7 +40,7 @@ vim.opt.title = false
 -- vim.opt.colorcolumn = "80"
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.wrapmargin = 0
 vim.o.whichwrap = "bs<>[]hl"
 vim.opt.linebreak = true

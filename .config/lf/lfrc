@@ -180,8 +180,8 @@ map gh cd ~/
 map gC cd ~/.config
 map gT cd ~/.local/share/Trash
 map ge. cd /mnt/disk/
-map gd cd ~/downloads
+map gd cd ~/Downloads
 map gc cd ~/code
 
-map gpw cd "~/pictures/wallpapers"
-map gps cd ~/pictures/screenshots
+map gpw cd "~/Pictures/wallpapers"
+map gps cd ~/Pictures/screenshots

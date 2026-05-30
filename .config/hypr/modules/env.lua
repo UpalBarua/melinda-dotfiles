@@ -3,9 +3,10 @@
 -------------------------------
 
 -- Theming Related Variables
-hl.env("XCURSOR_SIZE", 20)
-hl.env("HYPRCURSOR_SIZE", 20)
+hl.env("HYPRCURSOR_THEME", "BreezeX-RosePine-Linux")
+hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "BreezeX-RosePine-Linux")
+hl.env("XCURSOR_SIZE", 24)
 
 -- Toolkit Backend Variables
 hl.env("GDK_BACKEND", "wayland,x11,*")

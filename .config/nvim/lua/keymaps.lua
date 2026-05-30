@@ -50,8 +50,6 @@ keymap("n", "<C-l>", ":wincmd l<CR>", opts)
 -- Buffers
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", opts)
 keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)
-keymap("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
-keymap("n", "<leader>bD", "<cmd>:%bd|e#|bd#<cr>", opts)
 
 -- Tailwindcss
 -- keymap({ "n", "x" }, "j", "gj", opts)

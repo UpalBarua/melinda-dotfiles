@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MUSIC_DIR="$HOME/music/Lofi"
+MUSIC_DIR="$HOME/Music/Lofi"
 NOTIFICATION_ICON="media-tape"
 
 # Ensure we only look for MP3s since we are using mpg123

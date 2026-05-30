@@ -4,7 +4,7 @@
 
 local mainMod = "SUPER"
 local terminal = "kitty --single-instance"
-local screenshotDir = "~/pictures/screenshots"
+local screenshotDir = "~/Pictures/screenshots"
 local screenshotFile = "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
 
 -- Mster layout
@@ -65,7 +65,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- GUI Programs
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("$BROWSER"))
-hl.bind(mainMod .. " + CTRL + E", hl.dsp.exec_cmd("thunar"))
+hl.bind(mainMod .. " + SHIFT + CTRL + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/autostart.sh"))
 
 -- TUI Programs
@@ -98,8 +98,8 @@ hl.bind(mainMod .. " + SHIFT + BracketRight", hl.dsp.exec_cmd("brightness.sh -i"
 hl.bind(mainMod .. " + SHIFT + BracketLeft", hl.dsp.exec_cmd("brightness.sh -d"))
 
 -- Screenshots
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m active -m output -o" .. screenshotDir .. " -f " .. screenshotFile))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -o" .. screenshotDir .. " -f " .. screenshotFile))
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m active -m output -o " .. screenshotDir .. " -f " .. screenshotFile))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -o " .. screenshotDir .. " -f " .. screenshotFile))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprpicker -a -n"))
 hl.bind(
 	mainMod .. " + SHIFT + Print",

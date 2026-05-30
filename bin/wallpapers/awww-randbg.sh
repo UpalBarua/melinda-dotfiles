@@ -3,7 +3,7 @@
 # Random Wallpaper Script
 # Selects and sets a random wallpaper using awww
 
-wallpaper_dir="$HOME/pictures/wallpapers"
+wallpaper_dir="$HOME/Pictures/wallpapers"
 
 if ! command -v awww &>/dev/null; then
     echo "Error: awww is not installed. Please install it first."
