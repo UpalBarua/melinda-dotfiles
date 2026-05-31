@@ -41,6 +41,7 @@ return {
 				},
 			},
 			clangd = { capabilities = capabilities },
+			nil_ls = { capabilities = capabilities },
 			basedpyright = { capabilities = capabilities },
 			cssls = {
 				capabilities = capabilities,
@@ -48,8 +49,8 @@ return {
 					css = { validate = true, lint = { unknownAtRules = "ignore" } },
 					scss = { validate = true, lint = { unknownAtRules = "ignore" } },
 				},
-				hyprls = { capabilities = capabilities },
 			},
+			hyprls = { capabilities = capabilities },
 		}
 
 		-- require("mason-lspconfig").setup({

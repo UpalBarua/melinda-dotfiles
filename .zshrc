@@ -12,8 +12,11 @@ zinit light Aloxaf/fzf-tab
 zinit light qoomon/zsh-lazyload
 
 # Load completions
-autoload -Uz compinit && compinit
-zinit cdreplay -q
+# autoload -Uz compinit && compinit
+# zinit cdreplay -q
+
+autoload -Uz compinit
+compinit -C
 
 # Keybindings
 bindkey -e

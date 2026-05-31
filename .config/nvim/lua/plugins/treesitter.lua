@@ -23,6 +23,7 @@ return {
 			"tsx",
 			"css",
 			"html",
+      "nix",
 		})
 	end,
 }

@@ -18,6 +18,7 @@ return {
 				json = { "prettierd" },
 				yaml = { "prettierd" },
 				markdown = { "prettierd" },
+				nix = { "nixfmt" },
 			},
 			format_on_save = nil,
 		})
