@@ -1,6 +1,3 @@
-# Enable reading of .zshrc (zsh only)
-setopt rcs
-
 # XDG Base Directory Specification
 export XDG_DATA_HOME=~/.local/share
 export XDG_CONFIG_HOME=~/.config
@@ -15,7 +12,7 @@ export VISUAL='nvim'
 export BROWSER='brave' 
 
 # exa/eza configuration
-export EXA_ICON_SPACING="2"
+export EZA_ICON_SPACING="2"
 
 # Add local binaries to PATH
 [ -d ~/.local/bin ] && export PATH=~/.local/bin:$PATH
@@ -24,16 +21,14 @@ export EXA_ICON_SPACING="2"
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-# clipmenud configuration
-export CM_DIR=$HOME/.cache/
-export CM_MAX_CLIPS=100
-export CM_OUTPUT_CLIP=1
-export CM_HISTLENGTH=20
-
-# For running java swing guis
+# ========================
+# Java GUI workaround for tiling WMs
+# ========================
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# FZF Rosepine
+# ========================
+# FZF colors
+# ========================
 export FZF_DEFAULT_OPTS="
 	--color=fg:#908caa,bg:#191724,hl:#ebbcba
 	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba

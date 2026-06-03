@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Random Wallpaper Script
 # Selects and sets a random wallpaper using awww
@@ -20,7 +20,7 @@ if [ ! -d "$wallpaper_dir" ]; then
     exit 1
 fi
 
-if ! pgrep -x awww-daemon > /dev/null; then
+if ! pgrep awww-daemon > /dev/null; then
     awww-daemon &
     sleep 1
 fi
@@ -32,6 +32,6 @@ if [ -z "$wallpaper" ]; then
     exit 1
 fi
 
-awww img --transition-step 30 --transition-fps 60 --transition-type center "$wallpaper"
+awww img --transition-type random --transition-step 30 --transition-duration 1 --transition-fps 60 "$wallpaper"
 
 echo "Wallpaper set to: $wallpaper"

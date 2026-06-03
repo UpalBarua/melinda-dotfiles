@@ -1,18 +1,18 @@
-[safe]
-  directory = /mnt/general-disk/code/repos/*
-	directory = /mnt/general-disk/code/yugenx/yugenx.org
+[gpg]
+    format = ssh
 
 [user]
   name = upalbarua
   email = upalbarua52@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICv+eoQjML4BL4yI7ku92kcGOyWglSJUZW5MfC/Jef0X upalbarua52@gmail.com
+
+[commit]
+    gpgsign = true
 
 [push]
-  autoSetupRemote = true
   default = simple
+  autoSetupRemote = true
   followTags = true
-
-[credential]
-  helper = store
 
 [core]
   editor = nvim
@@ -22,3 +22,6 @@
 
 [init]
   defaultBranch = main
+
+[color]
+  ui = auto

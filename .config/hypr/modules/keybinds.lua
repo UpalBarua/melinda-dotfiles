@@ -106,4 +106,4 @@ hl.bind(
 	hl.dsp.exec_cmd("hyprshot -m region -o" .. screenshotDir .. " -f " .. screenshotFile)
 )
 
-hl.bind(mainMod .. " + CTRL + Space", hl.dsp.exec_cmd("~/.local/bin/wallpapers/awww-randbg.sh"))
+hl.bind(mainMod .. " + CTRL + Space", hl.dsp.exec_cmd("awww-randbg.sh"))

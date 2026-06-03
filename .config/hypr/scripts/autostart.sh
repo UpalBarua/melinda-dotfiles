@@ -2,7 +2,7 @@
 
 # Check if a process is running and kill it
 kill_process() {
-    if pgrep -x "$1" > /dev/null; then
+    if pgrep "$1" > /dev/null; then
         pkill "$1"
     fi
 }

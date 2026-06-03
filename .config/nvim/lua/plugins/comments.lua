@@ -7,7 +7,7 @@ return {
 		},
 	},
 	config = function()
-		-- vim.g.skip_ts_context_commentstring_module = true  NOTE: Note sure what this line does, but it's been in my config for a long time.
+		vim.g.skip_ts_context_commentstring_module = true
 
 		require("ts_context_commentstring").setup({
 			enable_autocmd = false,

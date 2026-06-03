@@ -14,12 +14,10 @@
   programs.mpv.enable = true;
 
   programs.sesh.enable = true;
-  programs.tmux.enable = true;
   programs.fzf.tmux.enableShellIntegration = true;
 
   programs.swayimg.enable = true;
   programs.rofi.enable = true;
-  programs.opencode.enable = true;
   programs.obsidian.enable = true;
   programs.jq.enable = true;
 
@@ -35,7 +33,36 @@
   programs.gh.enable = true;
   programs.firefox.enable = true;
 
-  services.hypridle.enable = true;
+  programs.opencode = {
+    enable = true;
+    settings = {
+      mcp = {
+        chrome-devtools = {
+          type = "local";
+          command = [
+            "npx"
+            "-y"
+            "chrome-devtools-mcp@latest"
+          ];
+        };
+      };
+    };
+  };
+
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+    extraConfig = ''
+      Host github.com
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+    '';
+  };
+
+  services.ssh-agent.enable = true;
+
   services.cliphist.enable = true;
   services.mako.enable = true;
 
@@ -60,7 +87,7 @@
     google-chrome
     hyprpicker
     awww
-    trashy
+    trash-cli
     vscodium
     nodejs
     pnpm
@@ -72,6 +99,14 @@
     fastfetch
     libnotify
     transmission_4
+    zinit
+    file
+    hypridle
+    tmux
+
+    # lf
+    unzip
+    poppler-utils
   ];
 
   programs.neovim = {
@@ -79,7 +114,7 @@
     extraPackages = with pkgs; [
       lua-language-server
       typescript-language-server
-      tailwindcss
+      tailwindcss-language-server
       vscode-langservers-extracted
       emmet-language-server
       clang-tools
@@ -126,6 +161,7 @@
     download = "$HOME/Downloads";
     music = "$HOME/Music";
     pictures = "$HOME/Pictures";
+    projects = "$HOME/Projects";
     desktop = null;
     documents = null;
     templates = null;
@@ -144,17 +180,21 @@
     ".config/lf".source = ../.config/lf;
     ".config/mako".source = ../.config/mako;
     ".config/mpv".source = ../.config/mpv;
-    ".config/opencode".source = ../.config/opencode;
     ".config/rofi".source = ../.config/rofi;
-    ".config/tmux".source = ../.config/tmux;
     ".config/waybar".source = ../.config/waybar;
     ".config/zathura".source = ../.config/zathura;
+    ".config/tmux".source = ../.config/tmux;
     ".config/starship.toml".source = ../.config/starship.toml;
     ".config/mimeapps.list".source = ../.config/mimeapps.list;
 
     ".zshrc".source = ../.zshrc;
     ".zshenv".source = ../.zshenv;
 
-    ".local/bin".source = ../bin;
+    # Scripts
+    ".local/bin/img2webp".source = ../bin/img2webp;
+    ".local/bin/vimv".source = ../bin/vimv;
+    ".local/bin/brightness.sh".source = ../bin/brightness.sh;
+    ".local/bin/volume.sh".source = ../bin/volume.sh;
+    ".local/bin/awww-randbg.sh".source = ../bin/wallpapers/awww-randbg.sh;
   };
 }

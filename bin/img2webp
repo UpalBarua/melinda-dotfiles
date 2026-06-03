@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # img2webp.sh: Converts an image to a compressed WebP format using ImageMagick's 'convert'.
 
