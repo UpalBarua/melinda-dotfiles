@@ -4,7 +4,7 @@
 [user]
   name = upalbarua
   email = upalbarua52@gmail.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICv+eoQjML4BL4yI7ku92kcGOyWglSJUZW5MfC/Jef0X upalbarua52@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzH90DeUL7mVHadpAYAbg0EJbbU232/bXK3dG4e3zOQ upalbarua52@gmail.com
 
 [commit]
     gpgsign = true
