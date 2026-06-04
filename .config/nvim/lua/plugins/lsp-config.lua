@@ -51,6 +51,7 @@ return {
 				},
 			},
 			hyprls = { capabilities = capabilities },
+			bashls = { capabilities = capabilities },
 		}
 
 		-- require("mason-lspconfig").setup({

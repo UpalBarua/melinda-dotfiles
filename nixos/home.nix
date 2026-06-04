@@ -16,7 +16,15 @@
   programs.sesh.enable = true;
   programs.fzf.tmux.enableShellIntegration = true;
 
-  programs.swayimg.enable = true;
+  programs.swayimg = {
+    enable = true;
+    settings = {
+      viewer = {
+        window = "#191724";
+      };
+    };
+  };
+
   programs.rofi.enable = true;
   programs.obsidian.enable = true;
   programs.jq.enable = true;
@@ -116,6 +124,7 @@
     file
     hypridle
     tmux
+    ripdrag
 
     # lf
     unzip
@@ -140,6 +149,8 @@
       prettierd
       eslint_d
       nixfmt
+      bash-language-server
+      shfmt
     ];
   };
 

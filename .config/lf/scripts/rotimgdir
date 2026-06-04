@@ -1,19 +1,55 @@
 #!/usr/bin/env bash
 
-# Usage check
+# ----------------------------------------------------------------------
+# Usage: rotimgdir <image-file>
+#
+# Outputs a newline-separated list of all image files in the same
+# directory as <image-file>, rotated so that <image-file> appears first,
+# preserving the relative order of the others. Only files with extensions
+# listed in IMAGE_EXTS are included.
+# ----------------------------------------------------------------------
+
+# --- Configurable list of image extensions (lowercase) ---
+IMAGE_EXTS=(
+    png jpg jpeg gif webp tif tiff ico bmp
+)
+
+# --- Helper: check if file has an image extension (case-insensitive) ---
+is_image() {
+    local filename=$(basename "$1")
+    local ext="${filename##*.}"
+    ext=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+    for valid in "${IMAGE_EXTS[@]}"; do
+        if [[ "$ext" == "$valid" ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+# --- Usage check ---
 if [[ -z "$1" ]]; then
-    echo "Usage: rotimgdir <filename>" >&2
+    echo "Usage: rotimgdir <image-file>" >&2
     exit 1
 fi
 
-target=$(basename "$1")
+# --- Change to the target's directory ---
+target_dir="$(dirname "$1")"
+target_name="$(basename "$1")"
+cd "$target_dir" || { echo "Cannot cd to $target_dir" >&2; exit 1; }
+
+# --- Iterate over all files in the directory ---
 found=false
 before=()
 after=()
 
-# Use a glob instead of 'ls' to handle spaces/special characters safely
 for file in *; do
-    if [[ "$file" == "$target" ]]; then
+    # Skip non‑regular files (directories, symlinks, devices, etc.)
+    [[ -f "$file" ]] || continue
+    # Skip non‑images
+    is_image "$file" || continue
+
+    if [[ "$file" == "$target_name" ]]; then
         found=true
     fi
 
@@ -24,11 +60,10 @@ for file in *; do
     fi
 done
 
-# If the file wasn't found, just print the normal list and exit
-if ! $found; then
-    printf '%s\n' "${before[@]}"
-    exit 0
+# --- Output ---
+if $found; then
+    printf '%s\n' "${after[@]}" "${before[@]}"
+else
+    # Target not found (e.g., extension mismatch) – output all images in order
+    printf '%s\n' "${before[@]}" "${after[@]}"
 fi
-
-# Print the 'pivoted' list: target and everything after, then the 'before' part
-printf '%s\n' "${after[@]}" "${before[@]}"

@@ -1,21 +1,33 @@
+# ========================
+# General settings
+# ========================
 font=Iosevka Nerd Font Propo 10.5
 format=%s\n%b
 sort=-time
 output=
 layer=overlay
 anchor=top-center
+
+# ========================
+# Appearance
+# ========================
 width=300
 height=110
-margin=5
-padding=12,14
+margin=10
+padding=12,16
 border-size=1
 border-radius=0
 icons=0
 max-icon-size=64
-default-timeout=5000
-ignore-timeout=1
-
 background-color=#191724
 text-color=#e0def4
-progress-color=#26233a
+progress-color=#1f1d2e
 border-color=#524f67
+
+# ========================
+# Behavior
+# ========================
+default-timeout=5000
+ignore-timeout=1
+max-visible=5
+group-by=app-name

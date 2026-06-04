@@ -31,6 +31,7 @@ return {
 				yaml = { "prettierd" },
 				markdown = { "prettierd" },
 				nix = { "nixfmt" },
+				shell = { "shfmt" },
 			},
 			format_on_save = nil,
 		})

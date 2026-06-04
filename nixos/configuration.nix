@@ -51,6 +51,8 @@
     liberation_ttf
   ];
 
+  services.fstrim.enable = true;
+
   # Sound.
   services.pipewire = {
     enable = true;

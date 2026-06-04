@@ -27,8 +27,7 @@ zinit cdreplay -q
 # Keybindings
 # ========================
 KEYTIMEOUT=10
-bindkey -v
-bindkey '-M' viins '^F' forward-char 
+bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
@@ -124,5 +123,6 @@ function sesh-sessions() {
 }
 
 zle     -N             sesh-sessions
+bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions

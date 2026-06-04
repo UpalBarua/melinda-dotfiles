@@ -1,5 +1,7 @@
-# base configurations
-set shell sh
+# ========================
+# Base configurations
+# ========================
+set shell bash
 set ignorecase true
 set icons true
 set drawbox
@@ -11,8 +13,9 @@ set cleaner '~/.config/lf/scripts/cleaner'
 set previewer '~/.config/lf/scripts/previewer'
 set cursorpreviewfmt ""
 
-# custom functions
-
+# ========================
+# Custom functions – Directory & file creation
+# ========================
 # new folder
 cmd mkdir %{{
   printf " Directory Name: "
@@ -27,6 +30,9 @@ cmd mkfile %{{
   touch $ans
 }}
 
+# ========================
+# Trash & delete
+# ========================
 # trash-cli
 cmd trash %trash-put -- $fx
 cmd trash-clear %trash-empty
@@ -40,7 +46,9 @@ cmd delete %{{
   [ $ans = "y" ] && rm -rf $fx
 }}
 
-# zoxide integration
+# ========================
+# Zoxide integration
+# ========================
 cmd z %{{
     result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
     lf -remote "send $id cd \"$result\""
@@ -55,17 +63,24 @@ cmd on-cd &{{
     zoxide add "$PWD"
 }}
 
-# starship
+# ========================
+# Starship prompt integration
+# ========================
 cmd on-cd &{{
     fmt="$(STARSHIP_SHELL= starship prompt | sed 's/\\/\\\\/g;s/"/\\"/g')"
     lf -remote "send $id set promptfmt \"$fmt\""
 }}
 
-# eza integration
+# ========================
+# Eza integration (file info)
+# ========================
 cmd on-select &{{
    lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
 }}
 
+# ========================
+# Fzf integrations (jump & search)
+# ========================
 # find files
 cmd fzf_jump ${{
   res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location')"
@@ -92,35 +107,37 @@ cmd fzf_search ${{
   [ -n "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
-# extract archive
+# ========================
+# Archive extraction
+# ========================
 cmd extract ${{
    set -f
    ouch decompress $fx
 }}
 
-# compress files 
-cmd zip %zip -r "$f" "$f"
-cmd targz %tar cvzf "$f.tar.gz" "$f"
+# ========================
+# Drag and Drop
+# ========================
+cmd drag %ripdrag -x -a "$fx"
 
+# ========================
+# Wallpaper & open commands
+# ========================
 # set as bg
-cmd setwallpaper %feh --bg-fill "$f"
+cmd setwallpaper %awww img --transition-type random --transition-duration 1 --transition-fps 60 "$f" 
 
 # open with
 cmd open-with %"$@" "$fx"
 
-# open
+# open (file type detection)
 cmd open &{{
   case $(file --mime-type -bL -- "$f") in
+    image/*)
+      mapfile -t files < <("$HOME/.config/lf/scripts/rotimgdir" "$f")
+      swayimg "${files[@]}" &
+      ;;
     text/*|application/json)
       lf -remote "send $id \$$EDITOR \$fx" ;;
-    image/*)
-      swayimg $(~/.config/lf/scripts/rotimgdir "$f" | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$") 2>/dev/null | 
-          while read -r file; do
-            [ -z "$file" ] && continue
-            # Move lf selection to match the viewer
-            lf -remote "send select \"$file\""
-          done &
-        ;;
     audio/*)
       mpv --no-terminal "$fx"
       ;;
@@ -138,9 +155,9 @@ cmd open &{{
   esac
 }}
 
-# key bindings
-
-# remove defaults
+# ========================
+# Key bindings – Remove defaults
+# ========================
 map m
 map o
 map n
@@ -151,7 +168,9 @@ map c
 map e
 map f
 
-# functions
+# ========================
+# Key bindings – Functions
+# ========================
 map K half-up  
 map J half-down
 map . set hidden!
@@ -174,14 +193,16 @@ map o push :open-with<space>
 map br $vimv $fx
 map z push :z<space>
 map gs :fzf_search
+map dr :drag
 
-# jumps
+# ========================
+# Key bindings – Jumps (directories)
+# ========================
 map gh cd ~/
 map gC cd ~/.config
 map gT cd ~/.local/share/Trash
-map ge. cd /mnt/disk/
+map gs cd /storage
 map gd cd ~/Downloads
-map gc cd ~/code
 
 map gpw cd "~/Pictures/wallpapers"
 map gps cd ~/Pictures/screenshots
