@@ -6,6 +6,9 @@
   email = upalbarua52@gmail.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLVMz80nEeGXD92AyGdLOE2IiJLBS1gjEQpNLedxT8Q upalbarua52@gmail.com 
 
+[credential]
+  helper = store
+
 [commit]
     gpgsign = true
 

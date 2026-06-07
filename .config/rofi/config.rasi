@@ -6,7 +6,7 @@ configuration {
   drun-display-format: "{name}";
   font: "Iosevka Nerd Font Propo 11";
   modi: "window,run,drun";
-  matching: "fuzzy";
+   // matching: "fuzzy";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
   kb-row-down: "Down,Control+j";

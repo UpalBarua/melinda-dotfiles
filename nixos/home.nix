@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ _config, pkgs, ... }:
 
 {
   home.username = "upal";
@@ -25,7 +25,14 @@
     };
   };
 
-  programs.rofi.enable = true;
+  programs.rofi = {
+    enable = true;
+    plugins = with pkgs; [
+      rofi-emoji
+      rofi-calc
+    ];
+  };
+
   programs.obsidian.enable = true;
   programs.jq.enable = true;
 
@@ -92,8 +99,6 @@
     brave
     kitty
     waybar
-    rofi-emoji
-    rofi-calc
     lua51Packages.tree-sitter-cli
     brightnessctl
     git-extras
@@ -211,6 +216,7 @@
     ".config/starship.toml".source = ../.config/starship.toml;
     ".config/mimeapps.list".source = ../.config/mimeapps.list;
 
+    ".gitconfig".source = ../.gitconfig;
     ".zshrc".source = ../.zshrc;
     ".zshenv".source = ../.zshenv;
 

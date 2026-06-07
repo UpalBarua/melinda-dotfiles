@@ -67,6 +67,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("$BROWSER"))
 hl.bind(mainMod .. " + SHIFT + CTRL + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/autostart.sh"))
+hl.bind(mainMod .. " + CTRL + O", hl.dsp.exec_cmd("obsidian"))
 
 -- TUI Programs
 hl.bind(mainMod .. " + CTRL + E", hl.dsp.exec_cmd("$TERMINAL -e lf"))
