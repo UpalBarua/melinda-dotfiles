@@ -1,0 +1,41 @@
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    htop
+    brave
+    kitty
+    waybar
+    lua51Packages.tree-sitter-cli
+    brightnessctl
+    git-extras
+    mate-polkit
+    zathuraPkgs.zathura_pdf_mupdf
+    wtype
+    ripgrep
+    ouch
+    openbangla-keyboard
+    nwg-look
+    wl-clipboard
+    google-chrome
+    hyprpicker
+    awww
+    trash-cli
+    vscodium
+    nodejs
+    pnpm
+    man-db
+    bluetui
+    ffmpegthumbnailer
+    mediainfo
+    pavucontrol
+    fastfetch
+    libnotify
+    transmission_4
+    zinit
+    file
+    hypridle
+    tmux
+    ripdrag
+    unzip
+    poppler-utils
+  ];
+}
