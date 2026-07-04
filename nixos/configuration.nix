@@ -21,5 +21,5 @@
 
   time.timeZone = "Asia/Dhaka";
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "25.11"; # DO NOT CHANGE THIS VALUE
+  system.stateVersion = "25.11"; # NOTE: DO NOT CHANGE THIS VALUE
 }

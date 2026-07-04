@@ -1,6 +1,15 @@
 input {
+    keyboard {
+      xkb {
+        layout "us"
+      }
+      repeat-delay 300
+      repeat-rate 40
+    }
+
     touchpad {
         tap
+        dwt
         accel-profile "flat"
     }
 
@@ -8,6 +17,18 @@ input {
         accel-profile "flat"
     }
 
+    trackball {
+        off
+    }
+
+    tablet {
+        off
+    }
+
+    touch {
+        off
+    }
+
     warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="10%"
+    // focus-follows-mouse max-scroll-amount="10%"
 }

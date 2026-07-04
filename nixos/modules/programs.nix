@@ -4,9 +4,11 @@
     git
     gcc
     ntfs3g
+    xwayland-satellite
   ];
 
   programs.zsh.enable = true;
+  programs.niri.enable = true;
 
   programs.thunar = {
     enable = true;
@@ -17,8 +19,8 @@
     ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
 }

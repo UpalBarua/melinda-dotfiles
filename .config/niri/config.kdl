@@ -7,11 +7,13 @@ include "modules/gestures.kdl"
 include "modules/layer-rule.kdl"
 include "modules/overview.kdl"
 include "modules/animations.kdl"
-
-hotkey-overlay {
-    skip-at-startup
-}
+include "modules/environment.kdl"
+include "modules/cursor.kdl"
 
 prefer-no-csd
 spawn-sh-at-startup "~/.config/niri/scripts/autostart.sh"
 screenshot-path "~/pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}

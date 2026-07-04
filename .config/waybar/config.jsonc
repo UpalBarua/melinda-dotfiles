@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "top",
   "spacing": 20,
-  "modules-left": ["hyprland/workspaces", "temperature", "cpu", "memory"],
+  "modules-left": ["niri/workspaces", "temperature", "cpu", "memory"],
   "modules-center": ["clock"],
   "modules-right": [
     "backlight",

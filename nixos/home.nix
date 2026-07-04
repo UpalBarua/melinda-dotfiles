@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   imports = [
     ./home/services.nix
@@ -21,14 +21,15 @@
       ".config/bat".source = ../.config/bat;
       ".config/btop".source = ../.config/btop;
       ".config/nvim".source = ../.config/nvim;
-      ".config/hypr".source = ../.config/hypr;
-      ".config/kitty".source = ../.config/kitty;
+      ".config/kitty".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/kitty";
+      ".config/niri".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/niri";
+      ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/hypr";
       ".config/lazygit".source = ../.config/lazygit;
       ".config/lf".source = ../.config/lf;
       ".config/mako".source = ../.config/mako;
       ".config/mpv".source = ../.config/mpv;
       ".config/rofi".source = ../.config/rofi;
-      ".config/waybar".source = ../.config/waybar;
+      ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/waybar";
       ".config/zathura".source = ../.config/zathura;
       ".config/tmux".source = ../.config/tmux;
       ".config/starship.toml".source = ../.config/starship.toml;

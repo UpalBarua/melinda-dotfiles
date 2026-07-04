@@ -2,14 +2,71 @@
 ---- KEYBINDINGS ----
 ---------------------
 
+local function layout_bind(bind_table)
+	return function()
+		local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+
+		if not workspace then
+			return
+		end
+
+		local layout = workspace.tiled_layout
+
+		if bind_table[layout] then
+			hl.dispatch(bind_table[layout])
+		end
+	end
+end
+
 local mainMod = "SUPER"
 local terminal = "kitty --single-instance"
 local screenshotDir = "~/Pictures/screenshots"
 local screenshotFile = "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
 
--- Mster layout
-hl.bind(mainMod .. " + L", hl.dsp.layout("mfact +0.1"))
-hl.bind(mainMod .. " + H", hl.dsp.layout("mfact -0.1"))
+-- Layout
+hl.bind(
+	mainMod .. " + L",
+	layout_bind({
+		master = hl.dsp.layout("mfact +0.1"),
+		scrolling = hl.dsp.layout("move +col"),
+	})
+)
+
+hl.bind(
+	mainMod .. " + H",
+	layout_bind({
+		master = hl.dsp.layout("mfact -0.1"),
+		scrolling = hl.dsp.layout("move -col"),
+	})
+)
+
+hl.bind(
+	mainMod .. " + SHIFT + L",
+	layout_bind({
+		scrolling = hl.dsp.layout("swapcol r"),
+  })
+)
+
+hl.bind(
+  mainMod .. " + SHIFT + H",
+	layout_bind({
+		scrolling = hl.dsp.layout("swapcol l"),
+	})
+)
+
+hl.bind(
+  mainMod .. " + EQUAL",
+	layout_bind({
+		scrolling = hl.dsp.layout("colresize +0.2"),
+	})
+)
+
+hl.bind(
+  mainMod .. " + MINUS",
+	layout_bind({
+		scrolling = hl.dsp.layout("colresize -0.2"),
+	})
+)
 
 hl.bind(mainMod .. " + J", hl.dsp.layout("cyclenext"))
 hl.bind(mainMod .. " + K", hl.dsp.layout("cycleprev"))
@@ -37,6 +94,9 @@ hl.bind(mainMod .. " + M", function()
 end)
 hl.bind(mainMod .. " + T", function()
 	hl.config({ general = { layout = "master" } })
+end)
+hl.bind(mainMod .. " + S", function()
+	hl.config({ general = { layout = "scrolling" } })
 end)
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 
@@ -76,6 +136,7 @@ hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd("$TERMINAL -e btop"))
 -- Webapps
 hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("$BROWSER --app=https://web.whatsapp.com"))
 hl.bind(mainMod .. " + CTRL + G", hl.dsp.exec_cmd("$BROWSER --app=https://gemini.google.com"))
+hl.bind(mainMod .. " + SHIFT + CTRL + P", hl.dsp.exec_cmd("$BROWSER --app=https://phitron.io/dashboard"))
 
 -- Rofi
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show run"))
