@@ -29,9 +29,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # ========================
 # FZF colors
 # ========================
-export FZF_DEFAULT_OPTS="
-	--color=fg:#908caa,bg:#191724,hl:#ebbcba
-	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-	--color=border:#403d52,header:#31748f,gutter:#191724
-	--color=spinner:#f6c177,info:#9ccfd8
-	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+	export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+	--color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
+	--color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
+	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
+	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'

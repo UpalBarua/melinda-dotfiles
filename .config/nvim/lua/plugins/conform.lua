@@ -32,6 +32,7 @@ return {
 				markdown = { "prettierd" },
 				nix = { "nixfmt" },
 				shell = { "shfmt" },
+				kdl = { "kdlfmt" },
 			},
 			format_on_save = nil,
 		})

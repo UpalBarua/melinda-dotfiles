@@ -9,9 +9,10 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
-      nerd-fonts.iosevka
+      nerd-fonts.caskaydia-cove
       dejavu_fonts
       liberation_ttf
+      ubuntu-sans
     ];
 
     fontconfig = {
@@ -19,14 +20,19 @@
 
       defaultFonts = {
         serif = [
+          "Ubuntu Serif"
           "Noto Serif"
           "Noto Serif Bengali"
         ];
         sansSerif = [
+          "Ubuntu Sans"
           "Noto Sans"
           "Noto Sans Bengali"
         ];
-        monospace = [ "Noto Sans Mono" ];
+        monospace = [
+          "CaskaydiaCove Nerd Font"
+          "Noto Sans Mono"
+        ];
       };
 
       antialias = true;

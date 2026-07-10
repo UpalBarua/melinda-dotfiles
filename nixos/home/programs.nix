@@ -1,9 +1,7 @@
-{ pkgs, ... }: {
+{ ... }: {
   programs = {
     hyprshot.enable = true;
     hyprlock.enable = true;
-    zathura.enable = true;
-    lf.enable = true;
     lazygit.enable = true;
     mpv.enable = true;
     sesh.enable = true;
@@ -27,14 +25,6 @@
           window = "#191724";
         };
       };
-    };
-
-    rofi = {
-      enable = true;
-      plugins = with pkgs; [
-        rofi-emoji
-        rofi-calc
-      ];
     };
 
     fzf = {

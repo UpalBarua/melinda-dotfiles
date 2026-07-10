@@ -1,10 +1,8 @@
 # ========================
 # General settings
 # ========================
-font=Iosevka Nerd Font Propo 10.5
-format=%s\n%b
+font=CaskaydiaCove Nerd Font Propo 10.5
 sort=-time
-output=
 layer=overlay
 anchor=top-center
 
@@ -13,16 +11,17 @@ anchor=top-center
 # ========================
 width=300
 height=110
-margin=10
-padding=12,16
+margin=15
+padding=14,16
 border-size=1
 border-radius=0
-icons=0
+icons=1
 max-icon-size=64
-background-color=#191724
-text-color=#e0def4
-progress-color=#1f1d2e
-border-color=#524f67
+
+background-color=#1a1b26
+text-color=#c0caf5
+border-color=#292e42
+progress-color=#292e42
 
 # ========================
 # Behavior

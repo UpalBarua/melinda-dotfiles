@@ -1,12 +1,11 @@
 configuration {
-  display-drun: ">";
+  display-drun: ">>>";
   display-window: "Windows";
   display-emoji: "Emojis";
   display-clipboard: "Clipboard";
   drun-display-format: "{name}";
-  font: "Iosevka Nerd Font Propo 11";
-  modi: "window,run,drun";
-   // matching: "fuzzy";
+  font: "CaskaydiaCove Nerd Font Propo 10.5";
+  modi: "window,run,drun,filebrowser";
 
   kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
   kb-row-down: "Down,Control+j";
@@ -21,10 +20,10 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #191724;
-  fg: #e0def4;
-  ac: #f6c177;
-  bd: #26233a;
+  bg: #1a1b26;
+  fg: #c0caf5;
+  ac: #7aa2f7;
+  bd: #292e42;
 
   border: 0;
   margin: 0;
@@ -37,7 +36,7 @@ configuration {
 
 window {
   width: 25em;
-  border: 2px 2px 2px 2px;
+  border: 1.5px 1.5px 1.5px 1.5px;
   padding: 0.75em;
   border-color: @bd;
   background-color: @bg;

@@ -4,7 +4,14 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
-# ========================
+# Load important Zinit annexes
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+# ====================
 # Zsh plugins (loaded with Zinit)
 # ========================
 zinit light zsh-users/zsh-syntax-highlighting
@@ -27,7 +34,7 @@ zinit cdreplay -q
 # Keybindings
 # ========================
 KEYTIMEOUT=10
-bindkey -e
+bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
@@ -78,11 +85,11 @@ eval "$(zoxide init --cmd cd zsh)"
 # Aliases
 # ========================
 # General
-alias l="eza -l --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes"
-alias ll="eza -la --icons --group-directories-first --sort=ext --no-user --no-permissions --no-quotes"
+alias l="eza -l --icons --group-directories-first --sort=ext --no-quotes"
+alias ll="eza -la --icons --group-directories-first --sort=ext --no-quotes"
 alias q="exit"
 alias c="clear"
-alias k="pkill -9"
+alias k="pkill"
 
 # Programs
 alias v="nvim"
@@ -93,19 +100,14 @@ alias bt="btop"
 alias ht="htop"
 alias nf="fastfetch"
 
-# Pacman - Archlinux
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-alias clean='sudo pacman -Rns $(pacman -Qtdq)'
-alias mirrorup="sudo reflector --verbose --country 'Bangladesh,India,China,Hong Kong,Vietnam,Thailand,Taiwan,Singapore' -l 25 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
-
 # Confirm before overwriting
 alias cp="cp -iv"
-alias mv='mv -i'
+alias mv='mv -iv'
 
-# Colorize grep output
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+# Pacman - Archlinux
+# alias unlock="sudo rm /var/lib/pacman/db.lck"
+# alias clean='sudo pacman -Rns $(pacman -Qtdq)'
+# alias mirrorup="sudo reflector --verbose --country 'Bangladesh,India,China,Hong Kong,Vietnam,Thailand,Taiwan,Singapore' -l 25 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # ========================
 # Sesh session manager 
@@ -126,3 +128,4 @@ zle     -N             sesh-sessions
 bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
+

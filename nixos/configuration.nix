@@ -21,5 +21,6 @@
 
   time.timeZone = "Asia/Dhaka";
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "25.11"; # NOTE: DO NOT CHANGE THIS VALUE
+  nixpkgs.config.android_sdk.accept_license = true;
+  system.stateVersion = "25.11"; # WARNING: DO NOT CHANGE THIS VALUE
 }
