@@ -30,6 +30,5 @@ else ICON="󰓅"; fi
 # 5. Notify
 notify-send -a "System" \
     -h string:x-canonical-private-synchronous:brightness \
-    -h int:value:"$NEW_PERC" \
     -u low -t 1500 \
     "$ICON Brightness: ${NEW_PERC}%"

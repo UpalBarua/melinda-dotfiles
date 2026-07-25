@@ -30,8 +30,8 @@ set selection-clipboard clipboard
 # ========================
 # Appearance
 # ========================
-set font "Iosevka Nerd Font 10"
-include themes/rose-pine
+set font "CaskaydiaCove Nerd Font 10"
+include themes/tokyonight_night
 
 # ========================
 # Session

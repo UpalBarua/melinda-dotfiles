@@ -2,10 +2,10 @@ format = """$directory$git_branch$git_status$character"""
 right_format = """$all"""
 
 add_newline = false
-palette = "rose-pine"
+palette = "tokyonight"
 
 [directory]
-style = 'bold fg:blue'
+style = 'bold tn_blue'
 format = '[$path ]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
@@ -19,23 +19,25 @@ truncate_to_repo = false
 'pictures' = ' '
 
 [git_branch]
-style = 'fg:green'
+style = 'fg:tn_green'
 symbol = ' '
-format = '[on](white) [$symbol$branch ]($style)'
+format = '[on](fg:tn_foreground) [$symbol$branch ]($style)'
 
 [git_status]
-style = 'fg:green'
+style = 'fg:tn_green'
 format = '([$all_status$ahead_behind]($style) )'
 
 [character]
-error_symbol = "[ ](bold red)"
-success_symbol = "[ ](bold gold)"
+error_symbol = "[ ](bold tn_red)"
+success_symbol = "[ ](bold tn_blue)"
 
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
+[palettes.tokyonight]
+tn_bg = '#24283b'
+tn_foreground = '#c0caf5'
+tn_selection = '#2e3c64'
+tn_red = '#f7768e'
+tn_green = '#9ece6a'
+tn_yellow = '#e0af68'
+tn_blue = '#7aa2f7'
+tn_magenta = '#bb9af7'
+tn_cyan = '#7dcfff'

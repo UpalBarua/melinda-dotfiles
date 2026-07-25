@@ -1,12 +1,11 @@
 { config, ... }:
 {
   imports = [
-    ./home/services.nix
-    ./home/ssh.nix
-    ./home/xdg.nix
-    ./home/gtk.nix
-    ./home/programs.nix
-    ./home/pkgs.nix
+    ../../home/services.nix
+    ../../home/ssh.nix
+    ../../home/xdg.nix
+    ../../home/gtk.nix
+    ../../home/programs.nix
   ];
 
   home = {
@@ -31,6 +30,7 @@
       ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/waybar";
       ".config/zathura".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/zathura";
       ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/tmux";
+      ".config/eza".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/eza";
       ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/starship.toml";
       ".config/mimeapps.list".source = config.lib.file.mkOutOfStoreSymlink  "${config.home.homeDirectory}/.dotfiles/.config/mimeapps.list";
 

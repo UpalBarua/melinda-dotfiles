@@ -1,26 +1,15 @@
 { pkgs, ... }: {
   gtk = {
     enable = true;
-
-    theme = {
-      name = "Tokyonight-Dark";
-      package = pkgs.tokyonight-gtk-theme;
-    };
-
-    iconTheme = {
-      name = "Tela-black-dark";
-      package = pkgs.tela-icon-theme;
-    };
-
+     
+    theme.name = "Colloid-Dark-Tokyonight";
+    iconTheme.name = "Colloid-Dark";
+    cursorTheme.name = "Colloid-cursors";
+      
     font = {
-      name = "Ubuntu Sans";
-      package = pkgs.ubuntu-sans;
-      size = 10;
-    };
-
-    cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
+      name = "Inter";
+      package = pkgs.inter;
+      size = 10.5;
     };
   };
 }

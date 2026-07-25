@@ -12,7 +12,7 @@
       nerd-fonts.caskaydia-cove
       dejavu_fonts
       liberation_ttf
-      ubuntu-sans
+      inter
     ];
 
     fontconfig = {
@@ -20,12 +20,12 @@
 
       defaultFonts = {
         serif = [
-          "Ubuntu Serif"
+          "Inter"
           "Noto Serif"
           "Noto Serif Bengali"
         ];
         sansSerif = [
-          "Ubuntu Sans"
+          "Inter"
           "Noto Sans"
           "Noto Sans Bengali"
         ];

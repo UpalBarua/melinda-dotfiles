@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 MUSIC_DIR="$HOME/Music/Lofi"
 NOTIFICATION_ICON="media-tape"

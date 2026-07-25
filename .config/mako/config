@@ -14,14 +14,14 @@ height=110
 margin=15
 padding=14,16
 border-size=1
-border-radius=0
+border-radius=5
 icons=1
 max-icon-size=64
 
 background-color=#1a1b26
 text-color=#c0caf5
 border-color=#292e42
-progress-color=#292e42
+progress-color=#222436
 
 # ========================
 # Behavior

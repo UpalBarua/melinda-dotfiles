@@ -2,9 +2,9 @@
 # Font settings
 # ========================
 font_family CaskaydiaCove Nerd Font
-font_size 10
+font_size 9.7
 adjust_line_height  5
-adjust_column_width 0
+adjust_column_width 1
 adjust_baseline 0
 disable_ligatures always
 box_drawing_scale 0.001, 1, 1.5, 2
@@ -259,6 +259,6 @@ narrow_symbols U+F027F,U+F01A7,U+F0295,U+F423,U+F0722,U+F002B,U+F0831,U+F0E8,U+F
 
 
 # BEGIN_KITTY_THEME
-# Rosé Pine
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME

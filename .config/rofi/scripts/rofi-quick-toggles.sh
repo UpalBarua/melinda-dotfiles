@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define the list of options
 options=(
-  "Bangla keyboard:ibus-daemon:ibus-daemon -drxR"
+  # "Ibus Daemon:ibus-daemon:ibus-daemon -drxR"
+  "Ibus Daemon:ibus-daemon:ibus start --type wayland"
   "Picom:picom:picom -b"
   "Polkit agent:polkit-mate-authentication-agent-1:/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
   "Transmission Daemon:transmission-daemon:transmission-daemon"

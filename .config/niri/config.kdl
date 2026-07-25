@@ -7,11 +7,11 @@ include "modules/gestures.kdl"
 include "modules/layer-rule.kdl"
 include "modules/overview.kdl"
 include "modules/animations.kdl"
-include "modules/environment.kdl"
 include "modules/cursor.kdl"
 
 prefer-no-csd
-spawn-sh-at-startup "~/.config/niri/scripts/autostart.sh"
+// spawn-sh-at-startup "~/.config/niri/scripts/autostart.sh"
+spawn-sh-at-startup "noctalia"
 screenshot-path "~/Pictures/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.png"
 
 hotkey-overlay {

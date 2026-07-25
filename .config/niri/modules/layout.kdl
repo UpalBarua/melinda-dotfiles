@@ -3,6 +3,7 @@ layout {
 
     gaps 5
     center-focused-column "never"
+    always-center-single-column
     default-column-width { proportion 0.5; }
 
     preset-column-widths {
@@ -17,10 +18,10 @@ layout {
 
     border {
         on
-        width 1
-        active-color "#c0caf5"
-        inactive-color "#283457"
-        urgent-color "#524f67"
+        width 1.5 
+        active-color "#565f89"
+        inactive-color "#292e42"
+        urgent-color "#7aa2f7"
     }
 
     shadow {

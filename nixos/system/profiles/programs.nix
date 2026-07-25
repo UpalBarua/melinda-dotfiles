@@ -1,9 +1,13 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   programs = {
     zsh.enable = true;
-    niri.enable = true;
     localsend.enable = true;
     obs-studio.enable = true;
+
+    niri = {
+      enable = true;
+      useNautilus = false;
+    };
 
     thunar = {
       enable = true;
@@ -23,9 +27,8 @@
     git
     gcc
     ntfs3g
-    xwayland-satellite
-    android-studio
-    scrcpy
-    android-tools
+    neovim
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

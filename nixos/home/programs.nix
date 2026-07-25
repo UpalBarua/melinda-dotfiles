@@ -1,36 +1,29 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs = {
-    hyprshot.enable = true;
-    hyprlock.enable = true;
-    lazygit.enable = true;
-    mpv.enable = true;
-    sesh.enable = true;
-    obsidian.enable = true;
     jq.enable = true;
     starship.enable = true;
     zoxide.enable = true;
-    alacritty.enable = true;
-    anki.enable = true;
+    lazygit.enable = true;
+    sesh.enable = true;
     bat.enable = true;
     btop.enable = true;
     eza.enable = true;
     fd.enable = true;
     gh.enable = true;
-    firefox.enable = true;
-
-    swayimg = {
-      enable = true;
-      settings = {
-        viewer = {
-          window = "#191724";
-        };
-      };
-    };
 
     fzf = {
       enable = true;
       tmux.enableShellIntegration = true;
     };
+
+    alacritty.enable = true;
+    mpv.enable = true;
+    obsidian.enable = true;
+    anki.enable = true;
+    firefox.enable = true;
+    swayimg.enable = true;
+    hyprshot.enable = true;
+    hyprlock.enable = true;
 
     opencode = {
       enable = true;
@@ -48,4 +41,82 @@
       };
     };
   };
+
+  home.packages = with pkgs; [
+    kitty
+    brave
+    google-chrome
+    waybar
+    mate-polkit
+    nwg-look
+    zathura
+    zathuraPkgs.zathura_pdf_mupdf
+    # openbangla-keyboard
+    ibus
+
+    vscodium
+    transmission_4
+    pavucontrol
+
+    (rofi.override {
+      plugins = with pkgs; [
+        rofi-emoji
+        rofi-calc
+      ];
+    })
+
+    htop
+    brightnessctl
+    git-extras
+    wtype
+    ripgrep
+    ouch
+    wl-clipboard
+    awww
+    trash-cli
+    nodejs
+    pnpm
+    man-db
+    ffmpegthumbnailer
+    mediainfo
+    fastfetch
+    libnotify
+    file
+    lua51Packages.tree-sitter-cli
+    xwayland-satellite
+
+    scrcpy
+    hypridle
+    hyprpicker
+    tmux
+    bluetui
+    lf
+    ripdrag
+    unzip
+    poppler-utils
+
+    # LSPs
+    lua-language-server
+    typescript-language-server
+    tailwindcss-language-server
+    vscode-langservers-extracted
+    emmet-language-server
+    clang-tools
+    nil
+    basedpyright
+    hyprls
+
+    # Formatters & Linters
+    stylua
+    ruff
+    prettierd
+    eslint_d
+    nixfmt
+    bash-language-server
+    shfmt
+    kdlfmt
+
+    android-studio
+    android-tools
+  ];
 }

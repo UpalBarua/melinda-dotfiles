@@ -39,6 +39,5 @@ else ICON="󰕾"; fi
 # 4. Notify
 notify-send -a "System" \
     -h string:x-canonical-private-synchronous:volume \
-    -h int:value:"$NEW_VOL" \
     -u low -t 1500 \
     "$ICON Volume: ${NEW_VOL}%"
