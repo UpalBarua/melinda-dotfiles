@@ -21,10 +21,12 @@ return {
 			"make",
 			"cmake",
 			"bash",
+			"jsx",
 			"tsx",
 			"css",
 			"html",
 			"nix",
+			"kdl",
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {
@@ -43,13 +45,12 @@ return {
 					end
 				end
 
-        -- For treesitter baed folding
-				-- if vim.treesitter.language.add(lang) then
-				-- 	vim.treesitter.start(args.buf, lang)
-				-- 	-- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-				-- 	vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-				-- 	vim.wo[0][0].foldmethod = "expr"
-				-- end
+				if vim.treesitter.language.add(lang) then
+					vim.treesitter.start(args.buf, lang)
+					vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					-- vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					-- vim.wo[0][0].foldmethod = "expr"
+				end
 			end,
 		})
 	end,

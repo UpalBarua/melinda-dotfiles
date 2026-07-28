@@ -118,7 +118,7 @@ binds {
     Mod+Shift+T { spawn-sh "~/.config/rofi/scripts/rofi-quick-toggles.sh"; } 
     Mod+Shift+M { spawn-sh "~/.config/rofi/scripts/rofi-music.sh"; } 
     // Mod+Escape { spawn-sh "~/.config/rofi/scripts/rofi-session.sh"; } 
-    Mod+Escape { spawn-sh "noctalia msg panel-toggle session"; } 
+    Mod+Ctrl+Escape { spawn-sh "noctalia msg panel-toggle session"; } 
 
     // === Screenshots ===
     Print { screenshot-screen; } 

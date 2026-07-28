@@ -98,6 +98,7 @@
     # LSPs
     lua-language-server
     typescript-language-server
+    vtsls
     tailwindcss-language-server
     vscode-langservers-extracted
     emmet-language-server

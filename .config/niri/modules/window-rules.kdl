@@ -27,8 +27,8 @@ window-rule {
     open-floating true
     // min-width 100
     // min-height 300
-    max-width 800
-    max-height 1000
+    max-width 900
+    max-height 1200
 }
 
 // Floating Noctalia settings window.

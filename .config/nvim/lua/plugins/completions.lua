@@ -1,5 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
+	enabled = false,
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
@@ -107,7 +108,7 @@ return {
 			formatting = {
 				fields = { "icon", "abbr", "kind" },
 				format = function(entry, vim_item)
-          vim_item.icon = string.format("%s", icons[vim_item.kind])
+					vim_item.icon = string.format("%s", icons[vim_item.kind])
 					vim_item.kind = string.format("%s", vim_item.kind)
 
 					-- vim_item.menu = ({

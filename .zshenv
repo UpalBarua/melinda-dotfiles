@@ -4,6 +4,8 @@ export XDG_CONFIG_HOME=~/.config
 export XDG_STATE_HOME=~/.local/state
 export XDG_CACHE_HOME=~/.cache
 
+# TODO: fuck
+
 # Editor and terminal preferences
 export TERM='kitty'
 export TERMINAL='kitty' 

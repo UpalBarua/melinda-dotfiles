@@ -1,5 +1,6 @@
 return {
 	"folke/snacks.nvim",
+  enabled = false,
 	priority = 1000,
 	lazy = false,
 	---@type snacks.Config
@@ -7,7 +8,6 @@ return {
 		bufdelete = { enabled = true },
 		picker = { enabled = true },
 		statuscolumn = { enabled = true },
-		-- fjadkfsa
 		notifier = { enabled = true },
 	},
 	keys = {

@@ -1,27 +1,9 @@
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
-	dependencies = {
-		-- "WhoIsSethDaniel/mason-tool-installer.nvim",
-		"hrsh7th/cmp-nvim-lsp",
-		{
-			"mason-org/mason.nvim",
-			lazy = false,
-			config = function()
-				require("mason").setup()
-			end,
-		},
-		-- {
-		--   "mason-org/mason-lspconfig.nvim",
-		--   lazy = false,
-		-- },
-	},
 	config = function()
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 		local server_configs = {
 			lua_ls = {
-				capabilities = capabilities,
 				settings = {
 					Lua = {
 						runtime = { version = "LuaJIT" },
@@ -31,32 +13,27 @@ return {
 					},
 				},
 			},
-			ts_ls = { capabilities = capabilities },
-			tailwindcss = { capabilities = capabilities },
-			html = { capabilities = capabilities },
+			-- ts_ls = {},
+			vtsls = {},
+			tailwindcss = {},
+			html = {},
 			emmet_language_server = {
-				capabilities = capabilities,
 				settings = {
 					filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact", "vue", "svelte" },
 				},
 			},
-			clangd = { capabilities = capabilities },
-			nil_ls = { capabilities = capabilities },
-			basedpyright = { capabilities = capabilities },
+			clangd = {},
+			nil_ls = {},
+			basedpyright = {},
 			cssls = {
-				capabilities = capabilities,
 				settings = {
 					css = { validate = true, lint = { unknownAtRules = "ignore" } },
 					scss = { validate = true, lint = { unknownAtRules = "ignore" } },
 				},
 			},
-			hyprls = { capabilities = capabilities },
-			bashls = { capabilities = capabilities },
+			hyprls = {},
+			bashls = {},
 		}
-
-		-- require("mason-lspconfig").setup({
-		--   ensure_installed = vim.tbl_keys(server_configs), -- NOTE: not sure about this thing
-		-- })
 
 		for server, config in pairs(server_configs) do
 			vim.lsp.config(server, config)
@@ -102,9 +79,9 @@ return {
 				title = "",
 			}
 
-			local clients = vim.lsp.get_clients({ name = "ts_ls" })
+			local clients = vim.lsp.get_clients({ name = "vtsls" })
 			if #clients == 0 then
-				vim.notify("No ts_ls client found", vim.log.levels.ERROR)
+				vim.notify("No vtsls client found", vim.log.levels.ERROR)
 				return
 			end
 			local client = clients[1]
@@ -115,18 +92,8 @@ return {
 		local opts = { noremap = true, silent = true }
 		local keymap = vim.keymap.set
 
-		keymap("n", "gD", vim.lsp.buf.declaration, opts)
-		keymap("n", "gd", vim.lsp.buf.definition, opts)
 		keymap("n", "K", vim.lsp.buf.hover, opts)
-		keymap("n", "gI", vim.lsp.buf.implementation, opts)
-		keymap("n", "gr", vim.lsp.buf.references, opts)
 		keymap("n", "gl", vim.diagnostic.open_float, opts)
-		keymap("n", "<leader>la", vim.lsp.buf.code_action, opts)
-		keymap("n", "<leader>lj", vim.diagnostic.goto_next, opts)
-		keymap("n", "<leader>lk", vim.diagnostic.goto_prev, opts)
-		keymap("n", "<leader>ll", vim.lsp.codelens.run, opts)
-		keymap("n", "<leader>lq", vim.diagnostic.setloclist, opts)
-		keymap("n", "<leader>lr", vim.lsp.buf.rename, opts)
 		keymap("n", "<leader>lo", organize_imports, opts)
 	end,
 }
