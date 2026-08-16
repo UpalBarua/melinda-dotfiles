@@ -12,6 +12,14 @@ return {
 				["cmp.entry.get_documentation"] = true,
 			},
 		},
+		presets = {
+			bottom_search = true,
+			command_palette = true,
+			long_message_to_split = true,
+			inc_rename = false,
+			lsp_doc_border = false,
+		},
+
 		routes = {
 			{
 				filter = {
@@ -25,65 +33,59 @@ return {
 				view = "mini",
 			},
 		},
-		presets = {
-			bottom_search = false,
-			command_palette = true,
-			long_message_to_split = true,
-			inc_rename = false,
-			lsp_doc_border = true,
-		},
-		views = {
-			cmdline_popup = {
-				position = {
-					row = 5,
-					col = "50%",
-				},
-				border = {
-					style = "single",
-				},
-				size = {
-					min_width = 60,
-					width = "auto",
-					height = "auto",
-				},
-				win_options = {
-					winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
-				},
-			},
-			cmdline_popupmenu = {
-				relative = "editor",
-				position = {
-					row = 13,
-					col = "50%",
-				},
-				size = {
-					width = 60,
-					height = "auto",
-					max_height = 15,
-				},
-				border = {
-					style = "single",
-					padding = { 0, 3 },
-				},
-				win_options = {
-					winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "NoiceCmdlinePopupBorder" },
-				},
-			},
-			hover = {
-				border = {
-					style = "single",
-				},
-			},
-			confirm = {
-				border = {
-					style = "single",
-				},
-			},
-			popup = {
-				border = {
-					style = "single",
-				},
-			},
-		},
+
+		-- views = {
+		-- 	cmdline_popup = {
+		-- 		position = {
+		-- 			row = 5,
+		-- 			col = "50%",
+		-- 		},
+		-- 		border = {
+		-- 			style = "single",
+		-- 		},
+		-- 		size = {
+		-- 			min_width = 60,
+		-- 			width = "auto",
+		-- 			height = "auto",
+		-- 		},
+		-- 		win_options = {
+		-- 			winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "FloatBorder" },
+		-- 		},
+		-- 	},
+		-- 	cmdline_popupmenu = {
+		-- 		relative = "editor",
+		-- 		position = {
+		-- 			row = 13,
+		-- 			col = "50%",
+		-- 		},
+		-- 		size = {
+		-- 			width = 60,
+		-- 			height = "auto",
+		-- 			max_height = 15,
+		-- 		},
+		-- 		border = {
+		-- 			style = "single",
+		-- 			padding = { 0, 3 },
+		-- 		},
+		-- 		win_options = {
+		-- 			winhighlight = { NormalFloat = "NormalFloat", FloatBorder = "NoiceCmdlinePopupBorder" },
+		-- 		},
+		-- 	},
+		-- 	hover = {
+		-- 		border = {
+		-- 			style = "single",
+		-- 		},
+		-- 	},
+		-- 	confirm = {
+		-- 		border = {
+		-- 			style = "single",
+		-- 		},
+		-- 	},
+		-- 	popup = {
+		-- 		border = {
+		-- 			style = "single",
+		-- 		},
+		-- 	},
+		-- },
 	},
 }

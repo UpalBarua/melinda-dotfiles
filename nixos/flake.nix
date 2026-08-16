@@ -17,10 +17,6 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
     };
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -28,7 +24,6 @@
       nixpkgs,
       home-manager,
       noctalia,
-      zen-browser,
       ...
     }:
     {

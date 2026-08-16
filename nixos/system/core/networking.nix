@@ -7,6 +7,7 @@
       allowedTCPPorts = [
         3000
         8081
+        4096
       ];
     };
   };

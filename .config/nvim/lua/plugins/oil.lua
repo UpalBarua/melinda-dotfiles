@@ -1,5 +1,6 @@
 return {
 	"stevearc/oil.nvim",
+  enabled = false,
 	---@module 'oil'
 	---@type oil.SetupOpts
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -23,7 +24,7 @@ return {
 			["q"] = "actions.close",
 		},
 		float = {
-			border = "single",
+			border = "rounded",
 			max_height = 20,
 			max_width = 60,
 		},

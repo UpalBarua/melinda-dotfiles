@@ -95,6 +95,7 @@ binds {
     Mod+Ctrl+B { spawn-sh "$BROWSER"; } 
     Mod+Ctrl+O { spawn "obsidian"; } 
     Mod+Ctrl+A { spawn "anki"; } 
+    Mod+Ctrl+S { spawn-sh "noctalia msg settings-open"; } 
     Mod+Ctrl+Shift+E { spawn "thunar"; } 
 
     // === TUI Programs ===
@@ -118,7 +119,7 @@ binds {
     Mod+Shift+T { spawn-sh "~/.config/rofi/scripts/rofi-quick-toggles.sh"; } 
     Mod+Shift+M { spawn-sh "~/.config/rofi/scripts/rofi-music.sh"; } 
     // Mod+Escape { spawn-sh "~/.config/rofi/scripts/rofi-session.sh"; } 
-    Mod+Ctrl+Escape { spawn-sh "noctalia msg panel-toggle session"; } 
+    Mod+Ctrl+Escape { spawn-sh "noctalia msg panel-toggle launcher /session"; } 
 
     // === Screenshots ===
     Print { screenshot-screen; } 

@@ -40,11 +40,14 @@ return {
 
 		cmdline = { enabled = true },
 		completion = {
-			menu = { border = "single" },
-			documentation = { auto_show = true, window = { border = "single" } },
+			-- menu = { border = "rounded" },
+			documentation = {
+				auto_show = true,
+				-- window = { border = "rounded"}
+			},
 			ghost_text = { enabled = true },
 		},
-		signature = { window = { border = "single" } },
+		signature = { window = { border = "rounded" } },
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 	opts_extend = { "sources.default" },

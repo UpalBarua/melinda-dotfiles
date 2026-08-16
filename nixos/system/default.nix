@@ -18,6 +18,5 @@
     ../system/profiles/fonts.nix
     ../system/profiles/programs.nix
     ../system/profiles/services.nix
-    # ../system/profiles/i18n.nix
   ];
 }

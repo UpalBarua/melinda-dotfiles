@@ -1,6 +1,5 @@
 return {
 	"nickjvandyke/opencode.nvim",
-	enabled = false,
 	version = "*",
 	dependencies = {
 		{

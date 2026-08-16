@@ -27,7 +27,9 @@ return {
 			function()
 				require("conform").format({
 					lsp_fallback = true,
-					async = true,
+					async = false, -- from lazyvim
+					timeout = 3000, -- from lazyvim
+					quiet = false, -- from lazyvim
 				})
 			end,
 		},

@@ -50,15 +50,6 @@ keymap("n", "<C-l>", ":wincmd l<CR>", opts)
 -- Buffers
 keymap("n", "<S-h>", "<cmd>bprevious<cr>", opts)
 keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)
-keymap("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
-keymap("n", "<leader>bD", function()
-	local current = vim.api.nvim_get_current_buf()
-	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-		if buf ~= current and vim.api.nvim_buf_is_loaded(buf) then
-			pcall(vim.cmd, "bdelete! " .. buf)
-		end
-	end
-end, opts)
 
 -- Tailwindcss
 -- keymap({ "n", "x" }, "j", "gj", opts)
@@ -68,7 +59,7 @@ end, opts)
 keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", opts)
 
 -- Toggle line wrapping
-keymap("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
+keymap("n", "<leader>lw", "<cmd>set wrap!<cr>", opts)
 
 -- Misc
 keymap("n", "<leader>L", "<cmd>Lazy<cr>", opts)

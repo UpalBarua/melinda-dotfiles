@@ -1,17 +1,13 @@
 { config, ... }:
 {
   imports = [
-    ../../home/services.nix
-    ../../home/ssh.nix
-    ../../home/xdg.nix
-    ../../home/gtk.nix
-    ../../home/programs.nix
+    ../../home/default.nix
   ];
 
   home = {
     username = "upal";
     homeDirectory = "/home/upal";
-    stateVersion = "26.05";
+    stateVersion = "26.05"; # WARNING: DO NOT CHANGE THIS VALUE
 
     file = {
       # # Configs

@@ -51,7 +51,7 @@
     nwg-look
     zathura
     zathuraPkgs.zathura_pdf_mupdf
-    # openbangla-keyboard
+    openbangla-keyboard
     ibus
 
     vscodium
@@ -75,6 +75,10 @@
     awww
     trash-cli
     nodejs
+    python3
+    luarocks
+    sqlite
+    lua5_1
     pnpm
     man-db
     ffmpegthumbnailer
@@ -84,6 +88,7 @@
     file
     lua51Packages.tree-sitter-cli
     xwayland-satellite
+    gnumake
 
     scrcpy
     hypridle
@@ -94,6 +99,7 @@
     ripdrag
     unzip
     poppler-utils
+    arduino-ide
 
     # LSPs
     lua-language-server
@@ -119,5 +125,8 @@
 
     android-studio
     android-tools
+    eas-cli
+
+    wmenu
   ];
 }

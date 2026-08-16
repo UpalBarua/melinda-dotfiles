@@ -1,6 +1,10 @@
 { ... }: {
   nix = {
     optimise.automatic = true;
+    settings.trusted-users = [
+      "root"
+      "upal"
+    ];
     settings.experimental-features = [
       "nix-command"
       "flakes"
