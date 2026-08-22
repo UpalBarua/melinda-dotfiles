@@ -1,4 +1,11 @@
 { pkgs, ... }: {
+  imports = [
+    ./sway.nix
+    ./rofi.nix
+    ./waybar.nix
+    ./nvim.nix
+  ];
+
   programs = {
     jq.enable = true;
     starship.enable = true;
@@ -57,13 +64,6 @@
     transmission_4
     pavucontrol
 
-    # (rofi.override {
-    #   plugins = with pkgs; [
-    #     rofi-emoji
-    #     rofi-calc
-    #   ];
-    # })
-
     htop
     brightnessctl
     git-extras
@@ -99,36 +99,5 @@
     unzip
     poppler-utils
     arduino-ide
-
-    # LSPs
-    lua-language-server
-    typescript-language-server
-    vtsls
-    tailwindcss-language-server
-    vscode-langservers-extracted
-    emmet-language-server
-    clang-tools
-    nil
-    basedpyright
-    hyprls
-
-    # Formatters & Linters
-    stylua
-    ruff
-    prettierd
-    eslint_d
-    nixfmt
-    bash-language-server
-    shfmt
-    kdlfmt
-
-    android-studio
-    android-tools
-    eas-cli
-
-    wmenu
-
-    # SCRIPTS
-    (import ./scripts/dual-battery-module.nix { inherit pkgs; })
   ];
 }

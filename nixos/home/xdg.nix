@@ -3,6 +3,7 @@
     userDirs = {
       enable = true;
       createDirectories = true;
+
       download = "$HOME/Downloads";
       music = "$HOME/Music";
       pictures = "$HOME/Pictures";
@@ -12,11 +13,6 @@
       templates = null;
       videos = null;
       publicShare = null;
-    };
-    portal.config = {
-      niri = {
-        "org.freedesktop.impl.portal.FileChooser" = "gtk";
-      };
     };
   };
 }
