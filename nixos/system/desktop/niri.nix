@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   programs = {
     niri = {
       enable = true;
@@ -7,6 +7,6 @@
   };
 
   environment.systemPackages = [
-    pkgs.inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
