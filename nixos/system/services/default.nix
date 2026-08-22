@@ -1,4 +1,6 @@
 { ... }: {
+  imports = [ ./auto-cpufreq.nix ];
+
   services.xserver.xkb.layout = "us";
   services.fstrim.enable = true;
   services.interception-tools.enable = true;

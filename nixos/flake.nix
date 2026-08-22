@@ -30,15 +30,16 @@
       nixosConfigurations.melinda = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
+
         modules = [
           ./hosts/melinda/configuration.nix
+          ./system/desktop/niri.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.upal = import ./hosts/melinda/home.nix;
           }
-          ./system/profiles/programs.nix
         ];
       };
     };

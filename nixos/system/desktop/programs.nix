@@ -1,13 +1,8 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   programs = {
     zsh.enable = true;
     localsend.enable = true;
     obs-studio.enable = true;
-
-    niri = {
-      enable = true;
-      useNautilus = false;
-    };
 
     thunar = {
       enable = true;
@@ -28,6 +23,5 @@
     gcc
     ntfs3g
     neovim
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
