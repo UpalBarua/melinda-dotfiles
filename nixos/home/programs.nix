@@ -46,7 +46,6 @@
     kitty
     brave
     google-chrome
-    waybar
     mate-polkit
     nwg-look
     zathura
@@ -58,12 +57,12 @@
     transmission_4
     pavucontrol
 
-    (rofi.override {
-      plugins = with pkgs; [
-        rofi-emoji
-        rofi-calc
-      ];
-    })
+    # (rofi.override {
+    #   plugins = with pkgs; [
+    #     rofi-emoji
+    #     rofi-calc
+    #   ];
+    # })
 
     htop
     brightnessctl
@@ -128,5 +127,8 @@
     eas-cli
 
     wmenu
+
+    # SCRIPTS
+    (import ./scripts/dual-battery-module.nix { inherit pkgs; })
   ];
 }

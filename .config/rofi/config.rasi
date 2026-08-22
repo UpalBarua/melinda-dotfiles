@@ -1,5 +1,5 @@
 configuration {
-  display-drun: ">>>";
+  display-drun: "run";
   display-window: "Windows";
   display-emoji: "Emojis";
   display-clipboard: "Clipboard";
@@ -35,21 +35,22 @@ configuration {
 }
 
 window {
-  width: 25em;
-  border: 1.5px 1.5px 1.5px 1.5px;
+  width: 65em;
+  border: 2px;
   padding: 0.75em;
-  border-color: @bd;
+  border-color: @ac;
   background-color: @bg;
-  border-radius: 5;
+  border-radius: 0;
 }
 
 element {
   padding: 0.5em 0.75em;
-  border-radius: 5;
+  border-radius: 0;
 }
 
 element selected {
   background-color: @bd;
+  text-color: @bg;
 }
 
 element-text {

@@ -120,6 +120,7 @@ binds {
     Mod+Shift+M { spawn-sh "~/.config/rofi/scripts/rofi-music.sh"; } 
     // Mod+Escape { spawn-sh "~/.config/rofi/scripts/rofi-session.sh"; } 
     Mod+Ctrl+Escape { spawn-sh "noctalia msg panel-toggle launcher /session"; } 
+    Mod+Shift+S { spawn-sh "localsend_app"; } 
 
     // === Screenshots ===
     Print { screenshot-screen; } 

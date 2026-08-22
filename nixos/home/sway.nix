@@ -6,7 +6,7 @@ let
   up = "k";
   right = "l";
 
-  menu = "${pkgs.wmenu}/bin/wmenu-run -f 'CaskaydiaCove Nerd Font 10' -l 20 -p 'run ' -N '#24283b' -m '#1a1b26' -M '#7aa2f7' -S '#7aa2f7' -s '#1a1b26'";
+  menu = "${pkgs.rofi}/bin/rofi";
   terminal = "${pkgs.kitty}/bin/kitty --single-instance";
   browser = "${pkgs.brave}/bin/brave";
 
@@ -26,8 +26,6 @@ in
       input = {
         "type:pointer" = {
           accel_profile = "flat";
-          # hide_cursor = "2000";
-          # hide_cursor = "when-typing";
         };
         "type:touchpad" = {
           dwt = "enabled";
@@ -55,8 +53,9 @@ in
         };
       };
       startup = [
-        { command = "awww-daemon"; }
+        { command = "${pkgs.awww}/bin/awww-daemon"; }
         { command = "${pkgs.mako}/bin/mako"; }
+        { command = "${pkgs.waybar}/bin/waybar"; }
         {
           command = "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store";
         }
@@ -67,67 +66,73 @@ in
       ];
       window = {
         titlebar = false;
-        border = 1;
+        border = 2;
       };
       gaps = {
-        inner = 6;
-        outer = 3;
+        top = 0;
+        bottom = 0;
+        left = 0;
+        vertical = 0;
+        horizontal = 0;
+        right = 0;
+        inner = 5;
+        outer = 5;
       };
       bars = [
-        {
-          id = "main";
-          position = "top";
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
-
-          fonts = {
-            size = 8.5;
-            names = [
-              "CaskaydiaCove Nerd Font Propo"
-              "monospace"
-            ];
-            style = "Bold";
-          };
-
-          colors = {
-            background = theme.bg;
-            statusline = theme.fg;
-            separator = theme.secondary;
-
-            focusedBackground = theme.bg;
-            focusedStatusline = theme.fg;
-            focusedSeparator = theme.accent;
-
-            focusedWorkspace = {
-              border = theme.accent;
-              background = theme.accent;
-              text = theme.bg;
-            };
-            activeWorkspace = {
-              border = theme.bg;
-              background = theme.bg;
-              text = theme.fg;
-            };
-            inactiveWorkspace = {
-              border = theme.bg;
-              background = theme.bg;
-              text = theme.fg;
-            };
-            urgentWorkspace = {
-              border = theme.urgent;
-              background = theme.urgent;
-              text = theme.fg;
-            };
-            bindingMode = {
-              border = theme.accent;
-              background = theme.accent;
-              text = theme.bg;
-            };
-          };
-
-          extraConfig = ''
-            status_padding 5
-          '';
-        }
+        # {
+        #   id = "main";
+        #   position = "top";
+        #   statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
+        #
+        #   fonts = {
+        #     size = 8.5;
+        #     names = [
+        #       "CaskaydiaCove Nerd Font Propo"
+        #       "monospace"
+        #     ];
+        #     style = "Bold";
+        #   };
+        #
+        #   colors = {
+        #     background = theme.bg;
+        #     statusline = theme.fg;
+        #     separator = theme.secondary;
+        #
+        #     focusedBackground = theme.bg;
+        #     focusedStatusline = theme.fg;
+        #     focusedSeparator = theme.accent;
+        #
+        #     focusedWorkspace = {
+        #       border = theme.accent;
+        #       background = theme.accent;
+        #       text = theme.bg;
+        #     };
+        #     activeWorkspace = {
+        #       border = theme.bg;
+        #       background = theme.bg;
+        #       text = theme.fg;
+        #     };
+        #     inactiveWorkspace = {
+        #       border = theme.bg;
+        #       background = theme.bg;
+        #       text = theme.fg;
+        #     };
+        #     urgentWorkspace = {
+        #       border = theme.urgent;
+        #       background = theme.urgent;
+        #       text = theme.fg;
+        #     };
+        #     bindingMode = {
+        #       border = theme.accent;
+        #       background = theme.accent;
+        #       text = theme.bg;
+        #     };
+        #   };
+        #
+        #   extraConfig = ''
+        #     status_padding 5
+        #   '';
+        # }
       ];
 
       keybindings = lib.attrsets.mergeAttrsList [
@@ -189,10 +194,10 @@ in
           "${mod}+Shift+Q" = "kill";
           "${mod}+Shift+R" = "reload";
 
-          "${mod}+D" = "exec ${menu}";
-          "${mod}+E" = "exec rofi -show emoji -modi emoji";
+          "${mod}+D" = "exec ${menu} -show drun";
+          "${mod}+E" = "exec ${menu} -show emoji -modi emoji";
           "${mod}+V" =
-            "exec cliphist list | rofi -dmenu -p 'Clipboard' -display-columns 2 | cliphist decode | wl-copy ";
+            "exec ${pkgs.cliphist}/bin/cliphist list | ${menu} -dmenu -p 'Clipboard' -display-columns 2 | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy ";
           "${mod}+Shift+T" = "exec ~/.config/rofi/scripts/rofi-quick-toggles.sh";
           "${mod}+Shift+M" = "exec ~/.config/rofi/scripts/rofi-music.sh";
           "${mod}+Escape" = "exec ~/.config/rofi/scripts/rofi-session.sh";
@@ -293,7 +298,7 @@ in
   };
 
   programs.i3status-rust = {
-    enable = true;
+    enable = false;
     bars = {
       default = {
         icons = "awesome6";
