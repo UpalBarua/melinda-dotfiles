@@ -4,6 +4,7 @@
     ./rofi.nix
     ./waybar.nix
     ./nvim.nix
+    ./mango.nix
   ];
 
   programs = {
@@ -94,10 +95,9 @@
     hyprpicker
     tmux
     bluetui
-    lf
     ripdrag
     unzip
     poppler-utils
-    arduino-ide
+    lf
   ];
 }

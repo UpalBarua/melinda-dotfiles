@@ -20,7 +20,7 @@ let
 in
 {
   wayland.windowManager.sway = {
-    enable = false;
+    enable = true;
     config = {
       modifier = mod;
       input = {
@@ -55,7 +55,7 @@ in
       startup = [
         { command = "${pkgs.awww}/bin/awww-daemon"; }
         { command = "${pkgs.mako}/bin/mako"; }
-        { command = "${pkgs.waybar}/bin/waybar"; }
+        # { command = "${pkgs.waybar}/bin/waybar"; }
         {
           command = "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store";
         }
@@ -79,60 +79,60 @@ in
         outer = 5;
       };
       bars = [
-        # {
-        #   id = "main";
-        #   position = "top";
-        #   statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
-        #
-        #   fonts = {
-        #     size = 8.5;
-        #     names = [
-        #       "CaskaydiaCove Nerd Font Propo"
-        #       "monospace"
-        #     ];
-        #     style = "Bold";
-        #   };
-        #
-        #   colors = {
-        #     background = theme.bg;
-        #     statusline = theme.fg;
-        #     separator = theme.secondary;
-        #
-        #     focusedBackground = theme.bg;
-        #     focusedStatusline = theme.fg;
-        #     focusedSeparator = theme.accent;
-        #
-        #     focusedWorkspace = {
-        #       border = theme.accent;
-        #       background = theme.accent;
-        #       text = theme.bg;
-        #     };
-        #     activeWorkspace = {
-        #       border = theme.bg;
-        #       background = theme.bg;
-        #       text = theme.fg;
-        #     };
-        #     inactiveWorkspace = {
-        #       border = theme.bg;
-        #       background = theme.bg;
-        #       text = theme.fg;
-        #     };
-        #     urgentWorkspace = {
-        #       border = theme.urgent;
-        #       background = theme.urgent;
-        #       text = theme.fg;
-        #     };
-        #     bindingMode = {
-        #       border = theme.accent;
-        #       background = theme.accent;
-        #       text = theme.bg;
-        #     };
-        #   };
-        #
-        #   extraConfig = ''
-        #     status_padding 5
-        #   '';
-        # }
+        {
+          id = "main";
+          position = "top";
+          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-default.toml";
+
+          fonts = {
+            size = 8.5;
+            names = [
+              "CaskaydiaCove Nerd Font Propo"
+              "monospace"
+            ];
+            style = "Bold";
+          };
+
+          colors = {
+            background = theme.bg;
+            statusline = theme.fg;
+            separator = theme.secondary;
+
+            focusedBackground = theme.bg;
+            focusedStatusline = theme.fg;
+            focusedSeparator = theme.accent;
+
+            focusedWorkspace = {
+              border = theme.accent;
+              background = theme.accent;
+              text = theme.bg;
+            };
+            activeWorkspace = {
+              border = theme.bg;
+              background = theme.bg;
+              text = theme.fg;
+            };
+            inactiveWorkspace = {
+              border = theme.bg;
+              background = theme.bg;
+              text = theme.fg;
+            };
+            urgentWorkspace = {
+              border = theme.urgent;
+              background = theme.urgent;
+              text = theme.fg;
+            };
+            bindingMode = {
+              border = theme.accent;
+              background = theme.accent;
+              text = theme.bg;
+            };
+          };
+
+          extraConfig = ''
+            status_padding 5
+          '';
+        }
       ];
 
       keybindings = lib.attrsets.mergeAttrsList [
@@ -298,7 +298,7 @@ in
   };
 
   programs.i3status-rust = {
-    enable = false;
+    enable = true;
     bars = {
       default = {
         icons = "awesome6";

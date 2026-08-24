@@ -17,15 +17,20 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
     };
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs@{
+    {
       nixpkgs,
       home-manager,
       noctalia,
+      mango,
       ...
-    }:
+    }@inputs:
     {
       nixosConfigurations.melinda = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -38,6 +43,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.upal = import ./hosts/melinda/home.nix;
           }
         ];
