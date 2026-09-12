@@ -10,6 +10,7 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       nerd-fonts.caskaydia-cove
+      nerd-fonts.iosevka
       dejavu_fonts
       liberation_ttf
       inter
@@ -30,7 +31,7 @@
           "Noto Sans Bengali"
         ];
         monospace = [
-          "CaskaydiaCove Nerd Font"
+          "Iosevka Nerd Font"
           "Noto Sans Mono"
         ];
       };

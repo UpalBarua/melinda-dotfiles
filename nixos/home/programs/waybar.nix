@@ -1,17 +1,17 @@
 { pkgs, ... }:
-let
-  dual-battery-module = import ./scripts/dual-battery-module.nix { inherit pkgs; };
-in
+# let
+#   dual-battery-module = import ./scripts/dual-battery-module.nix { inherit pkgs; };
+# in
 {
   programs.waybar = {
     enable = false;
     settings = {
-      sway = {
+      mango = {
         layer = "top";
         position = "top";
-        spacing = 15;
+        spacing = 16;
         modules-left = [
-          "sway/workspaces"
+          "mango/workspaces"
           "temperature"
           "cpu"
           "memory"
@@ -21,10 +21,23 @@ in
           "backlight"
           "pulseaudio"
           "network"
-          "custom/battery"
+          # "custom/battery"
           "tray"
         ];
-        "sway/workspaces" = {
+
+        "mango/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            "1" = "一";
+            "2" = "二";
+            "active" = "";
+            "default" = "";
+            "urgent" = "";
+            "empty" = "";
+          };
+          on-click = "activate";
+          on-click-right = "toggle";
+          overview-label = "";
         };
 
         "pulseaudio" = {
@@ -85,22 +98,22 @@ in
           tooltip = false;
         };
 
-        "custom/battery" = {
-          exec = "${dual-battery-module}/bin/dual-battery-module";
-          return-type = "json";
-          interval = 60;
-          format = "{icon} {text}";
-          format-icons = {
-            discharging = [
-              ""
-              ""
-              ""
-              ""
-              ""
-            ];
-            charging = "󱊦";
-          };
-        };
+        # "custom/battery" = {
+        #   exec = "${dual-battery-module}/bin/dual-battery-module";
+        #   return-type = "json";
+        #   interval = 60;
+        #   format = "{icon} {text}";
+        #   format-icons = {
+        #     discharging = [
+        #       ""
+        #       ""
+        #       ""
+        #       ""
+        #       ""
+        #     ];
+        #     charging = "󱊦";
+        #   };
+        # };
 
         "bluetooth" = {
           format = " {status}";
@@ -132,7 +145,7 @@ in
         min-height: 0;
         border: none;
         border-radius: 0;
-        font-family: "CaskaydiaCove Nerd Font Propo";
+        font-family: "Iosevka Nerd Font Propo";
         font-size: 11.5px;
         font-weight: bold;
       }

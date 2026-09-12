@@ -32,6 +32,7 @@ return {
 	},
 	{
 		"nvim-mini/mini.ai",
+    enabled = false,
 		event = "VeryLazy",
 		version = false,
 		opts = {},
@@ -39,6 +40,7 @@ return {
 	{ "nvim-mini/mini.surround", version = false, opts = {} },
 	{
 		"nvim-mini/mini.comment",
+    enabled = false,
 		version = false,
 		dependencies = {
 			{
@@ -57,6 +59,7 @@ return {
 	},
 	{
 		"nvim-mini/mini.files",
+    enabled = false,
 		version = false,
 		opts = {},
 		keys = {
